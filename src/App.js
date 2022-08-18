@@ -1,15 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import WelcomeComponent from './pages/WelcomeComponent';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <div className='App-welcome'>
-        <h1 className='App-title'>Bienvenidos</h1>
-        <button className='App-button'>Entrar</button>
-      </div>
+  return(
+    <div>
+      <>
+      <WelcomeComponent />
+      </>
     </div>
-  );
+  ) 
+
 }
+
+
 
 export default App;
