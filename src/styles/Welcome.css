@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App-container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: url(https://futurist.com/wp-content/themes/futurist/dist/img/featured-fallback.jpg);
+height: 100vh;
+}
+
+.App-title{
+    font-size: 64px;
+    color: rgb(244, 89, 0);
+    text-shadow: 2px 2px 2px rgb(101, 37, 1);
+}
+
+.App-title-description{
+    color: white;
+    margin-bottom: 7vh;
+    font-size: 18px;
+    text-shadow: 2px 2px 2px rgb(101, 37, 1);
+}
+
+.App-title-button{
+font-size: 20px;
+background-color: rgb(255, 209, 124);
+border: rgb(244, 89, 0) solid 2px;
+border-radius: 6px;
+padding: 5px;
+box-shadow:2px 2px 2px rgb(101, 37, 1);
+};
