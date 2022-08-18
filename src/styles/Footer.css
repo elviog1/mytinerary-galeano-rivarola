@@ -1,0 +1,26 @@
+.Footer-div{
+    height: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(255, 209, 124);
+}
+
+.Footer-logo{
+    width: 50px;
+    margin: 10px;
+}
+
+.Footer-title{
+    font-size: 40px;
+    font-weight: 900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(244, 89, 0);
+    -webkit-text-stroke: 1.4px rgb(0, 0, 0);
+}
+
+.Footer-my{
+    color: blueviolet;
+    -webkit-text-stroke: 1.4px rgb(0, 0, 0);
+}
+
