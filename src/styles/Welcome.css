@@ -35,10 +35,14 @@ border: rgb(244, 89, 0) solid 2px;
 border-radius: 6px;
 padding: 5px;
 box-shadow:2px 2px 2px rgb(101, 37, 1);
-cursor: pointer
+cursor: pointer;
+color: black;
+text-decoration: none;
 };
 
 .App-title-button:hover{
-    background-color: rgb(244, 89, 0);
-    color: rgb(255, 209, 124);
-  }
+  background-color: rgb(244, 89, 0);/* no funciona */
+  color: rgb(255, 209, 124); /* no funciona */
+}
+
+ 
