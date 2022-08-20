@@ -11,6 +11,7 @@ justify-content: center;
 align-items: center;
 background: url(https://futurist.com/wp-content/themes/futurist/dist/img/featured-fallback.jpg);
 height: 100vh;
+width: 100%;
 }
 
 .App-title{
@@ -19,6 +20,7 @@ height: 100vh;
     text-shadow: 2px 2px 2px rgb(101, 37, 1);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   -webkit-text-stroke: 1px rgb(0, 0, 0);
+  background-color: rgba(240, 248, 255, 0);
 }
 
 .App-title-description{
@@ -26,6 +28,7 @@ height: 100vh;
     margin-bottom: 7vh;
     font-size: 18px;
     text-shadow: 2px 2px 2px rgb(101, 37, 1);
+    background-color: rgba(240, 248, 255, 0);
 }
 
 .App-title-button{
@@ -45,4 +48,15 @@ text-decoration: none;
   color: rgb(255, 209, 124); /* no funciona */
 }
 
- 
+.App-button-description{
+  color: white;
+  font-size: 18px;
+  text-shadow: 2px 2px 2px rgb(101, 37, 1);
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.Arrow-up{
+  background-color: rgba(240, 248, 255, 0);
+  height: 15vh;
+  margin-top: 2vh;
+}

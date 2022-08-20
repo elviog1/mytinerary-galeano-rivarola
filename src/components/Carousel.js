@@ -13,10 +13,11 @@ function Carousel(props) {
     const rangeEnd = props.rangeEnd
 
 
+
     const itemCarousel = (item) =>( 
                 <div className='Carousel-card'>
-                    <img src={item.url} />
-                    <p>{item.country}</p>
+                    <img src={item.url} alt={item.country} className='Carousel-img'/>
+                    <p className='Carousel-text'>{item.country}</p>
                 </div>
     )
   return (
@@ -25,7 +26,7 @@ function Carousel(props) {
                 {// con slice le decimos q queremos cortar un array a partir de "start" hasta "end"
                 items.slice(rangeStart,rangeEnd).map(itemCarousel)  // map imprime lo q hay en el array del slice
                 } 
-            </div>
+             </div>
         </>
   )
 }
