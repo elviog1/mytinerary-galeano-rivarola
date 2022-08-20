@@ -1,8 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import WelcomeComponent from './pages/WelcomeComponent';
-import Footer from './components/Footer';
+import LayoutBasico from './layouts/LayoutBasico';
 import CountryCarousel from './components/CountryCarousel'
+import UnderConstruccion from './pages/UnderConstruction';
+
+
 
 
 
@@ -10,9 +12,11 @@ import CountryCarousel from './components/CountryCarousel'
 function App() {
   return(
       <>
+      <LayoutBasico>
       <WelcomeComponent />
       <CountryCarousel />
-      <Footer />
+      {/* <UnderConstruccion /> */}
+      </LayoutBasico>
       </>
   ) 
 
