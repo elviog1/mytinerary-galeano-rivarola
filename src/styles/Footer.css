@@ -1,3 +1,5 @@
+
+
 .Footer-div{
     height: 15vh;
     display: flex;
@@ -9,6 +11,7 @@
 .Footer-logo{
     width: 50px;
     margin: 10px;
+    background-color: rgb(255, 209, 124);  
 }
 
 .Footer-title{
@@ -17,10 +20,19 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(244, 89, 0);
     -webkit-text-stroke: 1.4px rgb(0, 0, 0);
+    background-color: rgb(255, 209, 124);  
 }
 
 .Footer-my{
     color: blueviolet;
     -webkit-text-stroke: 1.4px rgb(0, 0, 0);
+    background-color: rgb(255, 209, 124);  
 }
 
+.Footer-redes{
+    background-color: rgb(255, 209, 124);  
+}
+
+.Footer-direccion{
+    background-color: rgb(255, 209, 124);  
+}
