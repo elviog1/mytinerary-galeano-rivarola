@@ -1,15 +1,16 @@
 
 
 .Footer-div{
-    height: 15vh;
+    /* height: 15vh; */
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     background-color: rgb(255, 209, 124);
 }
 
 .Footer-logo{
-    width: 50px;
+    width: 40px;
     margin: 10px;
     background-color: rgb(255, 209, 124);  
 }
@@ -30,7 +31,8 @@
 }
 
 .Footer-redes{
-    background-color: rgb(255, 209, 124);  
+    background-color: rgb(255, 209, 124); 
+    /* width: 100%;  */
 }
 
 .Footer-direccion{
