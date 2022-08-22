@@ -15,7 +15,7 @@ width: 100%;
 }
 
 .App-title{
-    font-size: 64px;
+    font-size: 49px;
     color: rgb(244, 89, 0);
     text-shadow: 2px 2px 2px rgb(101, 37, 1);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -44,7 +44,7 @@ text-decoration: none;
 };
 
 .App-title-button:hover{
-  background-color: rgb(244, 89, 0);/* no funciona */
+  background-color: red;/* no funciona */
   color: rgb(255, 209, 124); /* no funciona */
 }
 
