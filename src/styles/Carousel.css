@@ -8,7 +8,7 @@
 .Carousel-slide{
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     background-color: rgb(141, 211, 211);
     /* height: 70vh; */
@@ -44,12 +44,11 @@
   }
 
 .Carousel-img{
-  width: 270px;
+  width: 320px;
   height: 250px;
   border: 1px solid black;
   box-shadow: 4px 3px 2px black;
   object-fit: cover;
-  margin: 26px;
 }
 
 
@@ -83,15 +82,18 @@ font-weight: bold;
 color: brown;
 cursor: pointer;
 border: none;
-/* position: absolute; */
-width: 30px;
-margin: 40px;
+ position: relative; 
+background-color: rgba(240, 248, 255, 0);
+width: 10px;
+margin: 20px;
+right: 23px;
 
 }
 
 .Arrow-img{
   width: 60px;
-  height: 50%;
+  height: 30%;
+  background-color: rgba(240, 248, 255, 0);
 }
 
 @media (max-width:800px){
@@ -99,4 +101,11 @@ margin: 40px;
   display: none;
 }
 
+}
+
+@media (max-width:1100px){
+  .Carousel-img{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
