@@ -8,7 +8,7 @@ function ArrowButton(props){
 
     return(
         <button className="Arrow-button" onClick={props.click}>
-            {props.icon}
+            <img src={props.img} className='Arrow-img'></img>
         </button>
     )
 }
