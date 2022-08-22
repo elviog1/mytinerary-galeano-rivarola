@@ -56,11 +56,11 @@ function Carousel(props) {
   return (
         <>
             <div className='Carousel-slide'>
-              <ArrowButton icon={"<"} click={prev} />
+              <ArrowButton icon={"<"} click={prev} img={'/img/flechaIzq.png'}/>
                 {// con slice le decimos q queremos cortar un array a partir de "start" hasta "end"
                 items.slice(start,end).map(itemCarousel)  // map imprime lo q hay en el array del slice
                 } 
-              <ArrowButton icon={">"} click={next} />
+              <ArrowButton icon={">"} click={next} img={'/img/flechaDer.png'}/>
              </div>
         </>
   )
