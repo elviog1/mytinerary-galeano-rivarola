@@ -50,15 +50,22 @@ color: black;
 text-decoration: none;
 };
 
-.App-button-description{
+ .App-button-description{
   color: white;
   font-size: 18px;
   text-shadow: 2px 2px 2px rgb(101, 37, 1);
   background-color: rgba(240, 248, 255, 0);
-}
+} 
 
 .Arrow-up{
   background-color: rgba(240, 248, 255, 0);
   height: 15vh;
   margin-top: 2vh;
+}
+
+.App-button-description{
+  color: white;
+  font-size: 18px;
+  text-shadow: 2px 2px 2px rgb(101, 37, 1);
+  background-color: rgba(240, 248, 255, 0);
 }
