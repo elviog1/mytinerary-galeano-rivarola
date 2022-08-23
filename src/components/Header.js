@@ -12,7 +12,7 @@ function Header() {
     return (
         <div className='Header'>
             <div className='Header-nav'>
-                <h1 className='Header-logo'>DreamJuan</h1>
+                <h1 className='Header-logo'><span>Dream</span>Juan</h1>
                 <div className='Header-links'>
                     {pages.map(link)}
                 </div>
