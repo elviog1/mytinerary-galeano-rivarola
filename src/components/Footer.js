@@ -13,7 +13,6 @@ export default function Footer() {
           <img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" alt="logo-whatsapp" />
           <img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" alt="logo-whatsapp" />         
         </div>
-
     </div>
   )
 }
