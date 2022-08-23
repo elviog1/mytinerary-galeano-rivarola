@@ -1,10 +1,12 @@
 import React from 'react'
 import '../styles/Footer.css'
+import {Link as LinkRouter} from 'react-router-dom'
+import ScrollToTop from './ScrollToTop'
 
 export default function Footer() {
   return (
     <div className='Footer-div'>
-      <p className='Footer-title'><span className='Footer-my'>My</span>Tinerary</p>
+      <LinkRouter to='/'><p className='Footer-title'><span className='Footer-my'>My</span>Tinerary</p></LinkRouter>
       <div>
         <p className='Footer-direccion'>Rivadavia 3472</p>
         </div>
