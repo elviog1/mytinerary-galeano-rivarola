@@ -9,6 +9,7 @@
 }
 
 
+
 .Header-nav{
     display: flex;
     background-color: rgb(255, 209, 124);
@@ -53,4 +54,34 @@
     color: rgb(244, 89, 0);
     text-shadow: 1.5px 1.5px 2px rgb(101, 37, 1);
     -webkit-text-stroke: 0.5px black;
+}
+
+@media (max-width:425px){
+    .Header-logo{
+        font-size: 35px;
+        margin-left: 10px;
+    }
+    .Header-links{
+        display: none;
+    }
+}
+
+@media (max-width:375px){
+    .Header-logo{
+        font-size: 25px;
+        margin-left: 10px;
+    }
+    .Header-links{
+        display: none;
+    }
+}
+
+@media (max-width:320px){
+    .Header-logo{
+        font-size: 25px;
+        margin-left: 10px;
+    }
+    .Header-links{
+        display: none;
+    }
 }
