@@ -31,7 +31,14 @@ width: 100%;
     background-color: rgba(240, 248, 255, 0);
 }
 
-.App-title-button{
+.App-button:hover{
+  background-color: rgb(244, 89, 0);
+  color: rgb(255, 209, 124);
+  font-weight: bold;
+  
+}
+
+.App-button{
 font-size: 20px;
 background-color: rgb(255, 209, 124);
 border: rgb(244, 89, 0) solid 2px;
@@ -42,11 +49,6 @@ cursor: pointer;
 color: black;
 text-decoration: none;
 };
-
-.App-title-button:hover{
-  background-color: red;/* no funciona */
-  color: rgb(255, 209, 124); /* no funciona */
-}
 
 .App-button-description{
   color: white;
