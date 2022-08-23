@@ -8,7 +8,7 @@ function WelcomeComponent(){
     return(
         <>
         <div className='App-container'>
-            <h1 className='App-title'>MyTinerary</h1>
+            <h1 className='App-title'><span>My</span>Tinerary</h1>
             <p className='App-title-description'>The best slogan is No Slogan</p>
         <CallToAction />
         </div>
