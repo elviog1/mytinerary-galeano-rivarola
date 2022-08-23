@@ -39,3 +39,18 @@
     background-color: rgb(255, 209, 124);  
 }
 
+.top{
+    font-size: 17px;
+    border: solid 1px black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-shadow: 2px 2px 2px black;
+    cursor: pointer;
+}
+
+.top:hover{
+    background-color: rgb(244, 89, 0);
+    color: white;
+    box-shadow: none;
+}
