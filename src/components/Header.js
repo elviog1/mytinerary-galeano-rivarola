@@ -24,7 +24,7 @@ function Header() {
                     {pages.map(link)}
                 </div>
                 <button className='boton-burger' onClick={handleToggle}><img className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png'/></button>
-                <h1 className='Header-logo'><span>Dream</span>Juan</h1>
+                <h1 className='Header-logo'><span>My</span>Tinerary</h1>
                 <div className='Header-links'>
                     {pages.map(link)}
                 </div>
