@@ -33,7 +33,7 @@
     background-color: transparent;
 }
 
-.Home, .Cities, .NewCity{
+.nav-item{
     text-decoration: none;
     color: rgba(141, 211, 211);
     font-size: 23px;
@@ -45,7 +45,7 @@
 
 }
 
-.Home:hover, .Cities:hover, .NewCity:hover{
+.nav-item:hover{
     color: rgb(0, 0, 0);
 
     background-color:  rgba(141, 211, 211);
