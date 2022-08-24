@@ -9,6 +9,7 @@
     position: fixed;
     width: 100vw;
     background-color: transparent;
+    margin-bottom: 60px;
 }
 
 
@@ -44,7 +45,7 @@
     box-shadow: 2px 2px 2px black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(244, 89, 0);
-    /* background-color: transparent; */
+
 }
 
 .Home:hover, .Cities:hover, .NewCity:hover{
@@ -93,12 +94,12 @@
 }
 
 @media (min-width:768px){
-    button{
-        display:none;
+    .boton-burger{
+        display: none;
     }
 }
 
-@media (max-width:425px){
+@media (max-width:426px){
     .Header-logo{
         font-size: 35px;
         margin-left: 10px;
@@ -143,3 +144,4 @@
         width: 60px;
     }
 }
+
