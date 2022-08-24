@@ -18,7 +18,7 @@ function CountryCarousel (){
 ]
     return (
         <>
-            <h1 className='Carousel-title'>Popular MyTineraries</h1>
+            <h1 className='Carousel-title'>Popular Cities</h1>
             <Carousel data={items} range={4} slides={3} interval={5}/>
             {/* <Carousel data={items} rangeStart={4} rangeEnd={8}/>
             <Carousel data={items} rangeStart={8} rangeEnd={12}/>  */}
