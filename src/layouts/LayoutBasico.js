@@ -5,7 +5,7 @@ import '../styles/LayoutBasico.css';
 
 function LayoutBasico(props) { 
    return (
-    <div>
+    <div className='Layout'>
     <Header />
      { props.children }
      <Footer />
