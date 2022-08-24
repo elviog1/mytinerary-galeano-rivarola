@@ -24,9 +24,9 @@ export default function Footer() {
             <p className='Footer-nav'>{pages.map(link)}</p>
         </div>
         <div className='Footer-redes'>
-          <img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="logo-whatsapp" />
-          <img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" alt="logo-whatsapp" />
-          <img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" alt="logo-whatsapp" />         
+          <a href='https://api.whatsapp.com/send/?phone=5491115151515&text&type=phone_number&app_absent=0'><img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="logo-whatsapp" /></a>
+          <a href='https://www.instagram.com/mytinerary_/'><img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" alt="logo-whatsapp" /></a>
+          <a href='https://twitter.com/MytineraryApp'><img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" alt="logo-whatsapp" /> </a>        
         </div>
         <button onClick={scrollTo} className='top'>▲Bop to the top▲</button>
     </div>
