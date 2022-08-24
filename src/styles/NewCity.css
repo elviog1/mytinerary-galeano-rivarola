@@ -33,6 +33,24 @@
     height: 22px;
 }
 
+.nc-boton{
+    width: 80px;
+    height: 27px;
+    align-self: flex-start;
+    background-color: rgb(244, 89, 0);
+    border: solid 1px black;
+    box-shadow: 1px 1px 2px black;
+    cursor: pointer;
+    color: wheat;
+    font-size: 17px;
+}
+
+.nc-boton:hover{
+    box-shadow: none;
+    background-color: rgb(255, 209, 124);
+    color: black;
+}
+
 @media (max-width:426px){
     .nc-form{
         width: 290px;

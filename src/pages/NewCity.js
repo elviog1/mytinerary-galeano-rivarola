@@ -13,6 +13,7 @@ export default function NewCity(){
                 <label className='nc-label' for='img'>Image
                      <input className='nc-input' type='text' id='img' placeholder='Enter the image here'></input>
                 </label>
+                <button id="enviar" type="button" className="nc-boton">Add city</button>
              </form>
         </div>
     )
