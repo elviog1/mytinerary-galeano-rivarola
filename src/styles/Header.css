@@ -4,29 +4,35 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 30px;
-    background-color: rgb(255, 209, 124);
+    /* background-color: rgb(255, 209, 124); */
     margin: 0;
+    position: fixed;
+    width: 100vw;
+    background-color: transparent;
 }
 
 
 
 .Header-nav{
     display: flex;
-    background-color: rgb(255, 209, 124);
+    /* background-color: rgb(255, 209, 124); */
+    background-color: transparent;
+    
 }
 .Header-avatar{
-    height: 50px;
-    width: 50px;
-    /* cursor: pointer; */
-    background-color: rgb(255, 209, 124);
-    margin-right: 20px;
+    height: 80px;
+    width: 80px;
+    /* background-color: rgb(255, 209, 124); */
+    margin: 30px 30px 0 0;
+    background-color: transparent;
 }
 
 .Header-links{
     display: flex;
     align-items: center;
     margin-left: 20px;
-    background-color: rgb(255, 209, 124);
+    /* background-color: rgb(255, 209, 124); */
+    background-color: transparent;
 }
 
 .Home, .Cities, .NewCity{
@@ -38,6 +44,7 @@
     box-shadow: 2px 2px 2px black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(244, 89, 0);
+    /* background-color: transparent; */
 }
 
 .Home:hover, .Cities:hover, .NewCity:hover{
@@ -54,6 +61,41 @@
     color: rgb(244, 89, 0);
     text-shadow: 1.5px 1.5px 2px rgb(101, 37, 1);
     -webkit-text-stroke: 0.5px black;
+    background-color: transparent;
+}
+
+.Header-burger{
+    width: 40px;
+    background-color: transparent;
+    display: none;
+}
+
+#active{
+    display: none;
+}
+
+
+.active{
+    transform: translate(100vw);
+}
+
+#active{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.685);
+    display: flex;
+    flex-direction: column;
+    transition: all.5s ease;
+
+}
+
+@media (min-width:768px){
+    button{
+        display:none;
+    }
 }
 
 @media (max-width:425px){
@@ -64,6 +106,23 @@
     .Header-links{
         display: none;
     }
+    .Header-burger{
+        display:block;
+    }
+    .Home, .Cities, .NewCity{
+        margin: 35px 0 0 0;
+        background-color: transparent;
+        box-shadow: none;
+        font-weight: bold;
+    }
+    .Home:hover, .Cities:hover, .NewCity:hover{
+        background-color: white;
+    }
+    .Header-avatar{
+        width: 60px;
+        height: 60px;
+        margin-top: 15px;
+    }
 }
 
 @media (max-width:375px){
@@ -71,9 +130,7 @@
         font-size: 25px;
         margin-left: 10px;
     }
-    .Header-links{
-        display: none;
-    }
+
 }
 
 @media (max-width:320px){
@@ -81,7 +138,8 @@
         font-size: 25px;
         margin-left: 10px;
     }
-    .Header-links{
-        display: none;
+    .Header-avatar{
+        height: 60px;
+        width: 60px;
     }
 }
