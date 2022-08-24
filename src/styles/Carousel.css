@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(141, 211, 211);
 }
+
 
 .Carousel-slide{
     text-align: center;
@@ -12,7 +12,6 @@
     align-items: center;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
-    /* height: 70vh; */
     margin-bottom: 10vh;
     flex-wrap: wrap;
  
@@ -49,27 +48,19 @@
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-.Carousel-img:hover{
-  opacity: .7;
 
+.Carousel-img:hover{
+  transform: scale(1.1);
 }
 
-
-
 .Carousel-text{
-  /* z-index: 2; */
-  /* top: 100%; */
-  /* position: absolute; */
   font-size: 30px;
   border-bottom-right-radius: 30px ;
   border-bottom-left-radius: 30px ;
   box-shadow: 4px 4px 2px black;
-  /* width: 70%;
-  left: 15%; */
   background-color: rgba(255, 255, 255, 0.452);
   font-weight: 600;
   height: 45px;
-  /* max-width: 300px; */
 }
 
 .Carousel-title{

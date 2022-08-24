@@ -4,3 +4,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.Layout{
+    background-image: url("https://phantom-elmundo.unidadeditorial.es/35f87d238c057aae9db15d2e08b9a917/resize/1200/f/jpg/assets/multimedia/imagenes/2021/09/21/16322250343699.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
