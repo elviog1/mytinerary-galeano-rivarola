@@ -14,7 +14,6 @@ function WelcomeComponent(){
         </div>
         <CountryCarousel/>
         </>
-
          )
 }
 
