@@ -70,3 +70,7 @@
     color: white;
     box-shadow: none;
 }
+
+a{
+    background-color: transparent;
+}
