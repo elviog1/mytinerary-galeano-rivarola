@@ -23,7 +23,7 @@ function Header() {
                 <div className={isActive ? 'active': null} id="active"> 
                     {pages.map(link)}
                 </div>
-                <button onClick={handleToggle}><img className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png'/></button>
+                <button className='boton-burger' onClick={handleToggle}><img className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png'/></button>
                 <h1 className='Header-logo'><span>Dream</span>Juan</h1>
                 <div className='Header-links'>
                     {pages.map(link)}

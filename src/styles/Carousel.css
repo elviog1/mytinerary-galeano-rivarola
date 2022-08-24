@@ -9,6 +9,7 @@
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
     /* height: 70vh; */
@@ -97,28 +98,31 @@ cursor: pointer;
 border: none;
  position: relative; 
 background-color: rgba(240, 248, 255, 0);
-width: 10px;
 margin: 20px;
-right: 23px;
-
 }
 
 .Arrow-img{
+  border: solid 2px rgb(244, 89, 0);
+  padding: 5px;
   width: 60px;
-  height: 30%;
-  background-color: rgba(240, 248, 255, 0);
+  height: 60px;
+  background-color: rgb(255, 209, 124);
+  border-radius: 360px;  
 }
+
+@media (max-width:1380px){
+  .Carousel-img{
+  width: 400px;
+  }
+} 
 
 @media (max-width:800px){
 .Arrow-button{
   display: none;
 }
 
+.Carousel-img{
+  width: 290px;
+  }
 }
 
-/* @media (max-width:1380px){
-  .Carousel-img{
-    margin-left: 70px;
-    margin-right: 70px;
-  }
-}  */
