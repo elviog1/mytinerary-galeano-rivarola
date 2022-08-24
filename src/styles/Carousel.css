@@ -19,13 +19,6 @@
   }
   .Carousel-card{
     margin-top: 30px;
-    
-    /* width: 100%; */
-    /* height: 60vh; */
-    /* background-color: rgb(141, 211, 211); */
-    /* animation-name: carousel;
-    animation-iteration-count: infinite;
-    animation-duration: 40s; */
     border-radius: 30px;
   }
   
@@ -109,6 +102,11 @@ margin: 20px;
   background-color: rgb(255, 209, 124);
   border-radius: 360px;  
 }
+@media (max-width:1380px){
+  .Arrow-button{
+    display: none;
+  }
+} 
 
 @media (max-width:1380px){
   .Carousel-img{
@@ -117,10 +115,6 @@ margin: 20px;
 } 
 
 @media (max-width:800px){
-.Arrow-button{
-  display: none;
-}
-
 .Carousel-img{
   width: 290px;
   }
