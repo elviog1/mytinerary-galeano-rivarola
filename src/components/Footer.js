@@ -2,6 +2,13 @@ import React from 'react'
 import '../styles/Footer.css'
 import {Link as LinkRouter} from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
+const pages = [
+  {name: 'Home', to:'/'},
+  {name: 'Cities', to: '/cities'},
+  {name: 'NewCity', to:'/newcity'},
+]
+
+const link = (page) => <LinkRouter to={page.to} className='Footer-link'>{page.name}</LinkRouter>
 
 export default function Footer() {
 
@@ -13,8 +20,8 @@ export default function Footer() {
   return (
     <div className='Footer-div'>
       <LinkRouter to='/'><p className='Footer-title'><span className='Footer-my'>My</span>Tinerary</p></LinkRouter>
-      <div>
-        <p className='Footer-direccion'>Rivadavia 3472</p>
+         <div>
+            <p className='Footer-nav'>{pages.map(link)}</p>
         </div>
         <div className='Footer-redes'>
           <img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" alt="logo-whatsapp" />
