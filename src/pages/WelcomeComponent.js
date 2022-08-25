@@ -9,12 +9,11 @@ function WelcomeComponent(){
         <>
         <div className='App-container'>
             <h1 className='App-title'><span>My</span>Tinerary</h1>
-            <p className='App-title-description'>The best slogan is No Slogan</p>
+            <p className='App-title-description'>Take the trip of you always wanted, to the city of your drems</p>
         <CallToAction />
         </div>
         <CountryCarousel/>
         </>
-
          )
 }
 

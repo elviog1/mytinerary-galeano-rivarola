@@ -4,10 +4,10 @@ import '../styles/Header.css'
 const pages = [
     {name: 'Home', to:'/'},
     {name: 'Cities', to: '/cities'},
-    {name: 'NewCity', to:'/newcity'},
+    {name: 'New City', to:'/newcity'},
 ]
 
-const link = (page) => <LinkRouter to={page.to} className={page.name}>{page.name}</LinkRouter>
+const link = (page) => <LinkRouter to={page.to} className='nav-item'>{page.name}</LinkRouter>
 
 function Header() {
     

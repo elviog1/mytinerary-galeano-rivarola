@@ -5,7 +5,7 @@ import ScrollToTop from './ScrollToTop'
 const pages = [
   {name: 'Home', to:'/'},
   {name: 'Cities', to: '/cities'},
-  {name: 'NewCity', to:'/newcity'},
+  {name: 'New City', to:'/newcity'},
 ]
 
 const link = (page) => <LinkRouter to={page.to} className='Footer-link'>{page.name}</LinkRouter>
