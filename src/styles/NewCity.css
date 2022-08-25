@@ -1,0 +1,72 @@
+.new-city-container{
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nc-title{
+    margin-top: 60px;
+    color: rgb(244, 89, 0);
+    -webkit-text-stroke: 1px black;
+    text-shadow: 1px 1px 2px black;
+    background-color: rgba(255, 255, 255, 0.621);
+    border: solid 2px black;
+    padding: 5px;
+    border-bottom: 0;
+    width: 500px;
+    padding-left: 30px;
+}
+
+.nc-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 500px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.621);
+    border: solid 2px black;
+    
+}
+
+.nc-label{
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nc-input{
+    width: 100%;
+    background-color: rgb(255, 209, 124);
+    height: 22px;
+}
+
+.nc-boton{
+    width: 80px;
+    height: 27px;
+    align-self: flex-start;
+    background-color: rgb(244, 89, 0);
+    border: solid 1px black;
+    box-shadow: 1px 1px 2px black;
+    cursor: pointer;
+    color: wheat;
+    font-size: 17px;
+}
+
+.nc-boton:hover{
+    box-shadow: none;
+    background-color: rgb(255, 209, 124);
+    color: black;
+}
+
+@media (max-width:426px){
+    .nc-form{
+        width: 290px;
+    }
+
+    .nc-title{
+        width: 290px;
+    }
+}
