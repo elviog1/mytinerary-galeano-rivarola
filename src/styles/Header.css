@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    /* overflow: hidden; */
-    width: 100vw;
+
+    /* position: fixed; */
+    width: 100%;
+
     top: 0;
     height: 11.6vh;
     background-color: transparent;
