@@ -17,6 +17,9 @@ export default function Footer() {
       top: 0,
       behavior: 'smooth'
     })}
+
+    let fecha = new Date()
+    let año = fecha.getFullYear()
   return (
     <div className='Footer-div'>
       <LinkRouter to='/'><p className='Footer-title'><span className='Footer-my'>My</span>Tinerary</p></LinkRouter>
@@ -29,6 +32,7 @@ export default function Footer() {
           <a href='https://twitter.com/MytineraryApp'><img className='Footer-logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" alt="logo-whatsapp" /> </a>        
         </div>
         <button onClick={scrollTo} className='top'>▲Bop to the top▲</button>
+        <p className='Footer-nav'>{año}</p>
     </div>
   )
 }
