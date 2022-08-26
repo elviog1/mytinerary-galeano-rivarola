@@ -1,3 +1,4 @@
+import { useRef } from "react"
 import CardCity from "../components/CardCity"
 
 
@@ -18,11 +19,18 @@ export default function Cities(){
 ]
 
 
-    return(
+    const search = useRef(null)
+    const changeState = () =>{
+        console.log(search.current.value) // desp borrar el consola
+       console.log(items.filter(item => item.city.toLowerCase().includes(search.current.value))) 
+    }
 
+    return(
             <div className="card-containter">
+                <input ref={search} type="search" className="cities-search" placeholder="Search country..." 
+                onChange={changeState}/>
                <CardCity data={items} />
             </div>
 
     )
-}
+    }
