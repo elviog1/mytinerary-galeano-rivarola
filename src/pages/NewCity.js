@@ -6,6 +6,8 @@ export default function NewCity(){
      {value: 'City'},
      {value: 'Country'},
      {value: 'Image'},  
+     {value: 'Population'},  
+     {value: 'Fundation'},  
     ]
     
     
