@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Footer.css'
 import {Link as LinkRouter} from 'react-router-dom'
-import ScrollToTop from './ScrollToTop'
+
 const pages = [
   {name: 'Home', to:'/'},
   {name: 'Cities', to: '/cities'},
