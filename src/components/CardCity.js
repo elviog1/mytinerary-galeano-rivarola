@@ -1,5 +1,6 @@
 import '../styles/Cities.css'
 import {Link as LinkRouter} from 'react-router-dom'
+import axios from 'axios'
 
 function CardCity(props){
     const allCard = props.data
