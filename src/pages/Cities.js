@@ -1,5 +1,6 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import CardCity from "../components/CardCity"
+import axios from 'axios'
 
 
 export default function Cities(){
@@ -18,11 +19,16 @@ export default function Cities(){
         {url: "/img/Tokyo.jpg", city: "Tokyo", country:'Japan'},
 ]
 
+// const[items, setItems] = useState([])
 
+// useEffect(()=>{
+// axios.get('http://localhost:4000/cities/')
+//     .then(response => setItems(response.data))    
+// }, [])
     const search = useRef(null)
     const changeState = () =>{
         console.log(search.current.value) // desp borrar el consola
-       console.log(items.filter(item => item.city.toLowerCase().includes(search.current.value))) 
+        console.log(items.filter(item => item.city.toLowerCase().includes(search.current.value))) 
     }
 
     return(
