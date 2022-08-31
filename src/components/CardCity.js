@@ -7,7 +7,7 @@ function CardCity(props){
 
 
     const card =(item) =>(
-            <LinkRouter to='notfound'>
+            <LinkRouter to={item._id} >
             <div className="CardCity-container">
             <div className='CardCity-info'>
                 <img src={item.image} className="CardCity-img" />
