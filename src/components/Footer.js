@@ -6,6 +6,7 @@ const pages = [
   {name: 'Home', to:'/'},
   {name: 'Cities', to: '/cities'},
   {name: 'New City', to:'/newcity'},
+  {name: 'Edit city', to:'/editcity'}
 ]
 
 const link = (page) => <LinkRouter to={page.to} className='Footer-link'>{page.name}</LinkRouter>
