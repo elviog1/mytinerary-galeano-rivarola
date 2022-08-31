@@ -60,6 +60,13 @@
     align-items: center;
 
 }
+
+.cardCity-info{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-bottom: 20px;
+}
 @media (max-width:768px){
     .CardCity-img{
         width: 35rem;
