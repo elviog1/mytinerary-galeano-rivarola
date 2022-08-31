@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-
+import InputDetails from './InputDetails';
 
 export default function Details() {
-  const id = useParams()
+  const {id} = useParams();
   const[items, setItems] = useState({})
   useEffect(()=>{
-  axios.get("http://localhost:4000/cities/" + id)
-      .then(response => console.log(response)/*setItems(response.data),*/
-      // console.log(items),
+  axios.get(`http://localhost:4000/cities/${id}`)
+      .then(response =>setItems(response.data.response),
+      console.log(items),
       )
     }, [])
   
@@ -17,8 +17,8 @@ export default function Details() {
     // console.log(item);
 
   return (
-    <div>
-        <h1>hoalassssssssssdl</h1>
-    </div>
+  <>
+  <InputDetails data={items}/>
+  </>
   )
 }
