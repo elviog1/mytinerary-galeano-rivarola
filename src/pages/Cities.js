@@ -13,7 +13,7 @@ const search = useRef(null)
 useEffect(()=>{
     axios.get(`http://localhost:4000/cities?name=` + `${busqueda}`)
         .then(response => setItems(response.data.response))
-    })
+    },[busqueda])
 
     const accion =() => setBusqueda(search.current.value)
 
