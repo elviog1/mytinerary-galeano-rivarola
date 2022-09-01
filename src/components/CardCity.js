@@ -1,6 +1,6 @@
 import '../styles/Cities.css'
 import {Link as LinkRouter} from 'react-router-dom'
-import axios from 'axios'
+
 
 function CardCity(props){
     const allCard = props.data
@@ -9,7 +9,7 @@ function CardCity(props){
     const card =(item) =>(
             <LinkRouter to={item._id} >
             <div className="CardCity-container">
-            <div className='CardCity-info'>
+            <div className='CardCity-info city-hover'>
                 <img src={item.image} className="CardCity-img" />
                 <p className="CardCity-city">{item.name}</p>
                 {/* <p className="CardCity-country">{item.country}</p>
