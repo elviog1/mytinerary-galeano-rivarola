@@ -1,9 +1,7 @@
 import axios from 'axios'
-import { useEffect, useRef, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import Input from '../components/Input'
 import EditInput from '../components/InputEdit'
-import NewCity from './NewCity'
 import '../styles/NewCity.css'
 import '../styles/EditCity.css'
 
