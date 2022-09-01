@@ -16,7 +16,6 @@ export default function NewCity(){
              <h1 className='nc-title'>New City</h1>
              <form className='nc-form'>
              <Input data={items}/>
-                <button id="enviar" type="submit" className="nc-boton">Add city</button>
              </form>
         </div>
     )
