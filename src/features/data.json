@@ -1,0 +1,110 @@
+[{
+    "_id": "630e518bbe28a5faae2423c0",
+    "name": "Tokyo",
+    "image": "/img/Tokyo.jpg",
+    "country": "Japan",
+    "population": 13960000,
+    "fundation": 1457,
+    "__v": 0,
+    "description": "Tokyo is identified as the political, economic and cultural center of Japan and, based on the administrative subdivision of the territory, is divided into 23 districts including 26 cities, 5 citadels and 8 villages."
+},
+{
+    "_id": "630e539233a9500ea3d6f95b",
+    "name": "Buenos Aires",
+    "image": "/img/BuenosAires.jpg",
+    "country": "Argentina",
+    "population": 3075646,
+    "fundation": 1580,
+    "__v": 0
+},
+{
+    "_id": "630e53e733a9500ea3d6f95d",
+    "name": "Athens",
+    "image": "/img/Athens.jpg",
+    "country": "Greece",
+    "population": 3154000,
+    "fundation": -508,
+    "__v": 0
+},
+{
+    "_id": "630e543233a9500ea3d6f95f",
+    "name": "Havana",
+    "image": "/img/Havana.jpg",
+    "country": "Cuba",
+    "population": 2130000,
+    "fundation": 1519,
+    "__v": 0
+},
+{
+    "_id": "630e547b33a9500ea3d6f961",
+    "name": "Las Vegas",
+    "image": "/img/LasVegas.jpg",
+    "country": "United States",
+    "population": 1951269,
+    "fundation": 1905,
+    "__v": 0
+},
+{
+    "_id": "630e54e833a9500ea3d6f963",
+    "name": "Lima",
+    "image": "/img/Lima.jpg",
+    "country": "Peru",
+    "population": 9674755,
+    "fundation": 1535,
+    "__v": 0
+},
+{
+    "_id": "630ee2f807ddaa7fbab6575d",
+    "name": "London",
+    "image": "/img/London.jpg",
+    "country": "England",
+    "population": 9002488,
+    "fundation": -47,
+    "__v": 0
+},
+{
+    "_id": "630ee3db07ddaa7fbab65761",
+    "name": "Los Angeles",
+    "image": "/img/LosAngeles.jpg",
+    "country": "United States",
+    "population": 3979576,
+    "fundation": 1781,
+    "__v": 0
+},
+{
+    "_id": "630ee48307ddaa7fbab65765",
+    "name": "Paris",
+    "image": "/img/Paris.jpg",
+    "country": "France",
+    "population": 2229621,
+    "fundation": -52,
+    "__v": 0
+},
+{
+    "_id": "630ee56607ddaa7fbab65769",
+    "name": "Rio de Janeiro",
+    "image": "/img/RioDeJaneiro.jpg",
+    "country": "Brazil",
+    "population": 6780000,
+    "fundation": 1565,
+    "__v": 0
+},
+{
+    "_id": "630ee5ea07ddaa7fbab6576d",
+    "name": "Rome",
+    "image": "/img/Rome.jpg",
+    "country": "Italy",
+    "population": 2815951,
+    "fundation": -753,
+    "__v": 0
+},
+{
+    "_id": "630ee69107ddaa7fbab6576f",
+    "name": "Sydney",
+    "image": "/img/Sydney.jpg",
+    "country": "Australia",
+    "population": 4500000,
+    "fundation": 1788,
+    "__v": 0
+}
+]
