@@ -7,16 +7,11 @@ function CardCity(props){
 
 
     const card =(item) =>(
-            <LinkRouter to={item._id} >
+            <LinkRouter to={item._id} key={item.name}>
             <div className="CardCity-container">
             <div className='CardCity-info city-hover'>
-                <img src={item.image} className="CardCity-img" />
+                <img alt={item.name} src={item.image} className="CardCity-img" />
                 <p className="CardCity-city">{item.name}</p>
-                {/* <p className="CardCity-country">{item.country}</p>
-                <div className='cardCity-info'>
-                    <p className='cardCity-population'>Population: {item.population.toLocaleString("de-DE")}</p>
-                    <p className='cardCity-fundation'>Fundation: {item.fundation.toLocaleString("de-DE")}</p>
-                </div> */}
             </div>
         </div>
             </LinkRouter>

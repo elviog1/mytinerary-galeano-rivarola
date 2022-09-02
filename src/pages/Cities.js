@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import { useEffect, useRef, useState, useLocation, useHistory } from "react"
+
+import { useEffect, useRef, useState} from "react"
 import CardCity from "../components/CardCity"
 import axios from 'axios'
 
@@ -11,7 +11,7 @@ const[busqueda, setBusqueda] = useState("")
 const search = useRef(null)
 
 useEffect(()=>{
-    axios.get(`http://localhost:4000/cities?name=` + `${busqueda}`)
+    axios.get(`http://localhost:4000/cities?name=${busqueda}`)
         .then(response => setItems(response.data.response))
     },[busqueda])
 
@@ -21,7 +21,7 @@ useEffect(()=>{
     return(
             <div className="card-containter">
                 <input onKeyUp={accion}  ref={search}  type="search" className="cities-search" placeholder="Search country..." />
-               <CardCity  data={items} />
+                <CardCity  data={items} />
             </div>
 
     )

@@ -28,14 +28,14 @@ function Carousel(props) {
     },[start])
 
     const itemCarousel = (item) =>( 
-              <LinkRouter to={'/cities/' + item._id}>
+              <LinkRouter key={item.name} to={'/cities/' + item._id}>
                 <div className='Carousel-card'>
                     <img src={item.image} alt={item.name} className='Carousel-img'/>
                     <p className='Carousel-text'>{item.country}</p>
                 </div>
               </LinkRouter>
     )
-console.log(items)
+
 
       function prev (){
         if (start >= range){

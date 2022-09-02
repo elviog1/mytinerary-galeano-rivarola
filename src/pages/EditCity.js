@@ -12,6 +12,7 @@ useEffect(()=>{
 axios.get('http://localhost:4000/cities/')
     .then(response => setItems(response.data.response))
 }, [])
+
 const values = [
     {value: 'City'},
     {value: 'Country'},
@@ -22,13 +23,13 @@ const values = [
 
     return (
         <div className='new-city-container'>
-        <form className='nc-form'>
-        <label for='select-city' className='select-title'>Select City</label>
-        <select id='select-city' className='nc-input'>
-           <EditInput data={items}/>
-        </select> 
-           <Input data={values} />
-        </form>
+            <form className='nc-form'>
+                <label for='select-city' className='select-title'>Select City</label>
+                <select id='select-city' className='nc-input'>
+                <EditInput data={items}/>
+                </select> 
+                <Input data={values} />
+            </form>
         </div>
 )
 }
