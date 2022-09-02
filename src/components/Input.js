@@ -13,14 +13,14 @@ function Input(props){
 
     
 
-    const accion = () =>{
-        const postURL = "http://localhost:4000/cities/"
-        fetch(postURL)
-    }
+    // const accion = () =>{
+    //     const postURL = "http://localhost:4000/cities/"
+    //     fetch(postURL)
+    // }
     return(
         <>
            {allInput.map(FormItem)}
-           <button onClick={accion} id="send" type="submit" className="nc-boton">Add city</button>
+           
         </>
     )
 }
