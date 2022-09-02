@@ -8,6 +8,8 @@ import Details from './components/Details';
 import EditCity from './pages/EditCity';
 import ScrollToTop from './components/ScrollToTop';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Provider } from 'react-redux'
+import {store} from './store'
 
 
 function App() {
