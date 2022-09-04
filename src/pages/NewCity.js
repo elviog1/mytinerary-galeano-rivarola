@@ -27,8 +27,8 @@ export default function NewCity(){
                   name: inputCity,
                   country : inputCountry,
                   image: inputImage,
-                  population: parseInt(inputPopulation),
-                  fundation: parseInt(inputFundation)
+                  population: inputPopulation,
+                  fundation: inputFundation
                 })
                 .then(function(response){
                     console.log(response)
