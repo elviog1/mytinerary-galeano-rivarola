@@ -1,10 +1,9 @@
 
 import { useEffect, useRef, useState} from "react"
 import CardCity from "../components/CardCity"
-import axios from 'axios'
-import Itinerary from "../components/Itinerary"
 import { useDispatch,useSelector } from "react-redux"
 import cityActions from "../features/cityActions"
+import { useAllQuery } from "../features/citiesApi"
 
 export default function Cities(){
 
@@ -39,10 +38,14 @@ useEffect(()=>{
 //       }, [])
 
 
+// const {data : items ,error ,isLoading} = useAllQuery()
+
+
     return(
             <div className="card-containter">
                 <input onKeyUp={accion}  ref={search}  type="search" className="cities-search" placeholder="Search country..." />
                 <CardCity  data={items} />
+                
                 {/* <Itinerary info={itinerary} /> */}
             </div>
 
