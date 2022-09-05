@@ -7,7 +7,7 @@ function Input(props){
 
     const FormItem =(item) =>(
                 <label key={item.value} className='nc-label' for={item.value}>{item.value}
-                     <input req className='nc-input' required type='text' name={item.value}id={item.value} placeholder='Enter a new value here'></input>
+                     <input req className='nc-input' required type='text' name={item.value}id={item.value} placeholder= {item.placeholder +item.value} ></input>
                 </label>
     )
 
