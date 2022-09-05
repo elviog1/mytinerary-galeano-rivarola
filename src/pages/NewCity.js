@@ -4,11 +4,11 @@ import axios from 'axios'
 
 export default function NewCity(){
     const items = [
-     {value: 'City'},
-     {value: 'Country'},
-     {value: 'Image'},  
-     {value: 'Population'},  
-     {value: 'Fundation'},  
+     {value: 'City', placeholder: ' Enter a new '},
+     {value: 'Country', placeholder: ' Enter a new '},
+     {value: 'Image', placeholder: ' Enter a new '},  
+     {value: 'Population', placeholder: ' Enter a new '},  
+     {value: 'Fundation', placeholder: ' Enter a new '},  
     ]
     
     
