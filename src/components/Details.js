@@ -12,7 +12,7 @@ export default function Details() {
     }, [])
   
     
-    console.log(items);
+    // console.log(items);
 
   return (
   <>
