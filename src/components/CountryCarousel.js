@@ -1,16 +1,29 @@
-import axios from "axios";
-import { useState,useEffect } from "react";
+
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import cityActions from "../features/cityActions";
 import Carousel from "./Carousel";
 
 
 function CountryCarousel (){
 
 
-const[items, setItems] = useState([])
+// const[items, setItems] = useState([])
+// useEffect(()=>{
+// axios.get('http://localhost:4000/cities/')
+//     .then(response => setItems(response.data.response))
+// }, [])
+
+
+const items = useSelector((state)=>
+    state.citiesSlice.cities
+)
+const dispatch = useDispatch()
+console.log(items)
 useEffect(()=>{
-axios.get('http://localhost:4000/cities/')
-    .then(response => setItems(response.data.response))
-}, [])
+    dispatch(cityActions.all())
+},[])
+
 
     return (
         <>
