@@ -14,11 +14,11 @@ axios.get('http://localhost:4000/cities/')
 }, [])
 
 const values = [
-    {value: 'City'},
-    {value: 'Country'},
-    {value: 'Image'},  
-    {value: 'Population'},  
-    {value: 'Fundation'},  
+    {value: 'City', placeholder: 'Enter a new '},
+    {value: 'Country', placeholder: 'Enter a new '},
+    {value: 'Image', placeholder: 'Enter a new '},  
+    {value: 'Population', placeholder: 'Enter a new '},  
+    {value: 'Fundation', placeholder: 'Enter a new '},  
    ]
    const cityValue = useRef(null)
    const [seleccionada, setSeleccionada] = useState("")
@@ -53,6 +53,7 @@ const values = [
 
     return (
         <div className='new-city-container'>
+            <h1 className='nc-title'>Edit City</h1>
             <form className='nc-form'>
                 <label for='select-city' className='nc-label'>Select City
                 <select id='select-city' className='nc-input' ref={cityValue} onChange={selectCity}>
