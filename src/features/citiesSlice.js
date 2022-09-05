@@ -1,29 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import cityActions from "./cityActions"
 
 
-export const citiesSlice = createSlice({
-    name: 'cities',
 
-    initialState: {
-        cities: []
-    },
+const initialState = {
+    cities: []
+}
 
-    reducers: {
-        fetchFromServer: (state) => {
-            state.cities = [
-                {
-                    name: "athens",
-                    country:'greece',
-                    image: 'image.jpg',
-                    population:'789513',
-                    fundation:'508'
-                }
-            ]
+
+ const citiesSlice = (state = initialState, action) => {
+            switch(action.type){
+                case 'GET_ALL':
+                    return {
+                        ...state,
+                        cities: action.payload
+                    }
+
+            default: return state
+            }
         }
-    },
-})
 
-export const{fetchFromServer} = citiesSlice.actions
+export default citiesSlice
 
-export default citiesSlice.reducer
+
