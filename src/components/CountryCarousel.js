@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
+import api_url from "../api";
 import Carousel from "./Carousel";
 
 
@@ -21,7 +22,7 @@ function CountryCarousel (){
 
 const[items, setItems] = useState([])
 useEffect(()=>{
-axios.get('http://localhost:4000/cities/')
+axios.get(api_url+'/cities/')
     .then(response => setItems(response.data.response))
 }, [])
 
