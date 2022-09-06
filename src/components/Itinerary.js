@@ -1,12 +1,11 @@
 
 function Itinerary(props){
-    const allCard = props.info
+    const allCard = props.data
 
-    const cardItinerary = (item) =>{
+    const cardItinerary = (item) =>(
         <div className="itinerary-card">
             <h2>{item.name}</h2>
-            <h3>{item.user}</h3>
-            <p>{item.city}</p>
+            <h3>{item.user.name}</h3>
             <div className="itinerary-card_price-duration">
                 <p>Price: {item.price}</p>
                 <p>Duration: {item.duration}</p>
@@ -14,11 +13,11 @@ function Itinerary(props){
             <p>{item.tags}</p>
             <p>{item.likes}</p>
         </div>
-    }
+    )
 
     return (
         <>
-            {cardItinerary(allCard)}
+            {allCard.map(cardItinerary)}
         </>
     )
 }
