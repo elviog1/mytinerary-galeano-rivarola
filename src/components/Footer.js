@@ -1,11 +1,12 @@
 import React from 'react'
 import '../styles/Footer.css'
 import {Link as LinkRouter} from 'react-router-dom'
-import ScrollToTop from './ScrollToTop'
+
 const pages = [
   {name: 'Home', to:'/'},
   {name: 'Cities', to: '/cities'},
   {name: 'New City', to:'/newcity'},
+  {name: 'Edit city', to:'/editcity'}
 ]
 
 const link = (page) => <LinkRouter to={page.to} className='Footer-link'>{page.name}</LinkRouter>

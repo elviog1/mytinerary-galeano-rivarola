@@ -1,21 +1,30 @@
+import axios from "axios";
+import { useState,useEffect } from "react";
 import Carousel from "./Carousel";
 
 
 function CountryCarousel (){
-    const items =[
-        {url: "/img/Athens.jpg", country: "Athens"},
-        {url: "/img/BuenosAires.jpg", country: "Buenos Aires"},
-        {url: "/img/Havana.jpg", country: "Havana"},
-        {url: "/img/LasVegas.jpg", country: "Las Vegas"},
-        {url: "/img/Lima.jpg", country: "Lima"},
-        {url: "/img/London.jpg", country: "London"},
-        {url: "/img/LosAngeles.jpg", country: "Los Angeles"},
-        {url: "/img/Paris.jpg", country: "Paris"},
-        {url: "/img/RioDeJaneiro.jpg", country: "Rio de Janeiro"},
-        {url: "/img/Rome.jpg", country: "Rome"},
-        {url: "/img/Sydney.jpg", country: "Sydney"},
-        {url: "/img/Tokyo.jpg", country: "Tokyo"},
-]
+//     const itemss =[
+//         {url: "/img/Athens.jpg", country: "Athens"},
+//         {url: "/img/BuenosAires.jpg", country: "Buenos Aires"},
+//         {url: "/img/Havana.jpg", country: "Havana"},
+//         {url: "/img/LasVegas.jpg", country: "Las Vegas"},
+//         {url: "/img/Lima.jpg", country: "Lima"},
+//         {url: "/img/London.jpg", country: "London"},
+//         {url: "/img/LosAngeles.jpg", country: "Los Angeles"},
+//         {url: "/img/Paris.jpg", country: "Paris"},
+//         {url: "/img/RioDeJaneiro.jpg", country: "Rio de Janeiro"},
+//         {url: "/img/Rome.jpg", country: "Rome"},
+//         {url: "/img/Sydney.jpg", country: "Sydney"},
+//         {url: "/img/Tokyo.jpg", country: "Tokyo"},
+// ]
+
+const[items, setItems] = useState([])
+useEffect(()=>{
+axios.get('http://localhost:4000/cities/')
+    .then(response => setItems(response.data.response))
+}, [])
+
     return (
         <>
             <h1 className='Carousel-title'>Popular Cities</h1>

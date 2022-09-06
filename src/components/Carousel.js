@@ -27,7 +27,7 @@ function Carousel(props) {
 
     const itemCarousel = (item) =>( 
                 <div className='Carousel-card'>
-                    <img src={item.url} alt={item.country} className='Carousel-img'/>
+                    <img src={item.image} alt={item.name} className='Carousel-img'/>
                     <p className='Carousel-text'>{item.country}</p>
                 </div>
     )
