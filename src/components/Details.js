@@ -16,10 +16,6 @@ export default function Details() {
     },[])
   
 
-       axios.get(`http://localhost:4000/itineraries/query?city=${id}`)
-           .then(response =>setItineraries(response.data.response))
-
-
   return (
   <>
     <InputDetails data={items}/>
