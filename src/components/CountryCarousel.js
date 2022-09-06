@@ -19,7 +19,7 @@ const items = useSelector((state)=>
     state.citiesSlice.cities
 )
 const dispatch = useDispatch()
-console.log(items)
+//console.log(items)
 useEffect(()=>{
     dispatch(cityActions.all())
 },[])
