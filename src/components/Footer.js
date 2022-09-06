@@ -9,7 +9,7 @@ const pages = [
   {name: 'Edit city', to:'/editcity'}
 ]
 
-const link = (page) => <LinkRouter to={page.to} className='Footer-link'>{page.name}</LinkRouter>
+const link = (page) => <LinkRouter key={page.name} to={page.to} className='Footer-link'>{page.name}</LinkRouter>
 
 export default function Footer() {
 
@@ -21,6 +21,7 @@ export default function Footer() {
 
     let fecha = new Date()
     let año = fecha.getFullYear()
+
   return (
     <div className='Footer-div'>
       <LinkRouter to='/'><p className='Footer-title'><span className='Footer-my'>My</span>Tinerary</p></LinkRouter>
