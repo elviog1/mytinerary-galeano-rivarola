@@ -1,4 +1,9 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import '../styles/Itinerary.css'
+import Comment from './Comment'
+
 function Itinerary(props){
     const allCard = props.data
 
@@ -17,9 +22,22 @@ function Itinerary(props){
         </div>
     )
 
+    const {id} = useParams()
+    const [comments,setComments] = useState([])
+    useEffect(()=>{
+        axios.get(`http://localhost:4000/itineraries/query?city=${id}`)
+            .then(response => setComments(response.data.response))
+            axios.get(`http://localhost:4000/comments/query?itinerary=63166032d5fc4c0bc157c398`)
+            .then(response => setComments(response.data.response))
+    },[])
+    console.log(comments)
+
+   
+
     return (
         <>
             {allCard.map(cardItinerary)}
+            <Comment data={comments} />
         </>
     )
 }
