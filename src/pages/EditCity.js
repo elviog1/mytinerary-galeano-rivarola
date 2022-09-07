@@ -21,10 +21,10 @@ const values = [
     {value: 'Fundation', placeholder: 'Enter a new '},  
    ]
    const cityValue = useRef(null)
-   const [seleccionada, setSeleccionada] = useState("")
+   const [selected, setSelected] = useState("")
 
    const selectCity = (e)=>{
-    setSeleccionada(cityValue.current.value)
+    setSelected(cityValue.current.value)
    }
    
    const accion = (e)=>{
@@ -36,7 +36,7 @@ const values = [
        let inputFundation= document.getElementById("Fundation").value
        
 
-         axios.patch(`http://localhost:4000/cities/${seleccionada}`,{           
+         axios.patch(`http://localhost:4000/cities/${selected}`,{           
                name: inputCity,
                country : inputCountry,
                image: inputImage,
