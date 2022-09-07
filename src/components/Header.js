@@ -30,7 +30,7 @@ function Header() {
                     {pages.map(link)}
                 </div>
             </div>
-        <img alt='avatar-login' src='https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-login-web-store-flaticons-lineal-color-flat-icons-3.png' className='Header-avatar' href='profile picture'></img>
+        <img alt='avatar-login' src='https://cdn-icons-png.flaticon.com/512/3711/3711310.png' className='Header-avatar' href='profile picture'></img>
         </div>
     )
 }

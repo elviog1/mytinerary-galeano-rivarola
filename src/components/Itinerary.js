@@ -1,17 +1,19 @@
-
+import '../styles/Itinerary.css'
 function Itinerary(props){
     const allCard = props.data
 
     const cardItinerary = (item) =>(
         <div className="itinerary-card">
-            <h2>{item.name}</h2>
-            <h3>{item.user.name}</h3>
-            <div className="itinerary-card_price-duration">
-                <p>Price: {item.price}</p>
-                <p>Duration: {item.duration}</p>
+            <div className='itinerary-container'>
+                <h2 className="itinerary-name">{item.name}</h2>
+                <h3 className="itinerary-user-name">{item.user.name}</h3>
+                <div className="itinerary-card_price-duration">
+                    <p className="itinerary-price">Price: {item.price}</p>
+                    <p className="itinerary-duration">Duration: {item.duration}</p>
+                </div>
+                <p className="itinerary-tags">{item.tags}</p>
+                <p className="itinerary-likes">{item.likes}</p>
             </div>
-            <p>{item.tags}</p>
-            <p>{item.likes}</p>
         </div>
     )
 
