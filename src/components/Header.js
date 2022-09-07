@@ -5,7 +5,8 @@ const pages = [
     {name: 'Home', to:'/'},
     {name: 'Cities', to: '/cities'},
     {name: 'New City', to:'/newcity'},
-    {name: 'Edit city', to:'/editcity'}
+    {name: 'Edit city', to:'/editcity'},
+    {name: 'My Tineraries', to:'/itineraries/63125913116eb5ae120cb622'}
 ]
 
 const link = (page) => <LinkRouter key={page.name} to={page.to} className='nav-item'>{page.name}</LinkRouter>
