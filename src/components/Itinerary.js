@@ -9,13 +9,16 @@ import Comment from './Comment'
 function Itinerary(props){
     const allCard = props.data
     const [comments,setComments] = useState([])
+    const [activities,setActivities] = useState([])
+    const [id, setId] = useState('')
     useEffect(()=>{
         axios.get(`http://localhost:4000/comments/query?itinerary=63166032d5fc4c0bc157c398`)
         .then(response => setComments(response.data.response))
+        axios.get(`http://localhost:4000/activities/query?itinerary=63166032d5fc4c0bc157c398`)
+        .then(response => setActivities(response.data.response))
     },[])
     console.log(comments)
-    const [activities,setActivities] = useState([])
-    const [id, setId] = useState('')
+    console.log(activities)
 
      function ThisActivity(act){
         
