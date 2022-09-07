@@ -1,15 +1,33 @@
 
-import { useEffect, useRef, useState} from "react"
+import {  useRef, useState} from "react"
 import CardCity from "../components/CardCity"
-import { useDispatch,useSelector } from "react-redux"
-import cityActions from "../features/cityActions"
 import { useAllQuery } from "../features/citiesApi"
-
 export default function Cities(){
-
-// const[items, setItems] = useState([])
-const[busqueda, setBusqueda] = useState("")
-const search = useRef(null)
+    
+    // const[items, setItems] = useState([])
+    const[busqueda, setBusqueda] = useState()
+    const search = useRef("")
+    const accion =() => {
+        setBusqueda(search.current.value)
+    }
+    let {
+        data:cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed
+    } = useAllQuery(search.current ? search.current.value : "")
+    console.log(cities)
+    let content
+    
+    if(isLoading){
+        cities = []
+    }else if(isSuccess){
+        cities = cities.response
+    }else if(isFailed){
+        cities = []
+    }
+    // let items = cities
 
 // ciudades
 // useEffect(()=>{
@@ -17,34 +35,22 @@ const search = useRef(null)
 //         .then(response => setItems(response.data.response))
 //     },[busqueda])
 
-const accion =() => setBusqueda(search.current.value)
 
-const items = useSelector((state)=>
-    state.citiesSlice.cities
-)
-const dispatch = useDispatch()
-
-useEffect(()=>{
-    dispatch(cityActions.all(busqueda))
-},[busqueda])
-
-    
-// itinerarios
-// const [itinerary,setItinerary] = useState([])
+// const items = useSelector((state)=>
+//     state.citiesSlice.cities
+// )
+// const dispatch = useDispatch()
 
 // useEffect(()=>{
-//     axios.get(`http://localhost:4000/itineraries`)
-//         .then(response =>console.log(response.data.response))
-//       }, [])
+//     dispatch(cityActions.all(busqueda))
+// },[busqueda])
 
-
-// const {data : items ,error ,isLoading} = useAllQuery()
-
+ 
 
     return(
             <div className="card-containter">
-                <input onKeyUp={accion}  ref={search}  type="search" className="cities-search" placeholder="Search country..." />
-                <CardCity  data={items} />
+                <input onChange={accion}  ref={search}  type="search" className="cities-search" placeholder="Search country..." />
+                <CardCity  data={cities} />
                 
                 {/* <Itinerary info={itinerary} /> */}
             </div>
