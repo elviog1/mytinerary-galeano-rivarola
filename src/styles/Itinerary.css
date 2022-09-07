@@ -3,7 +3,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    /* flex-direction: column; */
+     flex-direction: column; 
     margin: 10px 0;
     /* padding: 10px 0; */
     /* max-width: 50rem; */
@@ -55,4 +55,25 @@ h1{
 
 body{
     min-height: 90vh;
+}
+.comment-content{
+  font-weight: 400;
+  margin: 8px;
+}
+
+.act-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.comment-img{
+    width: 40px;
+    margin: 8px;
+}
+
+.comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
