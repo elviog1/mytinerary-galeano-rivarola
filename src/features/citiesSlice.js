@@ -1,6 +1,3 @@
-import cityActions from "./cityActions"
-
-
 
 const initialState = {
     cities: []
