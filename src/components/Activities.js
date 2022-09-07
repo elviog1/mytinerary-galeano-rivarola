@@ -1,12 +1,13 @@
+import '../styles/Activity.css'
 function Activity(props){
     const allCard = props.data
 
-    const cardActivity = (item) =>{
+    const cardActivity = (item) =>(
         <div className="act-card">
-            <h2>{item.photo}</h2>
-            <p>{item.name}</p>
+            <h2 className="act-photo">{item.photo}</h2>
+            <p className="act-name">{item.name}</p>
         </div>
-    }
+    )
 
     return(
         <>
