@@ -1,7 +1,6 @@
 
 import { useEffect,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import cityActions from "../features/cityActions";
 import Carousel from "./Carousel";
 import { useAllQuery } from "../features/citiesApi";
 import axios from "axios";
