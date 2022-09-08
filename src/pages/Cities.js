@@ -4,10 +4,10 @@ import CardCity from "../components/CardCity"
 import { useAllQuery } from "../features/citiesApi"
 export default function Cities(){
     
-    const[busqueda, setBusqueda] = useState()
+    const[searching, setSearching] = useState()
     const search = useRef("")
     const accion =() => {
-        setBusqueda(search.current.value)
+        setSearching(search.current.value)
     }
     let {
         data:cities,
