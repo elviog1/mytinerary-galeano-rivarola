@@ -16,6 +16,14 @@ export default function Cities(){
         isSuccess,
         isFailed
     } = useAllQuery(search.current ? search.current.value : "")
+
+    if(isLoading){
+        cities = []
+    }else if (isSuccess){
+        cities = cities
+    }else if (isFailed){
+        cities = []
+    }
     
     return(
             <div className="card-containter">
