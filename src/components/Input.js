@@ -11,12 +11,6 @@ function Input(props){
                 </label>
     )
 
-    
-
-    // const accion = () =>{
-    //     const postURL = "http://localhost:4000/cities/"
-    //     fetch(postURL)
-    // }
     return(
         <>
            {allInput.map(FormItem)}

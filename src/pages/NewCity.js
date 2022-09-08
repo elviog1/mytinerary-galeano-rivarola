@@ -19,9 +19,7 @@ export default function NewCity(){
         let inputImage= document.getElementById("Image").value
         let inputPopulation= document.getElementById("Population").value
         let inputFundation= document.getElementById("Fundation").value
-        //let valor = { City: inputCity , Country : inputCountry, Image: inputImage,Population:inputPopulation, Fundation: inputFundation}
-        //let resJson = valor
-        //console.log(resJson)
+
 
              axios.post(`http://localhost:4000/cities/`,{           
                   name: inputCity,

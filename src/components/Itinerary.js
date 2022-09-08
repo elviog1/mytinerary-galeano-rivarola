@@ -17,17 +17,8 @@ function Itinerary(props){
         axios.get(`http://localhost:4000/activities/query?itinerary=63166032d5fc4c0bc157c398`)
         .then(response => setActivities(response.data.response))
     },[])
-    console.log(comments)
-    console.log(activities)
-
-     function ThisActivity(act){
-        
-     }
 
      function CardItinerary(item) {
-         //setId(item._id) 
-        //  axios.get(`http://localhost:4000/activities/query?itinerary=${id}`)
-        //  .then(res => setActivities(res.data.response))
         return (
             <div className="itinerary-card">
                 <div className='itinerary-container'>
@@ -53,7 +44,6 @@ function Itinerary(props){
     return (
         <>
             {allCard.map(CardItinerary)}
-            {/* <Comment data={comments} /> */}
         </>
     )
 }
