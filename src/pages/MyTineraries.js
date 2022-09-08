@@ -3,15 +3,29 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Itinerary from '../components/Itinerary'
 import '../styles/Itinerary.css'
+import {useByuserQuery } from '../features/itineraiesApi'
 
 export default function MyTineraries () {
   const {id} = useParams();
-  console.log(id);
-  const[itineraries, setItineraries] = useState([])
-  useEffect(()=>{
-      axios.get(`http://localhost:4000/itineraries/queryu?user=${id}`)
-      .then(response =>setItineraries(response.data.response))
-    },[])
+   console.log({id});
+
+let{
+    data: itineraries,
+    isLoading,
+    isSuccess,
+    error
+} = useByuserQuery({id} ? id : "")
+
+
+if (isLoading) {
+    itineraries=[]
+} else if(isSuccess){
+    itineraries = itineraries.response
+    console.log("success")
+}else if(error){
+    itineraries = []
+    console.log("error")
+}
 
     return(
         <div className='itineraries-container'>

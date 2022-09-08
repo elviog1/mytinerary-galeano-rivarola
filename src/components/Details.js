@@ -3,18 +3,32 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import InputDetails from './InputDetails';
 import Itinerary from './Itinerary';
+import { useBycityQuery } from '../features/itineraiesApi';
 
 export default function Details() {
   const {id} = useParams();
   const[items, setItems] = useState({})
-  const[itineraries, setItineraries] = useState([])
   useEffect(()=>{
   axios.get(`http://localhost:4000/cities/${id}`)
       .then(response =>setItems(response.data.response))
-      axios.get(`http://localhost:4000/itineraries/query?city=${id}`)
-      .then(response =>setItineraries(response.data.response))
     },[])
+    let{
+      data: itineraries,
+      isLoading,
+      isSuccess,
+      error
+  } = useBycityQuery({id} ? id : "")
   
+  
+  if (isLoading) {
+      itineraries=[]
+  } else if(isSuccess){
+      itineraries = itineraries.response
+      console.log("success")
+  }else if(error){
+      itineraries = []
+      console.log("error")
+  }
 
   return (
   <>
