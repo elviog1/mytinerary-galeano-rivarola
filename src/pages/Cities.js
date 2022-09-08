@@ -17,16 +17,6 @@ export default function Cities(){
         isFailed
     } = useAllQuery(search.current ? search.current.value : "")
     
-    if(isLoading){
-        cities = []
-    }else if(isSuccess){
-        cities = cities.response
-    }else if(isFailed){
-        cities = []
-    }
-
- 
-
     return(
             <div className="card-containter">
                 <input onChange={accion}  ref={search}  type="search" className="cities-search" placeholder="Search country..." />
