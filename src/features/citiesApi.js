@@ -5,7 +5,7 @@ const citiesApi = createApi({
     reducerPath: "citiesApi",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000" 
+        baseUrl: "http://localhost:4000"
     }), 
 
     endpoints: (builder) =>({
