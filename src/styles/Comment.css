@@ -1,0 +1,52 @@
+.cardComment-img-name{
+    display: flex;
+    justify-content: center;
+
+}
+.comment-user{
+    align-self: center;
+    color: white;
+}
+
+.cardComment-button{
+    margin: 0 10px;
+    padding: 5px 15px;
+    font-size: 23px;
+    font-weight: bold;
+    align-self: center;
+    border-radius: 5px;
+}
+.cardComment-container{
+    /* position: relative; */
+    max-height: 0px;
+    overflow: hidden;
+    margin: 10px 0 ;
+    /* transition: all 1s; */
+}
+.show{
+    max-height: 100%;
+}
+.comment-img{
+    width: 40px;
+    margin: 8px;
+}
+
+.comment-content{
+    font-weight: 400;
+    margin: 8px;
+    color: white;
+    font-size: 25px;
+  }
+
+  
+/* 
+  
+  .act-card{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+  }
+  
+
+  
+  */
