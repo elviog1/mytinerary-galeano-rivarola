@@ -56,24 +56,3 @@ h1{
 body{
     min-height: 90vh;
 }
-.comment-content{
-  font-weight: 400;
-  margin: 8px;
-}
-
-.act-card{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.comment-img{
-    width: 40px;
-    margin: 8px;
-}
-
-.comment{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
