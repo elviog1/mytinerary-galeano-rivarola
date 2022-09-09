@@ -19,7 +19,7 @@ function Header() {
     }
     
     const click = ()=>{
-        document.getElementById('login').classList.toggle('show')
+        document.getElementById('login').classList.toggle('showLogin')
     }
 
     return (
