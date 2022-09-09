@@ -1,21 +1,19 @@
 import '../styles/Carousel.css'
 import { useEffect,useState } from 'react'
 import ArrowButton from './ArrowButton'
+import { Link as LinkRouter } from 'react-router-dom'
+
 
 
 function Carousel(props) {
 
-    const range = props.range // cuantas imagenes queremos imprimir  
+    const range = props.range
     const limitSlides = props.slides * range
     const [start,setStart] = useState(0)
     const [end,setEnd] = useState(start + range)
     const [intervalId,setIntervalId] = useState()
     const interval = props.interval * 1000
-    const items = props.data //props hace referencia al valor de los atributos del componente
-    // DATA es el atributo, PROPS el valor, ITEMS se lo utiliza pra un []
-
-    // const rangeStart = props.rangeStart
-    // const rangeEnd = props.rangeEnd
+    const items = props.data 
 
     useEffect(() => {
       let id = setInterval(function () {
@@ -26,11 +24,14 @@ function Carousel(props) {
     },[start])
 
     const itemCarousel = (item) =>( 
+              <LinkRouter key={item.name} to={'/cities/' + item._id}>
                 <div className='Carousel-card'>
                     <img src={item.image} alt={item.name} className='Carousel-img'/>
                     <p className='Carousel-text'>{item.country}</p>
                 </div>
+              </LinkRouter>
     )
+
 
       function prev (){
         if (start >= range){

@@ -1,0 +1,11 @@
+.act-card{
+    width: 50rem;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    flex-direction: column;
+}
+
+.act-name{
+    font-size: 30px;
+    color: brown;
+}

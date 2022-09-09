@@ -1,0 +1,79 @@
+.itinerary-card{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+     flex-direction: column; 
+    margin: 10px 0;
+    /* padding: 10px 0; */
+    /* max-width: 50rem; */
+    /* align-self: center; */
+}
+.itinerary-container{
+    background-color: rgba(21, 21, 21, 0.927);
+    border-radius: 20px;
+    width: 50rem;
+    border: 2px solid black;
+   padding: 10px 0;
+   color: white;
+   /* background-size:cover; */
+   /* background-image: url(https://img.freepik.com/vector-gratis/fondo-abstracto-azul-formas-geometricas_1035-17545.jpg?w=2000); */
+}
+
+.itineraries-container{
+    background-color: rgba(21, 21, 21, 0.927);
+    border-radius: 20px;
+    width: 50rem;
+    border: 2px solid black;
+   padding: 10px 0;
+   color: white;
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative; 
+   left: calc(50% - 25rem);
+   min-height: 90vh;
+}
+
+.itinerary-name{
+    font-size: 40px;
+}
+.itinerary-user-name{
+    font-size: 30px;
+}
+.itinerary-card_price-duration{
+    display: flex;
+    justify-content: space-around;
+}
+
+h1{
+    color: rgb(244, 89, 0);
+    text-shadow: 2px 2px 2px black;
+}
+
+body{
+    min-height: 90vh;
+}
+.comment-content{
+  font-weight: 400;
+  margin: 8px;
+}
+
+.act-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.comment-img{
+    width: 40px;
+    margin: 8px;
+}
+
+.comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

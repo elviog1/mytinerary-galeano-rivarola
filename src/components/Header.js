@@ -5,10 +5,11 @@ const pages = [
     {name: 'Home', to:'/'},
     {name: 'Cities', to: '/cities'},
     {name: 'New City', to:'/newcity'},
-    {name: 'Edit city', to:'/editcity'}
+    {name: 'Edit city', to:'/editcity'},
+    {name: 'My Tineraries', to:'/itineraries/63125913116eb5ae120cb622'}
 ]
 
-const link = (page) => <LinkRouter to={page.to} className='nav-item'>{page.name}</LinkRouter>
+const link = (page) => <LinkRouter key={page.name} to={page.to} className='nav-item'>{page.name}</LinkRouter>
 
 function Header() {
     
@@ -24,13 +25,13 @@ function Header() {
                 <div className={isActive ? 'active': null} id="active"> 
                     {pages.map(link)}
                 </div>
-                <button className='boton-burger' onClick={handleToggle}><img className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png' href='burger menu'/></button>
+                <button className='boton-burger' onClick={handleToggle}><img alt='burger' className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png' href='burger menu'/></button>
                 <h1 className='Header-logo'><span>My</span>Tinerary</h1>
                 <div className='Header-links'>
                     {pages.map(link)}
                 </div>
             </div>
-        <img src='https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-login-web-store-flaticons-lineal-color-flat-icons-3.png' className='Header-avatar' href='profile picture'></img>
+        <img alt='avatar-login' src='https://cdn-icons-png.flaticon.com/512/3711/3711310.png' className='Header-avatar' href='profile picture'></img>
         </div>
     )
 }

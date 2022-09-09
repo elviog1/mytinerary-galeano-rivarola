@@ -3,7 +3,7 @@ function EditInput(props){
 
 
     const select =(item) =>(
-         <option value={item.name}>{item.name}</option>
+         <option key={item.name} value={item.name}>{item.name}</option>
     )
 
     return(
