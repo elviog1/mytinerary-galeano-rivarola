@@ -1,7 +1,6 @@
 .cardComment-img-name{
     display: flex;
     justify-content: center;
-
 }
 .comment-user{
     align-self: center;
@@ -13,8 +12,9 @@
     padding: 5px 15px;
     font-size: 23px;
     font-weight: bold;
-    align-self: center;
+    /* align-self: center; */
     border-radius: 5px;
+    
 }
 .cardComment-container{
     /* position: relative; */
@@ -37,16 +37,30 @@
     color: white;
     font-size: 25px;
   }
+ 
+.comment-card{
+    width: 50rem;
+    background-color: rgb(20, 20, 20);
+}
 
-  
-/* 
-  
-  .act-card{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-  }
-  
 
-  
-  */
+@media (max-width:768px){
+    .comment-card{
+        width: 35rem;
+    }
+}
+@media (max-width:425px){
+    .comment-card{
+        width: 16rem;
+    }
+}
+@media (max-width:375px){
+    .comment-card{
+        width: 16rem;
+    }
+}
+@media (max-width:320px){
+    .comment-card{
+        width: 16rem;
+    }
+}
