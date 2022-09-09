@@ -11,7 +11,7 @@
 }
 .itinerary-container{
     background-color: rgba(21, 21, 21, 0.927);
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     width: 50rem;
     border: 2px solid black;
    padding: 10px 0;
@@ -55,4 +55,34 @@ h1{
 
 body{
     min-height: 90vh;
+}
+
+@media (max-width:768px){
+    .itinerary-container{
+        width: 35rem;
+    }
+}
+@media (max-width:425px){
+    .itinerary-container{
+        width: 16rem;
+    }
+    .itinerary-tags{
+        font-size: 10px;
+    }
+}
+@media (max-width:375px){
+    .itinerary-container{
+        width: 16rem;
+    }
+    .itinerary-tags{
+        font-size: 10px;
+    }
+}
+@media (max-width:320px){
+    .itinerary-container{
+        width: 16rem;
+    }
+    .itinerary-tags{
+        font-size: 10px;
+    }
 }
