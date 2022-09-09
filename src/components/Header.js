@@ -18,6 +18,9 @@ function Header() {
         setActive(!isActive)
     }
     
+    const click = ()=>{
+        document.getElementById('login').classList.toggle('show')
+    }
 
     return (
         <div className='Header'>
@@ -31,7 +34,12 @@ function Header() {
                     {pages.map(link)}
                 </div>
             </div>
-        <img alt='avatar-login' src='https://cdn-icons-png.flaticon.com/512/3711/3711310.png' className='Header-avatar' href='profile picture'></img>
+            <button onClick={click} className='header-button-avatar'>
+                <img alt='avatar-login' src='https://cdn-icons-png.flaticon.com/512/3711/3711310.png' className='Header-avatar' />
+            </button>
+        <div className='header-login' id='login'>
+            <p className='header-login-option'>Login</p>
+        </div>
         </div>
     )
 }
