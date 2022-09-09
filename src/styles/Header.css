@@ -25,7 +25,6 @@
     display: flex;
     align-items: center;
     margin-left: 20px;
-
     background-color: transparent;
 }
 
@@ -96,15 +95,26 @@
 .header-button-avatar{
     background-color: black;
     cursor: pointer;
+    border: none;
 }
-.show{
+.showLogin{
     transform: translateX(-180px);
     display: block;
 }
 
-@media (min-width:768px){
+@media (max-width:768px){
     .boton-burger{
         display: none;
+    }
+    .Header-links{
+        margin: 0;
+    }
+    .nav-item{
+        text-align: center;
+        font-size: 15px;
+    }
+    .Header{
+        height: 15vh;
     }
 }
 
