@@ -59,6 +59,9 @@
 .Header-burger{
     width: 40px;
     background-color: transparent;
+    /* display: none; */
+}
+.boton-burger{
     display: none;
 }
 
@@ -119,6 +122,9 @@
 }
 
 @media (max-width:426px){
+    .boton-burger{
+        display: block;
+    }
     .Header-logo{
         font-size: 35px;
         margin-left: 10px;
