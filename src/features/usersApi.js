@@ -8,11 +8,18 @@ const usersApi = createApi({
         baseUrl: 'http://localhost:4000',
     }),
 
-    endpoints: (builder)=>({
-        create: builder.query({
-            query: () => `/auth`
+    endpoints: (build)=>({
+        createuser: build.mutation({
+            query(data){
+               return{
+                url: '/auth',
+                method: 'POST',
+                data,
+               }
+            }
         })
     })
 })
 
-export const {useCreateQuery} = usersApi
+export default usersApi
+export const {useCreateuserMutation} = usersApi

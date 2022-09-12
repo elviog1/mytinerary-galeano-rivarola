@@ -9,6 +9,7 @@ import EditCity from './pages/EditCity';
 import ScrollToTop from './components/ScrollToTop';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import MyTineraries from './pages/MyTineraries';
+import SignIn from './pages/SignIn';
 
 function App() {
   return(
@@ -23,6 +24,7 @@ function App() {
             <Route path='/cities/:id' element={<Details />}/> 
             <Route path='/editcity' element={<EditCity />}/>
             <Route path='/itineraries/:id' element={<MyTineraries/>}/>
+            <Route path='/signin' element={<SignIn />} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
