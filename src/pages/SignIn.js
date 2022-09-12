@@ -1,36 +1,81 @@
+import { useRef, useState } from 'react'
+import SignUpGoogle from '../components/SignUpGoogle'
+import { useCreateuserMutation } from '../features/usersApi'
 import '../styles/SignIn.css'
 
-export default function (){
+export default function SignIn(){
+    let [datar, setDatar] = useState({})
+
+
+    let nameR = useRef(null)//la R es para aclarar q es el mail de register (para registrarse)
+    let mailR = useRef(null)
+    let passwordR = useRef(null) 
+    let photoR = useRef(null)
+    let countryR = useRef(null)
+
+
+    const AccionR =  async (e)=>{
+        e.preventDefault()
+        setDatar({
+            name : nameR.current.value,
+            mail : mailR.current.value,
+            passwordR : passwordR.current.value,
+            photo : photoR.current.value,
+            country: countryR.current.value,
+            role: "user",
+            from: "form"}
+            )
+            console.log(datar)
+            let {
+                data:user,
+                error,
+                isLoading,
+                isSuccess,
+                isFailed
+            } = useCreateuserMutation(datar)
+            if (isLoading){
+                user = []
+            }else if (isSuccess){
+                user = user
+                console.log("success")
+            }else if (isFailed){
+                user = []
+                console.log("fail")
+            }
+    }
+
+  
     return(
         <div className='signin-container'>
         <form className="signin-form">
         <h1>Sign Up</h1>
         <label for='mail' className="signin-field">mail
-                <input required type="text" className="signin-input" id="mail" placeholder="" ></input>
+                <input required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
             </label>
             <label for='password' className="signin-field">password
-                <input required type="text" className="signin-input" id="password" placeholder="" ></input>
+                <input required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
             <button id="send" type="submit" className="nc-boton">Sign Up</button>
         </form>
         <form className="signin-form">
         <h1>Register</h1>
             <label for='name' className="signin-field">name
-                <input required type="text" className="signin-input" id="name" placeholder="" ></input>
+                <input ref={nameR} required type="text" className="signin-input" id="name" placeholder="Enter your username" ></input>
             </label>
             <label for='mail' className="signin-field">mail
-                <input required type="text" className="signin-input" id="mail" placeholder="" ></input>
+                <input ref={mailR} required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
             </label>
             <label for='password' className="signin-field">password
-                <input required type="text" className="signin-input" id="password" placeholder="" ></input>
+                <input ref={passwordR} required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
             <label for='photo' className="signin-field">photo
-                <input required type="text" className="signin-input" id="photo" placeholder="" ></input>
+                <input ref={photoR} required type="text" className="signin-input" id="photo" placeholder="Enter the url of your photo" ></input>
             </label>
             <label for='country' className="signin-field">country
-                <input required type="text" className="signin-input" id="country" placeholder="" ></input>
+                <input ref={countryR} required type="text" className="signin-input" id="country" placeholder="Enter your country" ></input>
             </label>
-            <button id="send" type="submit" className="nc-boton">Register</button>
+            <button id="send" type="submit" className="nc-boton" onClick={AccionR}>Register</button>
+            {/* <SignUpGoogle /> */}
         </form>
         </div>
     )
