@@ -4,7 +4,7 @@ function Activity(props){
 
     const cardActivity = (item) =>(
                 <div className="act-card">
-                    <h2 className="act-photo">{item.photo}</h2>
+                    <img src={item.photo} alt={item.name} className="act-img" />
                     <p className="act-name">{item.name}</p>
                 </div>
     )
