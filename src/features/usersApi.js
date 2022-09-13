@@ -9,14 +9,12 @@ const usersApi = createApi({
     }),
 
     endpoints: (build)=>({
-        createuser: build.mutation({
-            query(data){
-               return{
-                url: '/auth',
+        createuser: build.query({
+            query: (data) =>({
+                url: `/auth/signup`,
                 method: 'POST',
-                data,
-               }
-            }
+                body:data,              
+            }),
         })
     })
 })
