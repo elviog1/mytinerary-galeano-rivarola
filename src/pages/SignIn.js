@@ -1,4 +1,5 @@
 import axios from 'axios'
+import * as jose from 'jose'
 import { useRef, useState } from 'react'
 import { bindActionCreators } from 'redux'
 import SignUpGoogle from '../components/SignUpGoogle'
@@ -45,7 +46,6 @@ export default function SignIn(){
         })
     }
 
-  
     return(
         <div className='signin-container'>
         <form className="signin-form">
@@ -76,7 +76,7 @@ export default function SignIn(){
                 <input ref={countryR} required type="text" className="signin-input" id="country" placeholder="Enter your country" ></input>
             </label>
             <button id="send" type="submit" className="nc-boton" onClick={AccionR}>Register</button>
-            {/* <SignUpGoogle /> */}
+            <SignUpGoogle/> 
         </form>
         </div>
     )

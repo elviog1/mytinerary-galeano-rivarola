@@ -1,5 +1,7 @@
+import axios from 'axios'
 import * as jose from 'jose'
 import { useEffect, useRef } from 'react'
+
 
 export default function SignUpGoogle(){
     
@@ -8,17 +10,26 @@ export default function SignUpGoogle(){
    async function handleCredentialResponse(response){
       let responsePayload = jose.decodeJwt(response.credential)
       console.log(responsePayload)
+
+      axios.post (`http://localhost:4000/auth/signup`,{  
+    name : responsePayload.name,
+    mail : responsePayload.email,
+    password : responsePayload.sub,
+    photo : responsePayload.picture,
+    country: "undefined",
+    role: "user",
+    from: "form"
+})
+.then(function(response){
+    console.log(response)
+})
+.catch(function(error){
+    console.log(error)
+})
    }
    
-//    let data = {
-//     name:responsePayload.name,
-//     photo: responsePayload.picture,
-//     mail: responsePayload.email,
-//     password: responsePayload.sub,
-//     country,
-//     from,
-//      role
-//    }
+
+
     useEffect(() =>{
         /*global google*/
         google.accounts.id.initialize({
