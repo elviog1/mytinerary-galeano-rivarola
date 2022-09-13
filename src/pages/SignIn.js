@@ -1,11 +1,14 @@
+import axios from 'axios'
 import { useRef, useState } from 'react'
+import { bindActionCreators } from 'redux'
 import SignUpGoogle from '../components/SignUpGoogle'
 import { useCreateuserMutation } from '../features/usersApi'
 import '../styles/SignIn.css'
 
+
+
 export default function SignIn(){
     let [datar, setDatar] = useState({})
-
 
     let nameR = useRef(null)//la R es para aclarar q es el mail de register (para registrarse)
     let mailR = useRef(null)
@@ -19,29 +22,27 @@ export default function SignIn(){
         setDatar({
             name : nameR.current.value,
             mail : mailR.current.value,
-            passwordR : passwordR.current.value,
+            password : passwordR.current.value,
             photo : photoR.current.value,
             country: countryR.current.value,
             role: "user",
-            from: "form"}
-            )
+            from: "form"})
             console.log(datar)
-            let {
-                data:user,
-                error,
-                isLoading,
-                isSuccess,
-                isFailed
-            } = useCreateuserMutation(datar)
-            if (isLoading){
-                user = []
-            }else if (isSuccess){
-                user = user
-                console.log("success")
-            }else if (isFailed){
-                user = []
-                console.log("fail")
-            }
+
+        axios.post (`http://localhost:4000/auth/signup`,{  
+          name : nameR.current.value,
+        mail : mailR.current.value,
+        password : passwordR.current.value,
+        photo : photoR.current.value,
+        country: countryR.current.value,
+        role: "user",
+        from: "form"})
+        .then(function(response){
+            console.log(response)
+        })
+        .catch(function(error){
+            console.log(error)
+        })
     }
 
   
