@@ -1,0 +1,48 @@
+ /* JOIN */
+.socketForm-window{
+    text-align: center;
+}
+.socketForm-title{
+    font-size: 30px;
+}
+.socketForm-inputs{
+flex-wrap: wrap;
+}
+.socketForm-inputs input , .socketForm-button {
+    margin: 5px 5px;
+    padding: 5px 5px;
+}
+
+.socketForm-button{
+    cursor: pointer;
+}
+
+
+ /* CHAT  */
+
+.chat-window{
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+}
+.chat-container{
+    width: 18rem;
+    background-color: rgb(174, 174, 177);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.chat-header{
+    background-color: rgb(73, 158, 255);
+}
+.chat-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-footer-text{
+    width: 100%;
+}
+
+/* https://www.youtube.com/watch?v=NU-HfZY3ATQ   43:17 */
