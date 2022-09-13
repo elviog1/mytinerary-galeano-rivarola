@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import MyTineraries from './pages/MyTineraries';
 import SignIn from './pages/SignIn';
+import SocketForm from './components/SocketForm';
 
 function App() {
   return(
@@ -25,6 +26,7 @@ function App() {
             <Route path='/editcity' element={<EditCity />}/>
             <Route path='/itineraries/:id' element={<MyTineraries/>}/>
             <Route path='/signin' element={<SignIn />} />
+            <Route path='/join' element={<SocketForm />} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
