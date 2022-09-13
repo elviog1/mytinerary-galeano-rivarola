@@ -38,7 +38,9 @@ function Header() {
                 <img alt='avatar-login' src='https://cdn-icons-png.flaticon.com/512/3711/3711310.png' className='Header-avatar' />
             </button>
         <div className='header-login' id='login'>
+            <LinkRouter to='/signin'>
             <p className='header-login-option'>Login</p>
+            </LinkRouter>
         </div>
         </div>
     )
