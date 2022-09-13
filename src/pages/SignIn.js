@@ -5,7 +5,8 @@ import { bindActionCreators } from 'redux'
 import SignUpGoogle from '../components/SignUpGoogle'
 import { useCreateuserMutation } from '../features/usersApi'
 import '../styles/SignIn.css'
-
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 
 export default function SignIn(){
@@ -43,6 +44,31 @@ export default function SignIn(){
         })
         .catch(function(error){
             console.log(error)
+            if (error.response.data.message === "name to short") {
+                Toastify({
+                    text:"Your name is too short, please try again(minimum 4 characters)"
+                }).showToast()
+            } else if (error.response.data.message === "name to long") {
+                Toastify({
+                    text:"Your name is too long, please try again(maximum 15 characters)"
+                }).showToast()
+            } else if (error.response.data.message === "invalid URL") {
+                Toastify({
+                    text:"Please insert a valid image URL"
+                }).showToast()
+            } else if (error.response.data.message === "mail to short") {
+                Toastify({
+                    text:"Please insert a valid Email"
+                }).showToast()
+            } else if (error.response.data.message === "password to short") {
+                Toastify({
+                    text:"Your password is too short, please try again(minimum 6 characters)"
+                }).showToast()
+            } else if (error.response.data.message === "invalid country") {
+                Toastify({
+                    text:"Please insert a country"
+                }).showToast()
+            } else{}
         })
     }
 
