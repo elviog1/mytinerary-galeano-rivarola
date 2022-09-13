@@ -1,8 +1,9 @@
-import '../styles/Socket.css'
-import { useState } from "react"
-import io from "socket.io-client"
-import Chat from "./SocketChat"
-const socket = io.connect("http://localhost:3000")
+// import '../styles/Socket.css'
+// import { useState } from "react"
+// import io from "socket.io-client"
+// import Chat from "./SocketChat"
+// const socket = io.connect("http://localhost:3000")
+
 
 function SocketForm (){
     const [username,setUsername] = useState("")
@@ -33,4 +34,5 @@ function SocketForm (){
     )
 }
 
-export default SocketForm
+
+// export default SocketForm
