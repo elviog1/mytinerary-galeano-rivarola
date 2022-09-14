@@ -9,14 +9,14 @@ export default function Details() {
   const[items, setItems] = useState({})
   const[itineraries, setItineraries] = useState([])
   useEffect(()=>{
-  axios.get(`http://localhost:4000/cities/${id}`)
+  axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${id}`)
       .then(response =>setItems(response.data.response))
-      axios.get(`http://localhost:4000/itineraries/query?city=${id}`)
+      axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/query?city=${id}`)
       .then(response =>setItineraries(response.data.response))
     },[])
   
 
-       axios.get(`http://localhost:4000/itineraries/query?city=${id}`)
+       axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/query?city=${id}`)
            .then(response =>setItineraries(response.data.response))
 
 

@@ -23,7 +23,7 @@ export default function NewCity(){
         //let resJson = valor
         //console.log(resJson)
 
-             axios.post(`http://localhost:4000/cities/`,{           
+             axios.post(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/`,{           
                   name: inputCity,
                   country : inputCountry,
                   image: inputImage,

@@ -37,7 +37,7 @@ const values = [
        let inputFundation= document.getElementById("Fundation").value
        
 
-         axios.patch(`http://localhost:4000/cities/${seleccionada}`,{           
+         axios.patch(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${seleccionada}`,{           
                name: inputCity,
                country : inputCountry,
                image: inputImage,
