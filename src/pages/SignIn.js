@@ -43,7 +43,7 @@ export default function SignIn(){
         .then(function(response){
             console.log(response)
             Toastify({
-                text:"Registration succesfully completed! Press here to go to the home page",
+                text:"Registration succesfully completed! Please check your Email to verificate your account",
                 destination:"http://localhost:3000/"
             }).showToast()
             
