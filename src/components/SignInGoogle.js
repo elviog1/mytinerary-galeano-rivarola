@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import Toastify from "toastify-js"
 
 
-export default function SignUpGoogle(){
+export default function SignInGoogle(){
     
    const buttonDiv = useRef(null)
 
@@ -12,19 +12,14 @@ export default function SignUpGoogle(){
       let responsePayload = jose.decodeJwt(response.credential)
       console.log(responsePayload)
 
-      axios.post (`http://localhost:4000/auth/signup`,{  
-    name : responsePayload.name,
+      axios.post (`http://localhost:4000/auth/signin`,{  
     mail : responsePayload.email,
     password : responsePayload.sub,
-    photo : responsePayload.picture,
-    country: "undefined",
-    role: "user",
-    from: "google"
 })
 .then(function(response){
     console.log(response)
     Toastify({
-        text:"Registration succesfully completed! Press here to go to the home page",
+        text:"Logged in succesfully! Press here to go to the home page",
         destination:"http://localhost:3000/"
     }).showToast()
 })
@@ -40,11 +35,11 @@ export default function SignUpGoogle(){
         google.accounts.id.initialize({
             client_id: "936417647033-4hkfqvak0fcldudgubnrif7bgj9p6e74.apps.googleusercontent.com",
             callback: handleCredentialResponse,
-            context: 'signup'
+            context: 'signin'
           });
           google.accounts.id.renderButton(
             buttonDiv.current,
-            { theme: "outline", size: "medium", text:"signup_with" }  // customization attributes
+            { theme: "outline", size: "medium", text:"signin_with" }  // customization attributes
           );
     }, [])
     
