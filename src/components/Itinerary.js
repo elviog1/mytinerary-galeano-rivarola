@@ -23,7 +23,7 @@ function Itinerary(props){
             <div className="itinerary-card">
                 <div className='itinerary-container'>
                     <h2 className="itinerary-name">{item.name}</h2>
-                    <h3 className="itinerary-user-name">{item.user.name}</h3>
+                    <h3 className="itinerary-user-name">{item.name}</h3>
                     <div className="itinerary-card_price-duration">
                         <p className="itinerary-price">Price: {item.price}</p>
                         <p className="itinerary-duration">Duration: {item.duration}</p>
