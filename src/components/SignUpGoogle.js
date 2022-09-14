@@ -1,6 +1,7 @@
 import axios from 'axios'
 import * as jose from 'jose'
 import { useEffect, useRef } from 'react'
+import Toastify from "toastify-js"
 
 
 export default function SignUpGoogle(){
@@ -18,10 +19,14 @@ export default function SignUpGoogle(){
     photo : responsePayload.picture,
     country: "undefined",
     role: "user",
-    from: "form"
+    from: "google"
 })
 .then(function(response){
     console.log(response)
+    Toastify({
+        text:"Registration succesfully completed! Press here to go to the home page",
+        destination:"http://localhost:3000/"
+    }).showToast()
 })
 .catch(function(error){
     console.log(error)
