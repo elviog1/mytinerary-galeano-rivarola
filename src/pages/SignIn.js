@@ -7,17 +7,18 @@ import { useCreateuserMutation } from '../features/usersApi'
 import '../styles/SignIn.css'
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
-
+import SignInGoogle from '../components/SignInGoogle'
 
 export default function SignIn(){
     let [datar, setDatar] = useState({})
-
     let nameR = useRef(null)//la R es para aclarar q es el mail de register (para registrarse)
     let mailR = useRef(null)
     let passwordR = useRef(null) 
     let photoR = useRef(null)
     let countryR = useRef(null)
 
+    let mailS = useRef(null)
+    let passS = useRef(null)
 
     const AccionR =  async (e)=>{
         e.preventDefault()
@@ -41,6 +42,11 @@ export default function SignIn(){
         from: "form"})
         .then(function(response){
             console.log(response)
+            Toastify({
+                text:"Registration succesfully completed! Press here to go to the home page",
+                destination:"http://localhost:3000/"
+            }).showToast()
+            
         })
         .catch(function(error){
             console.log(error)
@@ -68,21 +74,59 @@ export default function SignIn(){
                 Toastify({
                     text:"Please insert a country"
                 }).showToast()
-            } else{}
+            } else{
+                Toastify({
+                    text:"Invalid request please try again"
+                }).showToast()
+            }
         })
     }
+
+    const AccionS = (e) =>{
+        e.preventDefault()
+        axios.post (`http://localhost:4000/auth/signin`,{  
+          mail : mailS.current.value,
+          password : passS.current.value,})
+          .then(function(response){
+            console.log(response)
+            Toastify({
+                text:"Logged in succesfully! Press here to go to the home page",
+                destination:"http://localhost:3000/"
+            }).showToast()
+        })
+        .catch(function(error){
+            console.log(error)
+            if (error.response.data.message === "mail to short") {
+                Toastify({
+                    text:"Please insert a valid Email"
+                }).showToast()
+            } else if (error.response.data.message === "password to short") {
+                Toastify({
+                    text:"Your password is too short, please try again(minimum 6 characters)"
+                }).showToast()
+        } else if (error.response.data.message === "Invalid credentials"){
+            Toastify({
+                text:"Mail or password incorrect, please try again"
+            }).showToast()
+        } else {
+            Toastify({
+                text:"Invalid request, please try again"
+            })
+        }
+    })}
 
     return(
         <div className='signin-container'>
         <form className="signin-form">
-        <h1>Sign Up</h1>
+        <h1>Sign In</h1>
         <label for='mail' className="signin-field">mail
-                <input required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
+                <input ref={mailS} required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
             </label>
             <label for='password' className="signin-field">password
-                <input required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
+                <input ref={passS} required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
-            <button id="send" type="submit" className="nc-boton">Sign Up</button>
+            <button id="send" type="submit" className="nc-boton" onClick={AccionS}>Sign In</button>
+            <SignInGoogle />
         </form>
         <form className="signin-form">
         <h1>Register</h1>
