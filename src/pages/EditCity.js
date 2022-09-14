@@ -4,6 +4,8 @@ import Input from '../components/Input'
 import EditInput from '../components/InputEdit'
 import '../styles/NewCity.css'
 import '../styles/EditCity.css'
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 export default function EditCity(){
 
@@ -45,9 +47,22 @@ const values = [
             })
             .then(function(response){
                 console.log(response)
+                Toastify({
+                    text:"City updated succesfully !",
+                    destination:"http://localhost:3000/editcity"
+                }).showToast()
             })
             .catch(function(error){
                 console.log(error)
+                if (error.response.data.message === "name to short") {
+                    Toastify({
+                        text:"Your name is too short, please try again(minimum 4 characters)"
+                    }).showToast()
+                }else{
+                    Toastify({
+                        text:"Invalid request please try again"
+                    }).showToast()
+                }
             })
             }
 
