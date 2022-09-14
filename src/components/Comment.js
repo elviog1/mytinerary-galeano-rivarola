@@ -3,7 +3,7 @@ import '../styles/Comment.css'
 
 function Comment(props){
     const allCard = props.data
-
+    console.log(allCard)
     const [show,setShow] = useState(false)
     const click = ()=>{
         setShow(!show)
@@ -13,8 +13,8 @@ function Comment(props){
 
             <div className='cardComment-container' id='button'>
                 <div className='cardComment-img-name'>
-                    <img alt={item.user.photo} src='https://cdn-icons-png.flaticon.com/512/3711/3711310.png'/*{item.image}*/ className="comment-img"/>
-                    <h2 className="comment-user">{item.user.name}marquitos dipalma:</h2>
+                    <img alt={item.user.photo} src={item.user.photo} className="comment-img"/>
+                    <h2 className="comment-user">{item.user.name}:</h2>
                 </div>
                 <p className="comment-content">{item.comment}</p>
             </div>
