@@ -35,13 +35,17 @@ function NewItinerary(){
         const inputPrice =document.getElementById("Price").value
         const inputTags = document.getElementById("Tags").value
         const inputDuration =document.getElementById("Duration").value
+        const inputCity =document.getElementById("City").value
+         
 
         axios.patch(`http://localhost:4000/cities/${select}`,{ // chequear esta parte
-            city: select,
+            city: inputCity,
             name: inputName,
             price: inputPrice,
             tags: inputTags,
-            duration: inputDuration
+            duration: inputDuration,
+            likes: 0,
+            user: ""
         })
 
     }
@@ -51,7 +55,7 @@ function NewItinerary(){
         <div className='new-city-container'>
             <h1 className='nc-title'>New Itinerary</h1>
             <form className="nc-form">
-                <select className='nc-input' ref={cityValue} onChange={selectCity}>
+                <select className='nc-input' ref={cityValue} onChange={selectCity} id="City">
                     <EditInput data={items}/>
                 </select>
                 <Input  data={values}/>
