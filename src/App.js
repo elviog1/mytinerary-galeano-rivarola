@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import MyTineraries from './pages/MyTineraries';
 import SignIn from './pages/SignIn';
 import SocketForm from './components/SocketForm';
+import NewItinerary from './pages/NewItinerary';
 
 function App() {
   return(
@@ -27,6 +28,7 @@ function App() {
             <Route path='/itineraries/:id' element={<MyTineraries/>}/>
             <Route path='/signin' element={<SignIn />} />
             <Route path='/join' element={<SocketForm />} />
+            <Route path='/newItinerary' element={<NewItinerary />} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
