@@ -1,10 +1,12 @@
 import axios from 'axios'
 import * as jose from 'jose'
 import { useEffect, useRef } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Toastify from "toastify-js"
 
 
 export default function SignInGoogle(){
+    const Navigate = useNavigate()
     
     const buttonDiv = useRef(null)
 
@@ -15,7 +17,7 @@ export default function SignInGoogle(){
         axios.post (`http://localhost:4000/auth/signin`,{  
         mail : responsePayload.email,
         password : responsePayload.sub,
-    })
+        })
     .then(function(response){
     // console.log(response.data.response.user)
     localStorage.setItem('user',JSON.stringify(response.data.response.user))

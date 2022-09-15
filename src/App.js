@@ -12,8 +12,16 @@ import MyTineraries from './pages/MyTineraries';
 import SignIn from './pages/SignIn';
 import SocketForm from './components/SocketForm';
 import NewItinerary from './pages/NewItinerary';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const[logged, setLogged] = useState(false)
+  const [admin, setAdmin] = useState(false)
+  // useEffect(()=>{
+  //   JSON.parse(localStorage.getItem('user'))&&setLogged(true)
+  //   JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
+  // }, [])
   return(
       <BrowserRouter>
         <ScrollToTop />
@@ -22,13 +30,13 @@ function App() {
             <Route path='/' element={<WelcomeComponent/> }/>
             <Route path='/cities' element={<Cities/>}/>  
             <Route path='/*' element={<UnderConstruccion />}/>
-            <Route path='/newcity' element={<NewCity />}/>
+            <Route path='/newcity' element={admin ?<NewCity />: <WelcomeComponent/>}/>
             <Route path='/cities/:id' element={<Details />}/> 
-            <Route path='/editcity' element={<EditCity />}/>
-            <Route path='/itineraries/:id' element={<MyTineraries/>}/>
+            <Route path='/editcity' element={admin ?<EditCity />: <WelcomeComponent/>}/>
+            <Route path='/itineraries/:id' element={logged?<MyTineraries/>: <WelcomeComponent/>}/>
             <Route path='/signin' element={<SignIn />} />
             <Route path='/join' element={<SocketForm />} />
-            <Route path='/newItinerary' element={<NewItinerary />} />
+            <Route path='/newitinerary' element={logged?<NewItinerary />:<WelcomeComponent/>} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
