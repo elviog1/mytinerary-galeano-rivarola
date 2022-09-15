@@ -9,18 +9,22 @@ const pages = [
     {name: 'Cities', to: '/cities'},
     {name: 'New City', to:'/newcity'},
     {name: 'Edit city', to:'/editcity'},
-    {name: 'My Tineraries', to:'/itineraries/63125913116eb5ae120cb622'}
+    // {name: 'My Tineraries', to:'/itineraries/63125913116eb5ae120cb622'}
 ]
 const link = (page) => <LinkRouter key={page.name} to={page.to} className='nav-item'>{page.name}</LinkRouter>
 
 
 function Header() {
-
+    const [userId, setUserId] =  useState('')
+    
     // const para chequear si un usuario esta logeado
     const [logged,setLogged] = useState(false)
     useEffect(()=>{
         JSON.parse(localStorage.getItem('user')) && setLogged(true)
+        const user = JSON.parse(localStorage.getItem('user'))
+        user ? setUserId(user.id) : setUserId("")
     },[])
+    const mytin = [{name: "My Tineraries", to: `/itineraries/${userId}`}]
     
     const [isActive,setActive] = useState("false")
     const handleToggle = () =>{
@@ -33,12 +37,13 @@ function Header() {
 
     // function para cerrar sesion y sacar el user del localstorage
     async function signOut (){
-        let email = JSON.parse(localStorage.getItem('user')).email
+        //let email = JSON.parse(localStorage.getItem('user')).email
         try{
             // let response = await axios.post('http://localhost:4000/auth/signout',{email})   // arreglar esto
             // console.log(response)
             setLogged(false)
             localStorage.removeItem('user')
+            setUserId("")
         }catch(error){
             console.log(error)
         }
@@ -78,6 +83,8 @@ function Header() {
                 <h1 className='Header-logo'><span>My</span>Tinerary</h1>
                 <div className='Header-links'>
                     {pages.map(link)}
+                    <LinkRouter key="newitinerary" to="/newitinerary" className='nav-item'>New Tinerary</LinkRouter>
+                    {mytin.map(link)}
                 </div>
             </div>
             <button onClick={click} className='header-button-avatar'>
