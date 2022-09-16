@@ -7,7 +7,6 @@ import {useByuserQuery } from '../features/itineraiesApi'
 
 export default function MyTineraries () {
   const {id} = useParams();
-   console.log({id});
 
 let{
     data: itineraries,
@@ -28,9 +27,11 @@ if (isLoading) {
 }
 
     return(
-        <div className='itineraries-container'>
-            <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
-                <Itinerary data={itineraries}/>
+        <div className="itinerary-card">
+            <div className='itinerary-container'>
+                <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
+                    <Itinerary data={itineraries}/>
+            </div>
         </div>
     )
 }
