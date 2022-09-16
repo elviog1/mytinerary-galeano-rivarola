@@ -18,14 +18,14 @@ function App() {
 
   const[logged, setLogged] = useState(false)
   const [admin, setAdmin] = useState(false)
+
    useEffect(()=>{
     JSON.parse(localStorage.getItem('user')) && setLogged(true)
-   //  JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
    }, [])
    useEffect(()=>{
-    //JSON.parse(localStorage.getItem('user')) && setLogged(true)
     JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
    }, [])
+
   return(
       <BrowserRouter>
         <ScrollToTop />
