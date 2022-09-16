@@ -13,12 +13,7 @@ function NewItinerary(){
     ]
 
 
-    const cityValue = useRef(null)
-    const [select,setSelect] = useState("")
-
-    const selectCity = ()=>{
-        setSelect(cityValue.current.value)
-    }
+    
 
     // renderizado de <select> cities
     const[items, setItems] = useState([])
@@ -27,7 +22,7 @@ function NewItinerary(){
         .then(response => setItems(response.data.response))
     }, [])
 
-    
+    // response.find(){name={select}}
     
     const accion = (e)=>{
         e.preventDefault()
@@ -36,26 +31,31 @@ function NewItinerary(){
         const inputTags = document.getElementById("Tags").value
         const inputDuration =document.getElementById("Duration").value
         const inputCity =document.getElementById("City").value
-         
+        let cityID =items.find(city => city.name ==inputCity)._id
+        
 
-        axios.patch(`http://localhost:4000/cities/${select}`,{ // chequear esta parte
-            city: inputCity,
+
+        axios.post(`http://localhost:4000/itineraries`,{ // chequear esta parte
+            city: cityID,
             name: inputName,
             price: inputPrice,
             tags: inputTags,
             duration: inputDuration,
-            likes: 0,
-            user: ""
+            likes: [],
+            user: JSON.parse(localStorage.getItem('user')).id
+        }).then(function(response){
+            console.log(response)
+        }).catch(function(error){
+            console.log(error)
         })
 
     }
-
 
     return(
         <div className='new-city-container'>
             <h1 className='nc-title'>New Itinerary</h1>
             <form className="nc-form">
-                <select className='nc-input' ref={cityValue} onChange={selectCity} id="City">
+                <select className='nc-input'  id="City">
                     <EditInput data={items}/>
                 </select>
                 <Input  data={values}/>
