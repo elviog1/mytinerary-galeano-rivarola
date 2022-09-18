@@ -121,10 +121,10 @@ export default function SignIn(){
         <div className='signin-container'>
         <form className="signin-form">
         <h1>Sign In</h1>
-        <label for='mail' className="signin-field">mail
+        <label htmlFor='mail' className="signin-field">mail
                 <input ref={mailS} required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
             </label>
-            <label for='password' className="signin-field">password
+            <label htmlFor='password' className="signin-field">password
                 <input ref={passS} required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
             <button id="send" type="submit" className="nc-boton" onClick={AccionS}>Sign In</button>
@@ -132,19 +132,19 @@ export default function SignIn(){
         </form>
         <form className="signin-form">
         <h1>Register</h1>
-            <label for='name' className="signin-field">name
+            <label htmlFor='name' className="signin-field">name
                 <input ref={nameR} required type="text" className="signin-input" id="name" placeholder="Enter your username" ></input>
             </label>
-            <label for='mail' className="signin-field">mail
+            <label htmlFor='mail' className="signin-field">mail
                 <input ref={mailR} required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
             </label>
-            <label for='password' className="signin-field">password
+            <label htmlFor='password' className="signin-field">password
                 <input ref={passwordR} required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
-            <label for='photo' className="signin-field">photo
+            <label htmlFor='photo' className="signin-field">photo
                 <input ref={photoR} required type="text" className="signin-input" id="photo" placeholder="Enter the url of your photo" ></input>
             </label>
-            <label for='country' className="signin-field">country
+            <label htmlFor='country' className="signin-field">country
                 <input ref={countryR} required type="text" className="signin-input" id="country" placeholder="Enter your country" ></input>
             </label>
             <button id="send" type="submit" className="nc-boton" onClick={AccionR}>Register</button>

@@ -70,7 +70,7 @@ const values = [
         <div className='new-city-container'>
             <h1 className='nc-title'>Edit City</h1>
             <form className='nc-form'>
-                <label for='select-city' className='nc-label'>Select City
+                <label  className='nc-label' htmlFor='select-city'>Select City
                 <select id='select-city' className='nc-input' ref={cityValue} onChange={selectCity}>
                 <EditInput data={items}/>
                 </select> 

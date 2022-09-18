@@ -10,7 +10,7 @@ function InputDetails(props){
   }
 
     const card =(item) =>(
-            <div className="CardCity-container">
+            <div className="CardCity-container" key={item._id}>
             <div className='CardCity-info'>
                 <div className='cardCity-close'>
                     <p className="CardCity-city">{item.name}</p>

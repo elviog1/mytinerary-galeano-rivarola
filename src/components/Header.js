@@ -37,12 +37,12 @@ function Header() {
 
     // function para cerrar sesion y sacar el user del localstorage
     async function signOut (){
-        //let email = JSON.parse(localStorage.getItem('user')).email
+        let email = JSON.parse(localStorage.getItem('user')).mail
         try{
             // let response = await axios.post('http://localhost:4000/auth/signout',{email})   // arreglar esto
-            // console.log(response)
-            setLogged(false)
-            localStorage.removeItem('user')
+            console.log(email)
+            // setLogged(false)
+            // localStorage.removeItem('user')
             setUserId("")
         }catch(error){
             console.log(error)

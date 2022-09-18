@@ -3,7 +3,6 @@ import '../styles/Comment.css'
 
 function Comment(props){
     const allCard = props.data
-    console.log(allCard)
     const [show,setShow] = useState(false)
     const click = ()=>{
         setShow(!show)
@@ -11,7 +10,7 @@ function Comment(props){
 
     const cardComment = (item) =>(
 
-            <div className='cardComment-container' id='button'>
+            <div className='cardComment-container' id='button' key={item._id}>
                 <div className='cardComment-img-name'>
                     <img alt={item.user.photo} src={item.user.photo} className="comment-img"/>
                     <h2 className="comment-user">{item.user.name}:</h2>
@@ -19,7 +18,8 @@ function Comment(props){
                 <p className="comment-content">{item.comment}</p>
             </div>
     )
-
+    console.log(allCard)
+    
     return(
         <>
             <div className="comment-card">

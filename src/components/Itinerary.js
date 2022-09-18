@@ -12,15 +12,15 @@ function Itinerary(props){
     const [activities,setActivities] = useState([])
     const [id, setId] = useState('')
     useEffect(()=>{
-        axios.get(`http://localhost:4000/comments/query?itinerary=63166032d5fc4c0bc157c398`)
+        axios.get(`http://localhost:4000/comments/query?itinerary=6316673e981c8cdc211716be`)
         .then(response => setComments(response.data.response))
-        axios.get(`http://localhost:4000/activities/query?itinerary=63166032d5fc4c0bc157c398`)
+        axios.get(`http://localhost:4000/activities/query?itinerary=6316673e981c8cdc211716be`)
         .then(response => setActivities(response.data.response))
     },[])
 
      function CardItinerary(item) {
         return (
-            <div className="itinerary-card">
+            <div className="itinerary-card" key={item.name}>
                 <div className='itinerary-container'>
                     <h2 className="itinerary-name">{item.name}</h2>
                     <h3 className="itinerary-user-name">{item.name}</h3>
