@@ -13,6 +13,11 @@
     font-size: 23px;
     font-weight: bold;
     border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.cardComment-button:hover{
+    background-color: orangered;
 }
 .cardComment-container{
     overflow: hidden;
@@ -25,16 +30,36 @@
 
 .comment-content{
     font-weight: 400;
-    margin: 8px;
-    color: white;
+    /* margin: 8px; */
+    /* color: white; */
     font-size: 25px;
-    
+    width: 100%;
   }
  
 .comment-card{
     width: 50rem;
     background-color: rgb(20, 20, 20);
     
+}
+.comment-info{
+    display: flex;
+    justify-content: space-between;
+}
+.comment-close, .comment-edit{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding:0 10px;
+    cursor: pointer;
+    
+}
+.comment-edition{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.comment-close:hover, .comment-edit:hover{
+    background-color: red;
 }
 
 
