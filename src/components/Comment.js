@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import '../styles/Comment.css'
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
+import NewComment from './NewComment'
 
 
 function Comment(props){
@@ -11,6 +12,16 @@ function Comment(props){
     const click = ()=>{ // muestra si hay comentarios de un itinerary
         setShow(!show)
     }
+
+    const [showNewComment,setShowNewComment] = useState(false)
+    const clickNewComment = ()=>{ // muestra para crear un comentario
+        setShowNewComment(!showNewComment)
+    }
+
+    const [logged,setLogged] = useState(false)
+    useEffect(()=>{
+        JSON.parse(localStorage.getItem('user')) && setLogged(true)
+    })
 
     const close = (id)=>{ // elimina un comentario
         axios.delete(`http://localhost:4000/comments/${id}`)
@@ -29,10 +40,6 @@ function Comment(props){
             }).showToast()
     }
 
-    const [logged,setLogged] = useState(false)
-    useEffect(()=>{
-        JSON.parse(localStorage.getItem('user')) && setLogged(true)
-    })
 
     const cardComment = (item) =>(
         logged ? (
@@ -61,13 +68,24 @@ function Comment(props){
             </div>
             )
     )
+
     return(
-        <>
-            <div className="comment-card">
-                <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
-                {show && allCard.map(cardComment) }
-            </div>
-        </>
+            !logged ?(
+                <div className="comment-card">
+                    <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
+                    {show && allCard.map(cardComment) }
+                </div>
+            ) : (
+                <div className="comment-card">
+                    <div>
+                        <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
+                        <button  onClick={()=> clickNewComment()}  className='cardComment-button'>New Comment</button>
+                        {show && allCard.map(cardComment)}
+                        {showNewComment && <NewComment />}
+                    </div>
+                </div>
+            )
+
     )
 }
 
