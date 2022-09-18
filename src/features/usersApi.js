@@ -15,9 +15,16 @@ const usersApi = createApi({
                 method: 'POST',
                 body:data,              
             }),
+        }),
+        signout: build.query({
+            query: (data) =>({
+                url: `/auth/signout`,
+                method: 'POST',
+                body:data,              
+            }),
         })
     })
 })
 
 export default usersApi
-export const {useCreateuserMutation} = usersApi
+export const {useCreateuserMutation,useSignoutMutation} = usersApi
