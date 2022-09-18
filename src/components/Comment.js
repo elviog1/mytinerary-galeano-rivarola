@@ -29,12 +29,17 @@ function Comment(props){
             }).showToast()
     }
 
+    const [logged,setLogged] = useState(false)
+    useEffect(()=>{
+        JSON.parse(localStorage.getItem('user')) && setLogged(true)
+    })
 
     const cardComment = (item) =>(
+        logged ? (
             <div className='cardComment-container' id='button' key={item._id}>
                 <div className='cardComment-img-name'>
                     <img alt={item.user.photo} src={item.user.photo} className="comment-img"/>
-                    <h2 className="comment-user">{item.user.name}:</h2>
+                    <h2 className="comment-user">: {item.user.name} </h2>
                 </div>
                 <div className='comment-info'>
                     <textarea  ref={divEdit} style={{resize:"none"}}  className="comment-content">{item.comment}</textarea>
@@ -44,6 +49,17 @@ function Comment(props){
                     </div>
                 </div>
             </div>
+            ) : (
+                <div className='cardComment-container' id='button' key={item._id}>
+                <div className='cardComment-img-name'>
+                    <img alt={item.user.photo} src={item.user.photo} className="comment-img"/>
+                    <h2 className="comment-user">{item.user.name}:</h2>
+                </div>
+                <div className='comment-info'>
+                    <p  style={{resize:"none", color:"white"}}  className="comment-content">{item.comment}</p>
+                </div>
+            </div>
+            )
     )
     return(
         <>

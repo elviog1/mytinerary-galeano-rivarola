@@ -94,6 +94,10 @@
 .header-login-option{
     font-size: 30px;
     text-align: center;
+    color: black;
+}
+.header-login-option:hover{
+    background-color: brown;
 }
 .header-button-avatar{
     background-color: black;
