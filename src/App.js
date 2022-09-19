@@ -22,9 +22,9 @@ function App() {
    useEffect(()=>{
     JSON.parse(localStorage.getItem('user')) && setLogged(true)
    }, [])
-   useEffect(()=>{
-    JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
-   }, [])
+  //  useEffect(()=>{
+  //   JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
+  //  }, [])
 
   return(
       <BrowserRouter>

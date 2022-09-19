@@ -24,10 +24,8 @@ export default function Details() {
       itineraries=[]
   } else if(isSuccess){
       itineraries = itineraries.response
-      console.log("success")
   }else if(error){
       itineraries = []
-      console.log("error")
   }
 
   return (
