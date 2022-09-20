@@ -3,27 +3,35 @@ import { useEffect, useState } from 'react'
 import {Link as LinkRouter} from 'react-router-dom'
 import '../styles/Header.css'
 
-// renderizado de links del nav
-const pages = [
-    {name: 'Home', to:'/'},
-    {name: 'Cities', to: '/cities'},
-    {name: 'New City', to:'/newcity'},
-    {name: 'Edit city', to:'/editcity'},
-    // {name: 'My Tineraries', to:'/itineraries/63125913116eb5ae120cb622'}
-]
-const link = (page) => <LinkRouter key={page.name} to={page.to} className='nav-item'>{page.name}</LinkRouter>
 
 
 function Header() {
+
     const [userId, setUserId] =  useState('')
-    
     // const para chequear si un usuario esta logeado
     const [logged,setLogged] = useState(false)
+
+    // renderizado de links del nav
+    const pagesNoLogged = [
+        {name: 'Home', to:'/'},
+        {name: 'Cities', to: '/cities'},
+    ]
+    const pagesLogged = [
+        {name: 'Home', to:'/'},
+        {name: 'Cities', to: '/cities'},
+        {name: 'New City', to:'/newcity'},
+        {name: 'Edit city', to:'/editcity'},
+        {name: 'New Itinerary', to:'/newitinerary'},
+        {name: "My Tineraries", to: `/itineraries/${userId}`}
+    ]
+    const link = (page) => <LinkRouter key={page.name} to={page.to} className='nav-item'>{page.name}</LinkRouter>
+    
     useEffect(()=>{
         JSON.parse(localStorage.getItem('user')) && setLogged(true)
         const user = JSON.parse(localStorage.getItem('user'))
         user ? setUserId(user.id) : setUserId("")
     },[])
+
     const mytin = [{name: "My Tineraries", to: `/itineraries/${userId}`}]
     
     const [isActive,setActive] = useState("false")
@@ -54,12 +62,12 @@ function Header() {
         <div className='Header'>
             <div className='Header-nav '>
                 <div className={isActive ? 'active': null} id="active"> 
-                    {pages.map(link)}
+                    {pagesNoLogged.map(link)}
                 </div>
                 <button className='boton-burger' onClick={handleToggle}><img alt='burger' className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png' href='burger menu'/></button>
                 <h1 className='Header-logo'><span>My</span>Tinerary</h1>
                 <div className='Header-links'>
-                    {pages.map(link)}
+                    {pagesNoLogged.map(link)}
                 </div>
             </div>
             <button onClick={click} className='header-button-avatar'>
@@ -77,14 +85,14 @@ function Header() {
         <div className='Header'>
             <div className='Header-nav '>
                 <div className={isActive ? 'active': null} id="active"> 
-                    {pages.map(link)}
+                    {pagesLogged.map(link)}
                 </div>
                 <button className='boton-burger' onClick={handleToggle}><img alt='burger' className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png' href='burger menu'/></button>
                 <h1 className='Header-logo'><span>My</span>Tinerary</h1>
                 <div className='Header-links'>
-                    {pages.map(link)}
-                    <LinkRouter key="newitinerary" to="/newitinerary" className='nav-item'>New Tinerary</LinkRouter>
-                    {mytin.map(link)}
+                    {pagesLogged.map(link)}
+                    {/* <LinkRouter key="newitinerary" to="/newitinerary" className='nav-item'>New Tinerary</LinkRouter>
+                    {mytin.map(link)} */}
                 </div>
             </div>
             <button onClick={click} className='header-button-avatar'>
