@@ -17,13 +17,26 @@
 }
 .act-name{
     font-size: 30px;
-    color: brown;
+    color: black;
+    background-color: white;
+    width: 80%;
+    border-bottom-left-radius: 10px;
+    height: 80px;
+    text-align: center;
+}
+
+.act-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
 }
 
 .act-img{
-    width: 100%;
+    width: 80%;
     height:150px;
     object-fit: cover;
+    border-top-right-radius: 10px;
 }
 
 
