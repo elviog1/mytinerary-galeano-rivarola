@@ -10,12 +10,6 @@ function Itinerary(props){
     let allCard
     props.data? allCard = props.data : allCard=props
     const [itinerary, setItinerary] = useState(props.data)
-    // const [comments,setComments] = useState([])
-    // const [activities,setActivities] = useState([])
-    // useEffect(()=>{
-    //     axios.get(`http://localhost:4000/comments/query?itinerary=6316673e981c8cdc211716be`)
-    //     .then(response => setComments(response.data.response))
-    // },[])
 
     return (
         <>
