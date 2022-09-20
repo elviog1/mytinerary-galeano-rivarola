@@ -16,7 +16,7 @@ function InputDetails(props){
   }
  
     let{data: itineraries } = useBycityQuery(id)
-    console.log(itineraries)
+    // console.log(itineraries)
     return(
         <>
           <div className="CardCity-container" key={item._id}>

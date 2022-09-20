@@ -2,7 +2,7 @@ import { useByitineraryQuery } from '../features/activitiesApi'
 import '../styles/Activity.css'
 
 function Activity(props){
-    console.log(props)
+    // console.log(props)
     let itineraryId = props.itinerary
 
     let {

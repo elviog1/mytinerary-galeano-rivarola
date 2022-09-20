@@ -1,6 +1,7 @@
 .cardComment-img-name{
     display: flex;
     justify-content: center;
+    border-top: 3px solid grey;
 }
 .comment-user{
     align-self: center;
@@ -17,7 +18,7 @@
     transition: all .5s;
 }
 .cardComment-button:hover{
-    background-color: orangered;
+    background-color: brown;
 }
 .cardComment-container{
     overflow: hidden;
@@ -44,13 +45,13 @@
 }
 .comment-info{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 .comment-close, .comment-edit{
     font-size: 20px;
     font-weight: bold;
     color: white;
-    padding:0 10px;
+    padding: 10px 0px;
     cursor: pointer;
     
 }
@@ -60,7 +61,10 @@
     justify-content: space-around;
 }
 .comment-close:hover, .comment-edit:hover{
-    background-color: red;
+    background-color: brown;
+}
+textarea{
+    background-color: rgb(165, 164, 164);
 }
 
 
