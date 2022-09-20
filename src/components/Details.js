@@ -4,34 +4,35 @@ import axios from 'axios'
 import InputDetails from './InputDetails';
 import Itinerary from './Itinerary';
 import { useBycityQuery } from '../features/itineraiesApi';
+import { useDetailsQuery } from '../features/citiesApi';
 
-export default function Details() {
-  const {id} = useParams();
-  const[items, setItems] = useState({})
+export default function Details(props) {
+  const {id} = useParams()
+  const [city, setCity] = useState()
   useEffect(()=>{
-  axios.get(`http://localhost:4000/cities/${id}`)
-      .then(response =>setItems(response.data.response))
-    },[])
-    let{
-      data: itineraries,
-      isLoading,
-      isSuccess,
-      error
-  } = useBycityQuery({id} ? id : "")
+    axios.get(`http://localhost:4000/cities/${id}`)
+    .then(response => setCity(response.data.response))
+},[])
+
+  //   let{
+  //     data: itineraries,
+  //     isLoading,
+  //     isSuccess,
+  //     error
+  // } = useBycityQuery({id})
   
-  
-  if (isLoading) {
-      itineraries=[]
-  } else if(isSuccess){
-      itineraries = itineraries.response
-  }else if(error){
-      itineraries = []
-  }
+  // if (isLoading) {
+  //     itineraries=[]
+  // } else if(isSuccess){
+  //     itineraries = itineraries.response
+  // }else if(error){
+  //     itineraries = []
+  // }
 
   return (
   <>
-    <InputDetails data={items}/>
-    <Itinerary data={itineraries}/>
+    <InputDetails data={city} cityId={id} />
+
   </>
   )
 }

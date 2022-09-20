@@ -28,7 +28,7 @@ if (isLoading) {
         <div className="itinerary-card">
             <div className='itinerary-container'>
                 <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
-                    <Itinerary data={itineraries}/>
+                    <Itinerary data={itineraries} key={itineraries._id}/>
             </div>
         </div>
     )

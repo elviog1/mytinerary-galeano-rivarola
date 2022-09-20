@@ -1,16 +1,25 @@
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import Itinerary from './Itinerary';
+import { useDetailsQuery } from '../features/citiesApi'
+import { useBycityQuery } from '../features/itineraiesApi';
 import '../styles/Cities.css'
 
 function InputDetails(props){
-    const allCard = props.data
-
+  let item
+  let id
+  props.data? item=props.data : item = props
+  props.cityId? id=props.cityId : id=props
     let navigate = useNavigate()
   const back = () =>{
     navigate('/cities')
   }
-
-    const card =(item) =>(
-            <div className="CardCity-container" key={item._id}>
+ 
+    let{data: itineraries } = useBycityQuery(id)
+    console.log(itineraries)
+    return(
+        <>
+          <div className="CardCity-container" key={item._id}>
             <div className='CardCity-info'>
                 <div className='cardCity-close'>
                     <p className="CardCity-city">{item.name}</p>
@@ -23,15 +32,16 @@ function InputDetails(props){
                     <p className='cardCity-fundation'>Fundation: {item.fundation}</p>
                 </div>
             </div>
+            {itineraries?.length? itineraries.map(itinerary => {
+                    return (
+                        <Itinerary data={itinerary} key={itinerary._id} />
+                        )
+                    }):null
+                }
         </div>
-
-    )
-
-    return(
-        <>
-           {card(allCard)}
         </>
-    )
+        )
+                
 }
 
 export default InputDetails

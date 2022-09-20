@@ -1,6 +1,14 @@
+import { useByitineraryQuery } from '../features/activitiesApi'
 import '../styles/Activity.css'
+
 function Activity(props){
-    const allCard = props.data
+    console.log(props)
+    let itineraryId = props.itinerary
+
+    let {
+        data: activities
+    }=useByitineraryQuery(itineraryId)
+    
 
     const cardActivity = (item) =>(
                 <div className="act-card" key={item.name}>
@@ -13,7 +21,7 @@ function Activity(props){
         <div className='activity'>
             <h2 className='activity-title'>Activities</h2>
             <div className='activity-container'>
-                {allCard.map(cardActivity)}
+                {activities?.response?.map(cardActivity)}
             </div>
         </div>
         
