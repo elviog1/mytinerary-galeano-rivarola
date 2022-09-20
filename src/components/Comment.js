@@ -7,11 +7,19 @@ import NewComment from './NewComment'
 
 
 function Comment(props){
-    const allCard = props.data
+
+    const [comments, setComments] = useState([])
     const [show,setShow] = useState(false)
+    const id = props.itinerary
     const click = ()=>{ // muestra si hay comentarios de un itinerary
         setShow(!show)
     }
+
+    useEffect(()=>{
+        axios.get(`http://localhost:4000/comments/query?itinerary=${id}`)
+        .then(response => setComments(response.data.response))
+    },[])
+
 
     const [showNewComment,setShowNewComment] = useState(false)
     const clickNewComment = ()=>{ // muestra para crear un comentario
@@ -73,14 +81,14 @@ function Comment(props){
             !logged ?(
                 <div className="comment-card">
                     <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
-                    {show && allCard.map(cardComment) }
+                    {show && comments.map(cardComment) }
                 </div>
             ) : (
                 <div className="comment-card">
                     <div>
                         <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
                         <button  onClick={()=> clickNewComment()}  className='cardComment-button'>New Comment</button>
-                        {show && allCard.map(cardComment)}
+                        {show && comments.map(cardComment)}
                         {showNewComment && <NewComment />}
                     </div>
                 </div>
