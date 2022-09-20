@@ -15,8 +15,6 @@ function Itinerary(props){
     // useEffect(()=>{
     //     axios.get(`http://localhost:4000/comments/query?itinerary=6316673e981c8cdc211716be`)
     //     .then(response => setComments(response.data.response))
-    //     axios.get(`http://localhost:4000/activities/query?itinerary=6316673e981c8cdc211716be`)
-    //     .then(response => setActivities(response.data.response))
     // },[])
 
     return (
@@ -36,7 +34,7 @@ function Itinerary(props){
                     <Activity itinerary={itinerary._id}/>
                 </div>
                 <div className='comment-box'>
-                    {/* <Comment itinerary={itinerary._id} className='comment'/> */}
+                    <Comment itinerary={itinerary._id} className='comment'/>
                 </div>
             </div>
         </>
