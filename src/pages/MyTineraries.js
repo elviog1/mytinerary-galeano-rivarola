@@ -6,7 +6,7 @@ import '../styles/Itinerary.css'
 import {useByuserQuery } from '../features/itineraiesApi'
 
 export default function MyTineraries () {
-  const {id} = useParams();
+  let {id} = useParams();
 
 let{
     data: itineraries,
@@ -15,11 +15,10 @@ let{
     error
 } = useByuserQuery({id} ? id : "")
 
-
 if (isLoading) {
     itineraries=[]
 } else if(isSuccess){
-    itineraries = itineraries.response
+    itineraries = itineraries
 }else if(error){
     itineraries = []
 }
@@ -28,7 +27,15 @@ if (isLoading) {
         <div className="itinerary-card">
             <div className='itinerary-container'>
                 <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
-                    <Itinerary data={itineraries} key={itineraries._id}/>
+                    {/* <Itinerary data={itineraries} key={itineraries._id}/> */}
+
+                    {itineraries?.length? itineraries.map(itinerary => 
+                    {
+                    return (
+                        <Itinerary data={itinerary} key={itinerary._id} />
+                        )
+                    }) : null
+                    }
             </div>
         </div>
     )

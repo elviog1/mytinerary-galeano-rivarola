@@ -12,7 +12,7 @@ export default function SignInGoogle(){
 
     async function handleCredentialResponse(response){
         let responsePayload = jose.decodeJwt(response.credential)
-        console.log(responsePayload)
+        // console.log(responsePayload)
 
         axios.post (`http://localhost:4000/auth/signin`,{  
         mail : responsePayload.email,
