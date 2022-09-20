@@ -7,43 +7,38 @@ import Comment from './Comment'
 
 
 function Itinerary(props){
-    const allCard = props.data
-    const [comments,setComments] = useState([])
-    const [activities,setActivities] = useState([])
-    const [id, setId] = useState('')
-    useEffect(()=>{
-        axios.get(`http://localhost:4000/comments/query?itinerary=6316673e981c8cdc211716be`)
-        .then(response => setComments(response.data.response))
-        axios.get(`http://localhost:4000/activities/query?itinerary=6316673e981c8cdc211716be`)
-        .then(response => setActivities(response.data.response))
-    },[])
-
-     function CardItinerary(item) {
-        return (
-            <div className="itinerary-card" key={item.name}>
-                <div className='itinerary-container'>
-                    <h2 className="itinerary-name">{item.name}</h2>
-                    <h3 className="itinerary-user-name">{item.name}</h3>
-                    <div className="itinerary-card_price-duration">
-                        <p className="itinerary-price">Price: {item.price}</p>
-                        <p className="itinerary-duration">Duration: {item.duration}</p>
-                    </div>
-                    <p className="itinerary-tags">{item.tags}</p>
-                    <p className="itinerary-likes">{item.likes} Likes</p>
-                </div>
-                <div>
-                    <Activity data={activities} />
-                </div>
-                <div className='comment-box'>
-                    <Comment data={comments} className='comment'/>
-                </div>
-            </div>
-        )
-    }
+    let allCard
+    props.data? allCard = props.data : allCard=props
+    const [itinerary, setItinerary] = useState(props.data)
+    // const [comments,setComments] = useState([])
+    // const [activities,setActivities] = useState([])
+    // useEffect(()=>{
+    //     axios.get(`http://localhost:4000/comments/query?itinerary=6316673e981c8cdc211716be`)
+    //     .then(response => setComments(response.data.response))
+    //     axios.get(`http://localhost:4000/activities/query?itinerary=6316673e981c8cdc211716be`)
+    //     .then(response => setActivities(response.data.response))
+    // },[])
 
     return (
         <>
-            {allCard.map(CardItinerary)}
+            <div className="itinerary-card" key={itinerary.name}>
+                <div className='itinerary-container'>
+                    <h2 className="itinerary-name">{itinerary.name}</h2>
+                    <h3 className="itinerary-user-name">{itinerary.name}</h3>
+                    <div className="itinerary-card_price-duration">
+                        <p className="itinerary-price">Price: {itinerary.price}</p>
+                        <p className="itinerary-duration">Duration: {itinerary.duration}</p>
+                    </div>
+                    <p className="itinerary-tags">{itinerary.tags}</p>
+                    <p className="itinerary-likes">{itinerary.likes} Likes</p>
+                </div>
+                 <div>
+                    <Activity itinerary={itinerary._id}/>
+                </div>
+                <div className='comment-box'>
+                    {/* <Comment itinerary={itinerary._id} className='comment'/> */}
+                </div>
+            </div>
         </>
     )
 }

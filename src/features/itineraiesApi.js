@@ -10,10 +10,12 @@ const itinerariesApi = createApi({
 
     endpoints: (builder) =>({
         byuser:builder.query({
-            query: (id)=> `/itineraries/queryu?user=${id}`
+            query: (id)=> (`/itineraries/queryu?user=${id}`),
+            transformResponse: res => res.response
         }),
         bycity:builder.query({
-            query: (id) => `/itineraries/query?city=${id}`
+            query: (id) => (`/itineraries/query?city=${id}`),
+            transformResponse: res => res.response
         })
     })
 })
