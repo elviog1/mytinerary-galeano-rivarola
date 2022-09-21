@@ -13,6 +13,8 @@ import SignIn from './pages/SignIn';
 import SocketForm from './components/SocketForm';
 import NewItinerary from './pages/NewItinerary';
 import { useEffect, useState } from 'react';
+import SignInAdmin from './pages/SignInAdmin';
+
 
 function App() {
 
@@ -41,6 +43,7 @@ function App() {
             <Route path='/signin' element={<SignIn />} />
             <Route path='/join' element={<SocketForm />} />
             <Route path='/newitinerary' element={logged?<NewItinerary />:<WelcomeComponent/>} />
+            <Route path='/admin' element={admin ? <SignInAdmin /> : <WelcomeComponent/> }/>
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
