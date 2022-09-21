@@ -13,8 +13,7 @@ import SignIn from './pages/SignIn';
 import SocketForm from './components/SocketForm';
 import NewItinerary from './pages/NewItinerary';
 import { useEffect, useState } from 'react';
-import SignInAdmin from './pages/SignInAdmin';
-
+import EditItinerary from './pages/EditItinerary';
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
 
    useEffect(()=>{
     JSON.parse(localStorage.getItem('user')) && setLogged(true)
-    JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
    }, [])
   //  useEffect(()=>{
   //   JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
@@ -44,7 +42,7 @@ function App() {
             <Route path='/signin' element={<SignIn />} />
             <Route path='/join' element={<SocketForm />} />
             <Route path='/newitinerary' element={logged?<NewItinerary />:<WelcomeComponent/>} />
-            <Route path='/admin' element={admin ? <SignInAdmin /> : <WelcomeComponent/> }/>
+            <Route path='/edititinerary' element={<EditItinerary />} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
