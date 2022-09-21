@@ -20,6 +20,8 @@ function Comment(props){
         .then(response => setComments(response.data.response))
     },[])
 
+    console.log(comments)
+
 
     const [showNewComment,setShowNewComment] = useState(false)
     const clickNewComment = ()=>{ // muestra para crear un comentario
@@ -41,11 +43,13 @@ function Comment(props){
     const divEdit = useRef(null)
     const edit = (id)=>{ // actualiza un comentario
         axios.put(`http://localhost:4000/comments/${id}`,{
-            comment: divEdit.current.value
+
+            comment: document.getElementById(`${id}`).value
         })
             Toastify({
                 text:"Comment update succesfully !"
             }).showToast()
+        console.log(id)
     }
 
     const cardComment = (item) =>(
@@ -59,7 +63,7 @@ function Comment(props){
 
                     {item.user._id === JSON.parse(localStorage.getItem('user')).id ? 
 
-                    (<><textarea  ref={divEdit} style={{resize:"none"}}  className="comment-content ">{item.comment}</textarea>
+                    (<><textarea id={`${item._id}`}  ref={divEdit} style={{resize:"none"}}  className={`comment-content ${item._id}`} >{item.comment}</textarea>
                     <div className='comment-edition'>
                         <div className='comment-edit' onClick={()=>edit(item._id)}>Edit</div>
                         <div className='comment-close' onClick={()=>close(item._id)} >Delete</div>
