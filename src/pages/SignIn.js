@@ -43,6 +43,7 @@ export default function SignIn(){
         .then(function(response){
             console.log(response.data.response.user)
             localStorage.setItem('user',JSON.stringify(response.data.response.user))
+            localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Registration succesfully completed! Please check your Email to verificate your account",
                 destination:"http://localhost:3000/"
@@ -91,6 +92,7 @@ export default function SignIn(){
           .then(function(response){
             console.log(response)
             localStorage.setItem('user',JSON.stringify(response.data.response.user))
+            localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Logged in succesfully! Press here to go to the home page",
                 destination:"http://localhost:3000/"
