@@ -24,7 +24,7 @@ function Itinerary(props){
                     </div>
                     <p className="itinerary-tags">{itinerary.tags}</p>
                     <p className="itinerary-likes">{itinerary.likes} Likes</p>
-                    <Likes />
+                    <Likes itinerary={itinerary._id} />
                 </div>
                  <div>
                     <Activity itinerary={itinerary._id}/>
