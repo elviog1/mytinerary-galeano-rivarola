@@ -19,6 +19,12 @@ function Header() {
     const pagesLogged = [
         {name: 'Home', to:'/'},
         {name: 'Cities', to: '/cities'},
+        {name: 'New Itinerary', to:'/newitinerary'},
+        {name: "My Tineraries", to: `/itineraries/${userId}`}
+    ]
+    const pagesAdmin = [
+        {name: 'Home', to:'/'},
+        {name: 'Cities', to: '/cities'},
         {name: 'New City', to:'/newcity'},
         {name: 'Edit city', to:'/editcity'},
         {name: 'New Itinerary', to:'/newitinerary'},
@@ -85,12 +91,15 @@ function Header() {
         <div className='Header'>
             <div className='Header-nav '>
                 <div className={isActive ? 'active': null} id="active"> 
-                    {pagesLogged.map(link)}
+                {JSON.parse(localStorage.getItem('user')).role === "admin" ? pagesAdmin.map(link) : pagesLogged.map(link)}
+                    
+                    
                 </div>
                 <button className='boton-burger' onClick={handleToggle}><img alt='burger' className='Header-burger ' src='https://img.icons8.com/doodle/344/menu.png' href='burger menu'/></button>
                 <h1 className='Header-logo'><span>My</span>Tinerary</h1>
                 <div className='Header-links'>
-                    {pagesLogged.map(link)}
+                    {/* {pagesLogged.map(link)} */}
+                    {JSON.parse(localStorage.getItem('user')).role === "admin" ? pagesAdmin.map(link) : pagesLogged.map(link)}
                     {/* <LinkRouter key="newitinerary" to="/newitinerary" className='nav-item'>New Tinerary</LinkRouter>
                     {mytin.map(link)} */}
                 </div>
