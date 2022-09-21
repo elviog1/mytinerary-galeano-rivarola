@@ -21,6 +21,7 @@ export default function SignInGoogle(){
     .then(function(response){
     // console.log(response.data.response.user)
     localStorage.setItem('user',JSON.stringify(response.data.response.user))
+    localStorage.setItem('token',JSON.stringify(response.data.response.token))
     Toastify({
         text:"Logged in succesfully! Press here to go to the home page",
         destination:"http://localhost:3000/"
