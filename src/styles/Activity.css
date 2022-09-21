@@ -48,6 +48,13 @@
         flex-direction: column;
         flex-wrap: wrap;
         width: 35rem;
+        gap:10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .act-card{
+        width: 80%;
+        justify-self: center;
     }
 }
 @media (max-width:425px){
@@ -57,7 +64,10 @@
     .activity-container{
         flex-direction: column;
         flex-wrap: wrap;
-        width: 16rem;
+        width: 16rem;       
+    }
+    .act-name{
+        font-size: 22px;
     }
 }
 @media (max-width:375px){
