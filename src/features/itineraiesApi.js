@@ -16,10 +16,17 @@ const itinerariesApi = createApi({
         bycity:builder.query({
             query: (id) => (`/itineraries/query?city=${id}`),
             transformResponse: res => res.response
+        }),
+        likeDislike: builder.mutation({
+            query:(id) =>({
+                url: `/itineraries/like/${id}`,
+                method: 'PATCH',
+                headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
+            })
         })
     })
 })
 
 
 export default itinerariesApi
-export const {useByuserQuery, useBycityQuery} = itinerariesApi
+export const {useByuserQuery, useBycityQuery, useLikeDislikeMutation} = itinerariesApi
