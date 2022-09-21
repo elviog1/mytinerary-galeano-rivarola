@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import '../styles/Itinerary.css'
 import Activity from './Activities'
 import Comment from './Comment'
+import Likes from './Likes'
 
 
 function Itinerary(props){
@@ -23,6 +24,7 @@ function Itinerary(props){
                     </div>
                     <p className="itinerary-tags">{itinerary.tags}</p>
                     <p className="itinerary-likes">{itinerary.likes} Likes</p>
+                    <Likes />
                 </div>
                  <div>
                     <Activity itinerary={itinerary._id}/>
