@@ -21,7 +21,7 @@ const itinerariesApi = createApi({
             query:(id) =>({
                 url: `/itineraries/like/${id}`,
                 method: 'PATCH',
-                headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
+                headers: {"Authorization": `Bearer ${localStorage.getItem("token").replace(/['"]+/g, '')}`}
             })
         })
     })
