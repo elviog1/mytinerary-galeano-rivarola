@@ -24,11 +24,11 @@ function App() {
   const [admin, setAdmin] = useState(false)
 
    useEffect(()=>{
-    JSON.parse(localStorage.getItem('user')) && setLogged(true)
+    JSON.parse(localStorage.getItem('user'))? setLogged(true):setLogged(false)
    }, [])
-  //  useEffect(()=>{
-  //   JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true)
-  //  }, [])
+   useEffect(()=>{
+    JSON.parse(localStorage.getItem('user'))? JSON.parse(localStorage.getItem('user')).role==='admin'&&setAdmin(true):setAdmin(false)
+   }, [])
 
   return(
       <BrowserRouter>
