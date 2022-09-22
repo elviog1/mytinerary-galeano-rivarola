@@ -14,6 +14,8 @@ import SocketForm from './components/SocketForm';
 import NewItinerary from './pages/NewItinerary';
 import { useEffect, useState } from 'react';
 import EditItinerary from './pages/EditItinerary';
+import SignInAdmin from './pages/SignInAdmin';
+import Perfil from './pages/Perfil';
 
 function App() {
 
@@ -40,9 +42,11 @@ function App() {
             <Route path='/editcity' element={admin ?<EditCity />: <WelcomeComponent/>}/>
             <Route path='/itineraries/:id' element={logged?<MyTineraries/>: <WelcomeComponent/>}/>
             <Route path='/signin' element={<SignIn />} />
+            <Route path='/newadmin' element={admin ? <SignInAdmin /> : <WelcomeComponent/>} />
             <Route path='/join' element={<SocketForm />} />
             <Route path='/newitinerary' element={logged?<NewItinerary />:<WelcomeComponent/>} />
             <Route path='/edititinerary' element={<EditItinerary />} />
+            <Route path='/perfil' element={<Perfil />} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
