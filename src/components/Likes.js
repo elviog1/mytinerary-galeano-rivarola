@@ -11,7 +11,7 @@ function Likes (props){
     let itinerary = props.itinerary
     let itObj = props.itObj
     const idUser = JSON.parse(localStorage.getItem('user')).id
-   
+
     function clickLike (e){
         likeDislike(itinerary)
         if(!itObj.likes.includes(idUser)){
@@ -19,6 +19,7 @@ function Likes (props){
                 text:"i love this!",
                 destination:"http://localhost:3000/cities"
             }).showToast()
+
         }else if(itObj.likes.includes(idUser)){
                 Toastify({
                     text:"noo!",
@@ -32,9 +33,24 @@ function Likes (props){
         .then(response => setLikes(response.data.response.likes.length))
     },[])
 
+    const [logged,setLogged] = useState(false)
+    const [userId, setUserId] =  useState('')
+    useEffect(()=>{
+        JSON.parse(localStorage.getItem('user')) && setLogged(true)
+        const user = JSON.parse(localStorage.getItem('user'))
+        user ? setUserId(user.id) : setUserId("")
+    },[])
+
     return (
-        <div>
-            <button onClick={clickLike}>♡{likes}</button>
+        <div> {logged ? (
+            <button onClick={clickLike} className="hearth" >
+                <div className="like-cant">{likes}</div>
+            </button>
+            ) : (
+            <button  className="hearth" >
+                <div className="like-cant">{likes}</div>
+            </button>
+            )}
         </div>
     )
 }
