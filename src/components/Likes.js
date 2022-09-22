@@ -1,38 +1,38 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { useLikeDislikeMutation } from "../features/itineraiesApi"
 
 function Likes (props){
-    // let userId = JSON.parse(localStorage.getItem('user')).id 
-    // const [likes, setLikes]= useState()
-    // let itinerary = props.itinerary
-    // let token = JSON.parse(localStorage.getItem('token'))
-    // //console.log(token)
-    // const [like,setLike] = useState(false)
-    // let header={headers: { 'Authorization': `Bearer ${token}`}}
-    // let urlR= `http://localhost:4000/itineraries/like/`+itinerary
-    // useEffect(()=>{
-    //     axios.get(`http://localhost:4000/itineraries/${itinerary}`)
-    //     .then(response => setLikes(response.data.response.likes.length))
-    // },[])
+    const [likeDislike,{data:resLike,error}] = useLikeDislikeMutation()
+    let userId = JSON.parse(localStorage.getItem('user'))?JSON.parse(localStorage.getItem('user')).id :"undefinde"
+    const [likes, setLikes]= useState()
+    let itinerary = props.itinerary
+    let token = JSON.parse(localStorage.getItem('token'))?JSON.parse(localStorage.getItem('token')):"undefined"
+    //console.log(token)
+    const [like,setLike] = useState(false)
+    let header={headers: { 'Authorization': `Bearer ${token}`}}
+    let urlR= `http://localhost:4000/itineraries/like/`+itinerary
+    //setLike(!like)
+    function clickLike (e){
+        console.log(like)
+        likeDislike(itinerary)
+        if (resLike) {
+            console.log(resLike)
+        } else {
+            console.log(error)
+        }
+    }
+    useEffect(()=>{
+        axios.get(`http://localhost:4000/itineraries/${itinerary}`)
+        .then(response => setLikes(response.data.response.likes.length))
+    },[])
 
-    // console.log(likes)
-    // const click=async ()=>{
-    //     setLike(!like)
-    //     console.log(like)
 
-    //     axios.patch(urlR, header
-    //     ).then((res) => {
-    //         console.log(res.data)
-    //       })
-    //       .catch((error) => {
-    //         console.error(error)
-    //       })
-    // }
 
     return (
         <div>
-            {/* <button onClick={click}>♡{likes}</button> */}
+            <button onClick={clickLike}>♡{likes}</button>
         </div>
     )
 }
