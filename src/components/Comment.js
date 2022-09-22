@@ -4,6 +4,7 @@ import '../styles/Comment.css'
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 import NewComment from './NewComment'
+import DeleteItinerary from './DeleteItinerary'
 
 
 function Comment(props){
@@ -15,12 +16,10 @@ function Comment(props){
         setShow(!show)
     }
     // console.log(id)
-    useEffect(()=>{
+    useEffect(()=>{ // devuelve todos los comentarios
         axios.get(`http://localhost:4000/comments/query?itinerary=${id}`)
         .then(response => setComments(response.data.response))
     },[])
-
-    console.log(comments)
 
 
     const [showNewComment,setShowNewComment] = useState(false)
@@ -29,7 +28,7 @@ function Comment(props){
     }
 
     const [logged,setLogged] = useState(false)
-    useEffect(()=>{
+    useEffect(()=>{ // si hay alguien conectado, devuelve TRUE
         JSON.parse(localStorage.getItem('user')) && setLogged(true)
     })
 
@@ -43,7 +42,6 @@ function Comment(props){
     const divEdit = useRef(null)
     const edit = (id)=>{ // actualiza un comentario
         axios.put(`http://localhost:4000/comments/${id}`,{
-
             comment: document.getElementById(`${id}`).value
         })
             Toastify({
@@ -98,10 +96,25 @@ function Comment(props){
             ) : (
                 <div className="comment-card">
                     <div>
-                        <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
-                        <button  onClick={()=> clickNewComment()}  className='cardComment-button'>New Comment</button>
-                        {show && comments.map(cardComment)}
-                        {showNewComment && <NewComment itinerary={id} />}
+                        
+                        {JSON.parse(localStorage.getItem('user')).role=== "admin" ? /*si un admin esta logeado */
+                        <div>
+                            <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
+                            <button  onClick={()=> clickNewComment()}  className='cardComment-button'>New Comment</button>
+                            <DeleteItinerary itinerary={id} />
+                            {show && comments.map(cardComment)}
+                            {showNewComment && <NewComment itinerary={id} />}
+                        </div> 
+                        :/*si un user esta logeado */
+                         <div> 
+                            <button  onClick={()=> click()}  className='cardComment-button'>Comments</button>
+                            <button  onClick={()=> clickNewComment()}  className='cardComment-button'>New Comment</button>
+                            {show && comments.map(cardComment)}
+                            {showNewComment && <NewComment itinerary={id} />}
+                         </div>
+                        }
+
+                        
                     </div>
                 </div>
             )

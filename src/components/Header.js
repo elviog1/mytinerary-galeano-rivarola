@@ -25,8 +25,9 @@ function Header() {
     const pagesAdmin = [
         {name: 'Home', to:'/'},
         {name: 'Cities', to: '/cities'},
-        {name: 'New City', to:'/newcity'},
         {name: 'Edit city', to:'/editcity'},
+        {name: 'Edit Itinerary', to:'/edititinerary'},
+        {name: 'New City', to:'/newcity'},
         {name: 'New Itinerary', to:'/newitinerary'},
         {name: "My Tineraries", to: `/itineraries/${userId}`}
     ]
@@ -37,8 +38,6 @@ function Header() {
         const user = JSON.parse(localStorage.getItem('user'))
         user ? setUserId(user.id) : setUserId("")
     },[])
-
-    const mytin = [{name: "My Tineraries", to: `/itineraries/${userId}`}]
     
     const [isActive,setActive] = useState("false")
     const handleToggle = () =>{
@@ -53,7 +52,7 @@ function Header() {
     async function signOut (){
         let id = JSON.parse(localStorage.getItem('user')).id
         try{
-             let response = await axios.post(`http://localhost:4000/auth/signout/${id}`)   // arreglar esto
+             let response = await axios.post(`http://localhost:4000/auth/signout/${id}`)   
              console.log(response)
             setLogged(false)
             localStorage.removeItem('user')
@@ -65,7 +64,6 @@ function Header() {
     }
 
     return ( !logged ? (
-
         <div className='Header'>
             <div className='Header-nav '>
                 <div className={isActive ? 'active': null} id="active"> 
@@ -110,8 +108,8 @@ function Header() {
             </button>
         
             <div className='header-login' id='login'>
-                <LinkRouter to='/signin'>
                 <p className='header-login-option'>{JSON.parse(localStorage.getItem('user')).name}</p>
+                <LinkRouter to='/signin'>
                 <div className='header-login-option' onClick={signOut}>Sign out</div>
                 </LinkRouter>
             </div>

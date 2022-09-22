@@ -17,7 +17,6 @@ function Itinerary(props){
             <div className="itinerary-card" key={itinerary.name}>
                 <div className='itinerary-container'>
                     <h2 className="itinerary-name">{itinerary.name}</h2>
-                    <h3 className="itinerary-user-name">{itinerary.name}</h3>
                     <div className="itinerary-card_price-duration">
                         <p className="itinerary-price">Price: {itinerary.price}</p>
                         <p className="itinerary-duration">Duration: {itinerary.duration}</p>
