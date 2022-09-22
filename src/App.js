@@ -42,7 +42,7 @@ function App() {
             <Route path='/cities/:id' element={<Details />}/> 
             <Route path='/editcity' element={admin ?<EditCity />: <WelcomeComponent/>}/>
             <Route path='/itineraries/:id' element={logged?<MyTineraries/>: <WelcomeComponent/>}/>
-            <Route path='/signin' element={logged?<WelcomeComponent/>:<SignIn />} />
+            <Route path='/signin' element={<SignIn />} />
             <Route path='/newadmin' element={admin ? <SignInAdmin /> : <WelcomeComponent/>} />
             <Route path='/join' element={<SocketForm />} />
             <Route path='/newitinerary' element={logged?<NewItinerary />:<WelcomeComponent/>} />
