@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../styles/Perfil.css'
 function Perfil (){
 
@@ -14,8 +15,12 @@ function Perfil (){
                     <p className='perfil-info'>Email: <span className='perfil-span'>{info.mail}</span></p>
                     <p className='perfil-info'>Role: <span className='perfil-span'>{info.role}</span></p>
                 </div>
+            <Link to="/editperfil">
+                <button className="nc-boton">Update </button>
+            </Link>
             </div>
         </div>
+
     )
 }
 
