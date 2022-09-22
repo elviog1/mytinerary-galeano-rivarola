@@ -32,6 +32,7 @@ const values = [
 
 
    const itineraryValue = useRef(null)
+   
    const [selected, setSelected] = useState("")
    const selectItinerary = ()=>{
     setSelected(itineraryValue.current.value)
@@ -39,8 +40,10 @@ const values = [
    const citiesValue = useRef(null)
    const [selectedCity, setSelectedCity] = useState("")
    const selectCity = ()=>{
-    setSelected(citiesValue.current.value)
+    setSelectedCity(citiesValue.current.value)
    }
+console.log(selected)
+console.log(selectedCity)
 
    let {
     data:cities,
@@ -67,14 +70,12 @@ if(isLoading){
        let inputDuration= document.getElementById("Duration").value
 
 
-
-         axios.patch(`http://localhost:4000/itineraries/${selected}`,{           
+         axios.put(`http://localhost:4000/itineraries/${selected}`,{           
                 name: inputName,
-                // city : cities.response[0]._id,
-                // price: inputPrice,
-                // tags: inputTags,
-                // duration: inputDuration,
-                // user: JSON.parse(localStorage.getItem('user')).id,
+                city : cities.response[0]._id,
+                price: inputPrice,
+                tags: inputTags,
+                duration: inputDuration,
             })
             .then(function(response){
                 console.log(response)
@@ -102,13 +103,15 @@ if(isLoading){
             <h1 className='nc-title'>Edit Itinerary</h1>
             <form className='nc-form'>
                 <label  className='nc-label' htmlFor='select-city'>Select Itinerary
-                <select  className='nc-input' ref={itineraryValue} onChange={setSelected}>
-                <EditInput data={itineraries}/>
+                <select  className='nc-input' ref={itineraryValue} onChange={selectItinerary}>
+                    <option>Select your itinerary</option>
+                    <EditInput data={itineraries}/>
                 </select> 
                 </label>
                 <label  className='nc-label' htmlFor='select-city'>Select City
-                <select  className='nc-input' ref={citiesValue} onChange={setSelectedCity}>
-                <EditInput data={items}/>
+                <select  className='nc-input' ref={citiesValue} onChange={selectCity}>
+                   <option>Select your city</option> 
+                   <EditInput data={items}/>
                 </select> 
                 </label>
                 <Input data={values} />

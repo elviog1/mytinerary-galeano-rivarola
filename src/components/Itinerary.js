@@ -18,8 +18,8 @@ function Itinerary(props){
                 <div className='itinerary-container'>
                     <h2 className="itinerary-name">{itinerary.name}</h2>
                     <div className="itinerary-card_price-duration">
-                        <p className="itinerary-price">Price: {itinerary.price}</p>
-                        <p className="itinerary-duration">Duration: {itinerary.duration}</p>
+                        <p className="itinerary-price">Price: {"💵".repeat(itinerary.price)} </p>
+                        <p className="itinerary-duration">Duration:  {"⌛".repeat(itinerary.duration)}</p>
                     </div>
                     <p className="itinerary-tags">{itinerary.tags}</p>
                     <p className="itinerary-likes">{itinerary.likes} Likes</p>
