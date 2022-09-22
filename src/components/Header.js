@@ -29,7 +29,8 @@ function Header() {
         {name: 'Edit Itinerary', to:'/edititinerary'},
         {name: 'New City', to:'/newcity'},
         {name: 'New Itinerary', to:'/newitinerary'},
-        {name: "My Tineraries", to: `/itineraries/${userId}`}
+        {name: "My Tineraries", to: `/itineraries/${userId}`},
+        {name: "New Admin", to: `/newadmin`}
     ]
     const link = (page) => <LinkRouter key={page.name} to={page.to} className='nav-item'>{page.name}</LinkRouter>
     
@@ -108,9 +109,11 @@ function Header() {
             </button>
         
             <div className='header-login' id='login'>
-                <p className='header-login-option'>{JSON.parse(localStorage.getItem('user')).name}</p>
+                <LinkRouter to='/perfil'>
+                    <p className='header-login-option'>{JSON.parse(localStorage.getItem('user')).name}</p>
+                </LinkRouter>
                 <LinkRouter to='/signin'>
-                <div className='header-login-option' onClick={signOut}>Sign out</div>
+                    <div className='header-login-option' onClick={signOut}>Sign out</div>
                 </LinkRouter>
             </div>
         </div>
