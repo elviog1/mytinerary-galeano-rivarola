@@ -27,16 +27,16 @@ if (isLoading) {
         <div className="itinerary-card">
             <div className='itinerary-container'>
                 <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
-                    {itineraries.length<0?<Itinerary data={itineraries} key={itineraries._id}/>:<div>
+                    {/* {itineraries.length<0?<Itinerary data={itineraries} key={itineraries._id}/>:<div>
                         <p>You have no Tineraries</p></div>
-}
-                    {/* {itineraries?.length? itineraries.map(itinerary => 
+} */}
+                    {itineraries?.length? itineraries.map(itinerary => 
                     {
                     return (
                         <Itinerary data={itinerary} key={itinerary._id} />
                         )
                     }) : null
-                    } */}
+                    }
             </div>
         </div>
     )
