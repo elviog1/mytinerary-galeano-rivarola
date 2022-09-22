@@ -108,10 +108,21 @@
     transform: translateX(-180px);
     display: block;
 }
+@media (max-width:1024px){
+    .Header-links{
+        display: none;
+    }
+    .boton-burger{
+        display: block;
+    }
+}
 
 @media (max-width:768px){
-    .boton-burger{
+    .Header-links{
         display: none;
+    }
+    .boton-burger{
+        display: block;
     }
     .Header-links{
         margin: 0;

@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import EditItinerary from './pages/EditItinerary';
 import SignInAdmin from './pages/SignInAdmin';
 import Perfil from './pages/Perfil';
+import EditPerfil from './pages/EditPerfil';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
             <Route path='/newitinerary' element={logged?<NewItinerary />:<WelcomeComponent/>} />
             <Route path='/edititinerary' element={<EditItinerary />} />
             <Route path='/perfil' element={<Perfil />} />
+            <Route path='/editperfil' element={<EditPerfil />} />
           </Routes>
         </LayoutBasico>
       </BrowserRouter>
