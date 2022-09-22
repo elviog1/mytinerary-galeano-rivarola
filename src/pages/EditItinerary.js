@@ -42,8 +42,6 @@ const values = [
    const selectCity = ()=>{
     setSelectedCity(citiesValue.current.value)
    }
-console.log(selected)
-console.log(selectedCity)
 
    let {
     data:cities,
@@ -60,7 +58,6 @@ if(isLoading){
 }else if (isFailed){
     cities = []
 }
-
    const accion = (e)=>{
        e.preventDefault()
        let inputName= document.getElementById("Name").value
@@ -68,13 +65,15 @@ if(isLoading){
        let inputPrice= document.getElementById("Price").value
        let inputTags= document.getElementById("Tags").value
        let inputDuration= document.getElementById("Duration").value
-
-
-         axios.put(`http://localhost:4000/itineraries/${selected}`,{           
+             axios.put(`http://localhost:4000/itineraries/${selected}`,{           
                 name: inputName,
-                city : cities.response[0]._id,
+                city : cities.length === 0 ?Toastify({
+                    text:"Please select a city",
+                    duration: 5000
+                }).showToast()
+                : cities.response[0]._id,
                 price: inputPrice,
-                tags: inputTags,
+                tags: [inputTags],
                 duration: inputDuration,
             })
             .then(function(response){
@@ -90,9 +89,45 @@ if(isLoading){
                     Toastify({
                         text:"Your name is too short, please try again(minimum 4 characters)"
                     }).showToast()
-                }else{
+                }else if (error.response.data.message === "") {                    
                     Toastify({
-                        text:"Invalid request please try again"
+                        text:"Your name is too long, please try again(maximum 30 characters)",
+                        duration:5000
+                    }).showToast()
+            }else if (error.response.data.message === "invalid_user") {
+                Toastify({
+                    text:"Please, log in to edit an itinerary",
+                    duration:5000
+                }).showToast()       
+            }
+            else if (error.response.data.message === "invalid_city") {
+                Toastify({
+                    text:"Please insert a valid city",
+                    duration:5000
+                }).showToast()    
+            }
+            else if (error.response.data.message === "invalid price") {
+                Toastify({
+                    text:"Please insert a valide price(number +0)",
+                    duration:5000
+                }).showToast() 
+            }
+            else if (error.response.data.message === "invalid tags") {
+                Toastify({
+                    text:"Please insert valid tags",
+                    duration:5000
+                }).showToast()    
+            }
+            else if (error.response.data.message === "invalid duration") {
+                Toastify({
+                    text:"Please insert a valid duration",
+                    duration:5000
+                }).showToast()    
+            }
+                else{
+                    Toastify({
+                        text:"Invalid request please try again",
+                        duration:5000 
                     }).showToast()
                 }
             })
