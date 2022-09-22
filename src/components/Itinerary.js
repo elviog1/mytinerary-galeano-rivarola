@@ -11,7 +11,7 @@ function Itinerary(props){
     let allCard
     props.data? allCard = props.data : allCard=props
     const [itinerary, setItinerary] = useState(props.data)
-
+    // console.log(itinerary)
     return (
         <>
             <div className="itinerary-card" key={itinerary.name}>
@@ -22,8 +22,7 @@ function Itinerary(props){
                         <p className="itinerary-duration">Duration:  {"⌛".repeat(itinerary.duration)}</p>
                     </div>
                     <p className="itinerary-tags">{itinerary.tags}</p>
-                    <p className="itinerary-likes">{itinerary.likes} Likes</p>
-                    <Likes itinerary={itinerary._id} />
+                    <Likes itinerary={itinerary._id} itObj={itinerary} />
                 </div>
                  <div>
                     <Activity itinerary={itinerary._id}/>
