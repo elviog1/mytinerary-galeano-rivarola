@@ -81,7 +81,7 @@ if(isLoading){
                 console.log(response)
                 Toastify({
                     text:"Itinerary updated succesfully !",
-                    destination:"http://localhost:3000/editcity"
+                    destination:"http://localhost:3000/cities"
                 }).showToast()
             })
             .catch(function(error){
