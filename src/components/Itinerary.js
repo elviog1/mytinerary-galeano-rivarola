@@ -12,6 +12,17 @@ function Itinerary(props){
     props.data? allCard = props.data : allCard=props
     const [itinerary, setItinerary] = useState(props.data)
     // console.log(itinerary)
+
+
+
+    const [logged,setLogged] = useState(false) 
+    const [userId, setUserId] =  useState('')
+    useEffect(()=>{// si hay algun usuario conectado
+        JSON.parse(localStorage.getItem('user')) && setLogged(true)
+        const user = JSON.parse(localStorage.getItem('user'))
+        user ? setUserId(user.id) : setUserId("")
+    },[])
+
     return (
         <>
             <div className="itinerary-card" key={itinerary.name}>
@@ -22,7 +33,7 @@ function Itinerary(props){
                         <p className="itinerary-duration">Duration:  {"⌛".repeat(itinerary.duration)}</p>
                     </div>
                     <p className="itinerary-tags">{itinerary.tags}</p>
-                    <Likes itinerary={itinerary._id} itObj={itinerary} />
+                   {logged ? (<Likes itinerary={itinerary._id} itObj={itinerary} />) : null} 
                 </div>
                  <div>
                     <Activity itinerary={itinerary._id}/>
