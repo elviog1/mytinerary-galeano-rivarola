@@ -10,23 +10,26 @@ function Likes (props){
     const [likes, setLikes]= useState()
     let itinerary = props.itinerary
     let itObj = props.itObj
-    const idUser = JSON.parse(localStorage.getItem('user')).id
+    
+console.log(itObj)
+    const [likeUser,setLikeUser] = useState(false)
 
     function clickLike (e){
         likeDislike(itinerary)
+        const idUser = JSON.parse(localStorage.getItem('user')).id
+
         if(!itObj.likes.includes(idUser)){
             Toastify({
                 text:"i love this!",
                 destination:"http://localhost:3000/cities"
             }).showToast()
 
-        }else if(itObj.likes.includes(idUser)){
+        }else if(itObj.likes.includes(idUser)) {
                 Toastify({
                     text:"noo!",
                     destination:"http://localhost:3000/cities"
                 }).showToast()
             }
-
     }
     useEffect(()=>{
         axios.get(`http://localhost:4000/itineraries/${itinerary}`)

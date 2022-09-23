@@ -33,7 +33,7 @@ function Itinerary(props){
                         <p className="itinerary-duration">Duration:  {"⌛".repeat(itinerary.duration)}</p>
                     </div>
                     <p className="itinerary-tags">{itinerary.tags}</p>
-                   {logged ? (<Likes itinerary={itinerary._id} itObj={itinerary} />) : null} 
+                   <Likes itinerary={itinerary._id} itObj={itinerary} />
                 </div>
                  <div>
                     <Activity itinerary={itinerary._id}/>
