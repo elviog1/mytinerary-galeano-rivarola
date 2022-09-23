@@ -1,0 +1,22 @@
+.perfi-img{
+    width: 200px;
+    border-radius: 50%;
+}
+.perfil-info{
+    font-size: 25px;
+}
+.perfil-span{
+    font-size: 20px;
+}
+.nc-title{
+    text-align: center;
+}
+
+@media (max-width:320px){
+    .new-city-container{
+        width: 300px;
+    }
+    .perfi-img{
+        width: 100px;
+    }
+}
