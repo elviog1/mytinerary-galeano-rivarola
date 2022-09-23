@@ -13,12 +13,19 @@ function Likes (props){
     
 //console.log(itObj)
     const [likeUser,setLikeUser] = useState(false)
+    const array = resLike?.response
+    console.log(resLike?.response)
+    useEffect(()=>{
+        if(resLike){
+            setLikes(resLike.response.length)
+            setLikeUser(!likeUser)
+        }
+    },[array])
 
     function clickLike (e){
         likeDislike(itinerary)
         const idUser = JSON.parse(localStorage.getItem('user')).id
-
-        if(!itObj.likes.includes(idUser)){
+        if(!itObj.likes.includes(idUser) && !likeUser){
             Toastify({
                 text:"i love this!",
                 destination:"http://localhost:3000/cities"
@@ -43,6 +50,8 @@ function Likes (props){
         const user = JSON.parse(localStorage.getItem('user'))
         user ? setUserId(user.id) : setUserId("")
     },[])
+
+  
 
     return (
         <div> {logged ? (
