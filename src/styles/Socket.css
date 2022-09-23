@@ -1,6 +1,7 @@
  /* JOIN */
 .socketForm-window{
     text-align: center;
+    height: 74.8vh;
 }
 .socketForm-title{
     font-size: 30px;
@@ -17,7 +18,7 @@ flex-wrap: wrap;
     cursor: pointer;
 }
 
-.chat-window, .chat-body{
+.chat-body{
     width: 100%;
     height: 100%;
     overflow-y: scroll;
@@ -25,22 +26,29 @@ flex-wrap: wrap;
 }
 
  /* CHAT  */
-
 .chat-window{
-    height: 18rem;
+    height: 71.9vh;
     display: flex;
     justify-content: center;
+    margin: 20px 0;
+    
 }
+
 .chat-container{
     width: 18rem;
     background-color: rgb(174, 174, 177);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 20px 20px 0 0;
+
 }
 .chat-header{
     background-color: rgb(73, 158, 255);
+    border-radius: 20px 20px 0 0;
+    padding: 7px;
+    border: 2px solid black;
 }
 .chat-footer{
     display: flex;
@@ -65,9 +73,17 @@ flex-wrap: wrap;
 }
 #you{
     justify-content: flex-start;
+    background-color: rgb(101, 160, 101);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 #other {
     justify-content: flex-end;
+    background-color: rgb(231, 126, 126);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px 0;
   }
 
   #you .message-content {
@@ -78,6 +94,11 @@ flex-wrap: wrap;
   }
   .meesage{
     display: flex;
+  }
+  .send-img{
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
   }
 
 /* https://www.youtube.com/watch?v=NU-HfZY3ATQ   43:17 */
