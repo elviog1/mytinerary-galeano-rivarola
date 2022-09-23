@@ -127,7 +127,7 @@ export default function SignIn(){
                 <input ref={mailS} required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
             </label>
             <label htmlFor='password' className="signin-field">password
-                <input ref={passS} required type="text" className="signin-input" id="password" placeholder="Enter your password" ></input>
+                <input ref={passS} required type="password" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
             <button id="send" type="submit" className="nc-boton" onClick={AccionS}>Sign In</button>
             <SignInGoogle />
