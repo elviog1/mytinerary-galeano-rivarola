@@ -25,7 +25,7 @@ export default function SocketForm (){
                 <input placeholder="Username"  type="text" onChange={e =>{setUsername(e.target.value)}}/>
                 <input placeholder="Room ID..."  type="text" onChange={e =>{setRoom(e.target.value)}}/>
             </div>
-            <button className="socketForm-button" onClick={joinRoom}>Join a Room</button>
+            <button className="socketForm-button nc-boton" onClick={joinRoom}>Join</button>
         </div>
             ):(
             <Chat socket={socket} username={username} room={room} />
