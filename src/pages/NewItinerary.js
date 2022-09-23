@@ -2,6 +2,9 @@ import axios from "axios"
 import { useEffect, useRef, useState } from "react"
 import Input from "../components/Input"
 import EditInput from "../components/InputEdit"
+import { useCreateMutation } from "../features/itineraiesApi"
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function NewItinerary(){
     // renderizado de labels con inputs
@@ -12,8 +15,7 @@ function NewItinerary(){
         {value:"Duration", placeholder:"Enter a new "},
     ]
 
-
-    
+    const [newIt] = useCreateMutation()
 
     // renderizado de <select> cities
     const[items, setItems] = useState([])
@@ -21,8 +23,6 @@ function NewItinerary(){
     axios.get('http://localhost:4000/cities/')
         .then(response => setItems(response.data.response))
     }, [])
-
-    // response.find(){name={select}}
     
     const accion = (e)=>{
         e.preventDefault()
@@ -32,22 +32,20 @@ function NewItinerary(){
         const inputDuration =document.getElementById("Duration").value
         const inputCity =document.getElementById("City").value
         let cityID =items.find(city => city.name ==inputCity)._id
-        
 
-
-        axios.post(`http://localhost:4000/itineraries`,{ // chequear esta parte
+        let body= {
             city: cityID,
             name: inputName,
             price: inputPrice,
-            tags: inputTags,
+            tags: [inputTags],
             duration: inputDuration,
             likes: [],
-            user: JSON.parse(localStorage.getItem('user')).id
-        }).then(function(response){
-            console.log(response)
-        }).catch(function(error){
-            console.log(error)
-        })
+            user: JSON.parse(localStorage.getItem('user')).id,
+        }
+        newIt(body)
+        Toastify({
+            text:"Thanks for your new Itinerary!"
+        }).showToast()
 
     }
 
@@ -63,7 +61,6 @@ function NewItinerary(){
             </form>
         </div>
     )
-
 }
 
 export default NewItinerary
