@@ -23,10 +23,18 @@ const itinerariesApi = createApi({
                 method: 'PATCH',
                 headers: {"Authorization": `Bearer ${localStorage.getItem("token").replace(/['"]+/g, '')}`}
             })
+        }),
+        create:builder.mutation({
+            query: (data)=> ({
+            url:`/itineraries`,
+            method: 'POST',
+            headers: {"Authorization": `Bearer ${localStorage.getItem("token").replace(/['"]+/g, '')}`},
+            body: data,
+        })
         })
     })
 })
 
 
 export default itinerariesApi
-export const {useByuserQuery, useBycityQuery, useLikeDislikeMutation} = itinerariesApi
+export const {useCreateMutation,useByuserQuery, useBycityQuery, useLikeDislikeMutation} = itinerariesApi
