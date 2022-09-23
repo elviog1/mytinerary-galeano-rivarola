@@ -28,10 +28,12 @@ function Chat({socket,username,room}){
 
 
     return (
+        <div className="socket-container">
+
         <div className="chat-window">
             <div className="chat-container">
                 <div className="chat-header">
-                    <p>Live chat</p>
+                    <p className="title-chat">Live chat</p>
                 </div>
                 <div className="chat-body">
                     {messageList.map((messageContent) => {
@@ -52,10 +54,11 @@ function Chat({socket,username,room}){
                 </div>
                 <div className="chat-footer">
                     <input className="chat-footer-text" type="text" onChange={e =>{setCurrentMessage(e.target.value)}} onKeyPress={e =>{ e.key === "Enter" && sendMessage()}} value={currentMessage}></input>
-                    <button onClick={sendMessage}>SEND</button>
+                    <button onClick={sendMessage}><img className="send-img" src="https://cdn-icons-png.flaticon.com/512/3682/3682321.png"></img></button>
                 </div>
             </div>
         </div>
+                    </div>
     )
 }
 

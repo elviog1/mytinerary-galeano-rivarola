@@ -115,6 +115,9 @@ function Header() {
                 <LinkRouter to='/signin'>
                     <div className='header-login-option' onClick={signOut}>Sign out</div>
                 </LinkRouter>
+                <LinkRouter to='/join'>
+                    <div className='header-login-option' >Chat</div>
+                </LinkRouter>
             </div>
         </div>
     )
