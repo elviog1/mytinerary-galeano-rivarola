@@ -11,7 +11,7 @@ function Likes (props){
     let itinerary = props.itinerary
     let itObj = props.itObj
     
-console.log(itObj)
+//console.log(itObj)
     const [likeUser,setLikeUser] = useState(false)
 
     function clickLike (e){
