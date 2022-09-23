@@ -14,7 +14,18 @@ const citiesApi = createApi({
         }),
         details:builder.query({
             query: (id)=> `/cities/${id}`
-        })
+        }),
+        getID:builder.query({
+            query: (name)=> `/cities/${name}`
+        }),
+        editCity: builder.mutation({
+            query:({name,data}) =>({
+                url: `/cities/${name}`,
+                method: 'PUT',
+                body: data
+            })
+        }),
+
     }),
 
 
@@ -22,4 +33,4 @@ const citiesApi = createApi({
 
 
 export default citiesApi
-export const {useDetailsQuery, useAllQuery} = citiesApi
+export const {useGetIDQuery,useEditCityMutation,useDetailsQuery, useAllQuery} = citiesApi
