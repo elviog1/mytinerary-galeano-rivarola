@@ -2,7 +2,7 @@ import '../styles/Socket.css'
 import { useState } from "react"
 import io from "socket.io-client"
 import Chat from "./SocketChat"
-const socket = io.connect("http://localhost:3000")
+const socket = io.connect("http://localhost:3001")
 
 
 export default function SocketForm (){
@@ -17,7 +17,7 @@ export default function SocketForm (){
         }
     }
     return (
-        <div>
+        <div >
             {!showChat ? (
         <div className="socketForm-window">
             <h3 className="socketForm-title">Join a chat</h3>
