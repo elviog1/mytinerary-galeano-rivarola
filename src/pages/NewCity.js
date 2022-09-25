@@ -23,7 +23,7 @@ export default function NewCity(){
         let inputFundation= document.getElementById("Fundation").value
 
 
-             axios.post(`http://localhost:4000/cities`,{           
+             axios.post(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities`,{           
                   name: inputCity,
                   country : inputCountry,
                   image: inputImage,
@@ -34,7 +34,7 @@ export default function NewCity(){
                     console.log(response)
                     Toastify({
                         text:"City created succesfully !",
-                        destination:"http://localhost:3000/newcity"
+                        destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/newcity"
                     }).showToast()
                 })
                 .catch(function(error){

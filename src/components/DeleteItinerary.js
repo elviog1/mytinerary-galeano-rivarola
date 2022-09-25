@@ -9,7 +9,7 @@ function DeleteItinerary (props){
     let{data: itineraries } = useByuserQuery(id) //retorna un itinerary con ese "id"
 
     const deleteItinerary = ()=>{
-        axios.delete(`http://localhost:4000/itineraries/${itineraryId}`)
+        axios.delete(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/${itineraryId}`)
         Toastify({
             text:"Comment Deleted succesfully !"
         }).showToast()

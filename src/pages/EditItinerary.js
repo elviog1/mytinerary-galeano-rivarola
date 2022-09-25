@@ -12,14 +12,14 @@ export default function EditItinerary(){
     // PARA RENDERIZAR LOS NOMBRES DE LOS ITINERARIES
     const[itineraries, setItineraries] = useState([])
     useEffect(()=>{
-    axios.get('http://localhost:4000/itineraries/')
+    axios.get('https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/')
         .then(response => setItineraries(response.data.response))
     }, [])
 
     // PARA RENDERIZAR LOS NOMBRES DE LAS CIUDADES
     const[items, setItems] = useState([])
     useEffect(()=>{
-    axios.get('http://localhost:4000/cities/')
+    axios.get('https://my-tinerary-dreamjuan-back.herokuapp.com/cities/')
         .then(response => setItems(response.data.response))
     }, [])
 
@@ -65,7 +65,7 @@ if(isLoading){
        let inputPrice= document.getElementById("Price").value
        let inputTags= document.getElementById("Tags").value
        let inputDuration= document.getElementById("Duration").value
-             axios.put(`http://localhost:4000/itineraries/${selected}`,{           
+             axios.put(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/${selected}`,{           
                 name: inputName,
                 city : cities.length === 0 ?Toastify({
                     text:"Please select a city",
@@ -80,7 +80,7 @@ if(isLoading){
                 console.log(response)
                 Toastify({
                     text:"Itinerary updated succesfully !",
-                    destination:"http://localhost:3000/cities"
+                    destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/cities"
                 }).showToast()
             })
             .catch(function(error){

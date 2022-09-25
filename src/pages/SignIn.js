@@ -32,7 +32,7 @@ export default function SignIn(){
             from: "form"})
             console.log(datar)
 
-        axios.post (`http://localhost:4000/auth/signup`,{  
+        axios.post (`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/signup`,{  
           name : nameR.current.value,
         mail : mailR.current.value,
         password : passwordR.current.value,
@@ -46,7 +46,7 @@ export default function SignIn(){
             localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Registration succesfully completed! Please check your Email to verificate your account",
-                destination:"http://localhost:3000/"
+                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
             }).showToast()
             
         })
@@ -86,7 +86,7 @@ export default function SignIn(){
 
     const AccionS = (e) =>{
         e.preventDefault()
-        axios.post (`http://localhost:4000/auth/signin`,{  
+        axios.post (`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/signin`,{  
           mail : mailS.current.value,
           password : passS.current.value,})
           .then(function(response){
@@ -95,7 +95,7 @@ export default function SignIn(){
             localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Logged in succesfully! Press here to go to the home page",
-                destination:"http://localhost:3000/"
+                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
             }).showToast()
         })
         .catch(function(error){

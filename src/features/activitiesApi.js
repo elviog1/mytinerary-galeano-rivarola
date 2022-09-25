@@ -5,7 +5,7 @@ const activitiesApi = createApi({
     reducerPath: "activitiesApi",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000"
+        baseUrl: "https://my-tinerary-dreamjuan-back.herokuapp.com"
     }), 
 
     endpoints: (builder) =>({

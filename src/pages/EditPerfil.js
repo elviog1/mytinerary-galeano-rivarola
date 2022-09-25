@@ -18,7 +18,7 @@ function EditPerfil(){
         let inputcountry = document.getElementById("Country").value 
         let inputphoto = document.getElementById("Photo").value 
 
-        axios.put(`http://localhost:4000/auth/${id}`,{
+        axios.put(`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/${id}`,{
             name:inputname,
             country: inputcountry,
             photo:inputphoto
@@ -27,7 +27,7 @@ function EditPerfil(){
             console.log(response)
             Toastify({
                 text:"Perfil updated succesfully !",
-                destination:"http://localhost:3000/perfil"
+                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/perfil"
             }).showToast()
         })
         .catch(function(error){
