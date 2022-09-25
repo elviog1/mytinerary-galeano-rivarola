@@ -28,6 +28,9 @@
     "heroku-postbuild": "npm run build",
     "start": "serve -s build"
   },
+  "engines":{
+    "node": "16.17.0"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
