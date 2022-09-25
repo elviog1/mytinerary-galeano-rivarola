@@ -5,11 +5,7 @@ const citiesApi = createApi({
     reducerPath: "citiesApi",
 
     baseQuery: fetchBaseQuery({
-<<<<<<< HEAD
-        baseUrl: "https://my-tinerary-dreamjuan-back.herokuapp.com/" 
-=======
         baseUrl: "https://my-tinerary-dreamjuan-back.herokuapp.com"
->>>>>>> 494c011b04a11f7dfb5814b705517d474303fa58
     }), 
 
     endpoints: (builder) =>({

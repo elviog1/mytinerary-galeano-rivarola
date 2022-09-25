@@ -10,18 +10,6 @@ export default function Details(props) {
   const {id} = useParams()
   const [city, setCity] = useState()
   useEffect(()=>{
-<<<<<<< HEAD
-  axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${id}`)
-      .then(response =>setItems(response.data.response))
-      axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/query?city=${id}`)
-      .then(response =>setItineraries(response.data.response))
-    },[])
-  
-
-       axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/query?city=${id}`)
-           .then(response =>setItineraries(response.data.response))
-
-=======
     axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${id}`)
     .then(response => setCity(response.data.response))
 },[])
@@ -40,7 +28,6 @@ export default function Details(props) {
   // }else if(error){
   //     itineraries = []
   // }
->>>>>>> 494c011b04a11f7dfb5814b705517d474303fa58
 
   return (
   <>

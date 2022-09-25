@@ -22,12 +22,8 @@ export default function NewCity(){
         let inputPopulation= document.getElementById("Population").value
         let inputFundation= document.getElementById("Fundation").value
 
-<<<<<<< HEAD
-             axios.post(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/`,{           
-=======
 
              axios.post(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities`,{           
->>>>>>> 494c011b04a11f7dfb5814b705517d474303fa58
                   name: inputCity,
                   country : inputCountry,
                   image: inputImage,
