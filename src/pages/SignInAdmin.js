@@ -18,8 +18,7 @@ export default function SignInAdmin(){
 
     const AccionR =  async (e)=>{
         e.preventDefault()
-
-        axios.post (`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/signup`,{  
+        axios.post (`http://localhost:4000/auth/signup`,{   
         name : nameR.current.value,
         mail : mailR.current.value,
         password : passwordR.current.value,
