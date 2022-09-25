@@ -9,7 +9,7 @@ function NewComment(props){
     const divText = useRef(null)
     const [newcom] = useCreateMutation()
     const sendComment = ()=>{
-        // axios.post(`http://localhost:4000/comments`,{
+        // axios.post(`https://my-tinerary-dreamjuan-back.herokuapp.com/comments`,{
         // user: JSON.parse(localStorage.getItem('user')).id,
         // itinerary: itineraryId ,
         // comment: divText.current.value

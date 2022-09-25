@@ -10,7 +10,7 @@ export default function EditCity(){
 
 const[items, setItems] = useState([])
 useEffect(()=>{
-axios.get(api_url+'/cities/')
+axios.get('https://my-tinerary-dreamjuan-back.herokuapp.com/cities/')
     .then(response => setItems(response.data.response))
 }, [])
 const values = [
@@ -51,19 +51,44 @@ console.log(selected)
         }
         console.log(data)
 
-         axios.patch(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${seleccionada}`,{           
-               name: inputCity,
-               country : inputCountry,
-               image: inputImage,
-               population: inputPopulation,
-               fundation: inputFundation
-            })
-            .then(function(response){
-                console.log(response)
-            })
-            .catch(function(error){
-                console.log(error)
-            })
+        editCity({name:cityID,data})
+        if(cityUpdate?.success){
+            Toastify({
+                    text:cityUpdate.message,
+                     destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/editcity"
+                    }).showToast()
+        }else{
+            Toastify({
+                    text:error.data.message
+                    }).showToast()
+        }
+        
+        //  axios.patch(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${selected}`,{           
+        //        name: inputCity,
+        //        country : inputCountry,
+        //        image: inputImage,
+        //        population: inputPopulation,
+        //        fundation: inputFundation
+        //     })
+        //     .then(function(response){
+        //         console.log(response)
+        //         Toastify({
+        //             text:"City updated succesfully !",
+        //             destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/editcity"
+        //         }).showToast()
+        //     })
+        //     .catch(function(error){
+        //         console.log(error)
+        //         if (error.response.data.message === "name to short") {
+        //             Toastify({
+        //                 text:"Your name is too short, please try again(minimum 4 characters)"
+        //             }).showToast()
+        //         }else{
+        //             Toastify({
+        //                 text:"Invalid request please try again"
+        //             }).showToast()
+        //         }
+        //     })
             }
 
     return (

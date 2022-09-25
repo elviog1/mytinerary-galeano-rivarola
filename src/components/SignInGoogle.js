@@ -24,7 +24,7 @@ export default function SignInGoogle(){
     localStorage.setItem('token',JSON.stringify(response.data.response.token))
     Toastify({
         text:"Logged in succesfully! Press here to go to the home page",
-        destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
+        destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/"
     }).showToast()
     })
     .catch(function(error){

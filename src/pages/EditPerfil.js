@@ -27,7 +27,7 @@ function EditPerfil(){
             console.log(response)
             Toastify({
                 text:"Perfil updated succesfully !",
-                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/perfil"
+                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/perfil"
             }).showToast()
         })
         .catch(function(error){

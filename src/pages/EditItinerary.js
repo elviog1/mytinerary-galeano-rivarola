@@ -80,7 +80,7 @@ if(isLoading){
                 console.log(response)
                 Toastify({
                     text:"Itinerary updated succesfully !",
-                    destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/cities"
+                    destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/cities"
                 }).showToast()
             })
             .catch(function(error){

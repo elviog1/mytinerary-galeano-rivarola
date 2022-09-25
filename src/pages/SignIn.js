@@ -46,7 +46,11 @@ export default function SignIn(){
             localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Registration succesfully completed! Please check your Email to verificate your account",
+<<<<<<< HEAD
+                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/"
+=======
                 destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
+>>>>>>> main
             }).showToast()
             
         })
@@ -95,7 +99,7 @@ export default function SignIn(){
             localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Logged in succesfully! Press here to go to the home page",
-                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
+                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/"
             }).showToast()
         })
         .catch(function(error){

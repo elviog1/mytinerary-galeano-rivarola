@@ -34,7 +34,7 @@ export default function NewCity(){
                     console.log(response)
                     Toastify({
                         text:"City created succesfully !",
-                        destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/newcity"
+                        destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/newcity"
                     }).showToast()
                 })
                 .catch(function(error){

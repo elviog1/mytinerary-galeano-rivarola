@@ -28,13 +28,13 @@ function Likes (props){
         if(!itObj.likes.includes(idUser) && !likeUser){
             Toastify({
                 text:"i love this!",
-                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/cities"
+                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/cities"
             }).showToast()
 
         }else if(itObj.likes.includes(idUser)) {
                 Toastify({
                     text:"noo!",
-                    destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/cities"
+                    destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/cities"
                 }).showToast()
             }
     }
