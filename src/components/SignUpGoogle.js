@@ -12,7 +12,7 @@ export default function SignUpGoogle(){
       let responsePayload = jose.decodeJwt(response.credential)
       console.log(responsePayload)
 
-      axios.post (`http://localhost:4000/auth/signup`,{  
+      axios.post (`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/signup`,{  
     name : responsePayload.name,
     mail : responsePayload.email,
     password : responsePayload.sub,
@@ -25,7 +25,7 @@ export default function SignUpGoogle(){
     console.log(response)
     Toastify({
         text:"Registration succesfully completed! Press here to go to the home page",
-        destination:"http://localhost:3000/"
+        destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/"
     }).showToast()
 })
 .catch(function(error){

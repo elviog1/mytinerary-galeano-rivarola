@@ -10,7 +10,7 @@ export default function Details(props) {
   const {id} = useParams()
   const [city, setCity] = useState()
   useEffect(()=>{
-    axios.get(`http://localhost:4000/cities/${id}`)
+    axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${id}`)
     .then(response => setCity(response.data.response))
 },[])
 

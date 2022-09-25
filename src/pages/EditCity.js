@@ -12,7 +12,7 @@ export default function EditCity(){
 
 const[items, setItems] = useState([])
 useEffect(()=>{
-axios.get('http://localhost:4000/cities/')
+axios.get('https://my-tinerary-dreamjuan-back.herokuapp.com/cities/')
     .then(response => setItems(response.data.response))
 }, [])
 const values = [
@@ -57,7 +57,7 @@ console.log(selected)
         if(cityUpdate?.success){
             Toastify({
                     text:cityUpdate.message,
-                     destination:"http://localhost:3000/editcity"
+                     destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/editcity"
                     }).showToast()
         }else{
             Toastify({
@@ -65,7 +65,7 @@ console.log(selected)
                     }).showToast()
         }
         
-        //  axios.patch(`http://localhost:4000/cities/${selected}`,{           
+        //  axios.patch(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${selected}`,{           
         //        name: inputCity,
         //        country : inputCountry,
         //        image: inputImage,
@@ -76,7 +76,7 @@ console.log(selected)
         //         console.log(response)
         //         Toastify({
         //             text:"City updated succesfully !",
-        //             destination:"http://localhost:3000/editcity"
+        //             destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/editcity"
         //         }).showToast()
         //     })
         //     .catch(function(error){

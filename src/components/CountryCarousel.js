@@ -25,7 +25,7 @@ function CountryCarousel (){
 
 const[items, setItems] = useState([])
 useEffect(()=>{
-axios.get('http://localhost:4000/cities/')
+axios.get('https://my-tinerary-dreamjuan-back.herokuapp.com/cities/')
     .then(response => setItems(response.data.response))
 }, [])
 

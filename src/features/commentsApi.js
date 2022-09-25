@@ -5,7 +5,7 @@ const commentsApi = createApi({
     reducerPath: "commentsApi",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000"
+        baseUrl: "https://my-tinerary-dreamjuan-back.herokuapp.com"
     }), 
 
     endpoints: (builder) =>({

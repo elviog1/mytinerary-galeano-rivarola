@@ -28,18 +28,18 @@ function Likes (props){
         if(!itObj.likes.includes(idUser) && !likeUser){
             Toastify({
                 text:"i love this!",
-                destination:"http://localhost:3000/cities"
+                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/cities"
             }).showToast()
 
         }else if(itObj.likes.includes(idUser)) {
                 Toastify({
                     text:"noo!",
-                    destination:"http://localhost:3000/cities"
+                    destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/cities"
                 }).showToast()
             }
     }
     useEffect(()=>{
-        axios.get(`http://localhost:4000/itineraries/${itinerary}`)
+        axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/itineraries/${itinerary}`)
         .then(response => setLikes(response.data.response.likes.length))
     },[])
 
