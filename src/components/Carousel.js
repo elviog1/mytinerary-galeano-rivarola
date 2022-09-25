@@ -7,17 +7,13 @@ import { Link as LinkRouter } from 'react-router-dom'
 
 function Carousel(props) {
 
-    const range = props.range // cuantas imagenes queremos imprimir  
+    const range = props.range
     const limitSlides = props.slides * range
     const [start,setStart] = useState(0)
     const [end,setEnd] = useState(start + range)
     const [intervalId,setIntervalId] = useState()
     const interval = props.interval * 1000
-    const items = props.data //props hace referencia al valor de los atributos del componente
-    // DATA es el atributo, PROPS el valor, ITEMS se lo utiliza pra un []
-
-    // const rangeStart = props.rangeStart
-    // const rangeEnd = props.rangeEnd
+    const items = props.data 
 
     useEffect(() => {
       let id = setInterval(function () {

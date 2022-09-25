@@ -1,0 +1,90 @@
+.cardComment-img-name{
+    display: flex;
+    justify-content: center;
+    border-top: 3px solid grey;
+}
+.comment-user{
+    align-self: center;
+    color: white;
+}
+
+.cardComment-button{
+    margin: 0 10px;
+    padding: 5px 15px;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.cardComment-button:hover{
+    background-color: brown;
+}
+.cardComment-container{
+    overflow: hidden;
+    margin: 10px 0 ;
+}
+.comment-img{
+    width:100px;
+    border-radius: 50%;
+    margin: 8px;
+}
+
+.comment-content{
+    font-weight: 400;
+    /* margin: 8px; */
+    /* color: white; */
+    font-size: 25px;
+    width: 100%;
+  }
+ 
+.comment-card{
+    width: 50rem;
+    background-color: rgb(20, 20, 20);
+    
+}
+.comment-info{
+    display: flex;
+    flex-direction: column;
+}
+.comment-close, .comment-edit{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 0px;
+    cursor: pointer;
+    
+}
+.comment-edition{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.comment-close:hover, .comment-edit:hover{
+    background-color: brown;
+}
+textarea{
+    background-color: rgb(165, 164, 164);
+}
+
+
+@media (max-width:768px){
+    .comment-card{
+        width: 35rem;
+    }
+}
+@media (max-width:425px){
+    .comment-card{
+        width: 16rem;
+    }
+}
+@media (max-width:375px){
+    .comment-card{
+        width: 16rem;
+    }
+}
+@media (max-width:320px){
+    .comment-card{
+        width: 16rem;
+    }
+}

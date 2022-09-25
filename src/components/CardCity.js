@@ -3,8 +3,7 @@ import {Link as LinkRouter} from 'react-router-dom'
 
 
 function CardCity(props){
-    const allCard = props.data
-
+    const allCard = props.data.response ? props.data.response : props.data
 
     const card =(item) =>(
             <LinkRouter to={item._id} key={item.name}>
@@ -20,7 +19,7 @@ function CardCity(props){
 
     return(
         <>
-           {allCard.map(card)}
+           {allCard?.map(card)}
         </>
     )
 }
