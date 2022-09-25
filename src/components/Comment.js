@@ -17,7 +17,7 @@ function Comment(props){
     }
     // console.log(id)
     useEffect(()=>{ // devuelve todos los comentarios
-        axios.get(`http://localhost:4000/comments/query?itinerary=${id}`)
+        axios.get(`https://my-tinerary-dreamjuan-back.herokuapp.com/comments/query?itinerary=${id}`)
         .then(response => setComments(response.data.response))
     },[])
 
@@ -33,7 +33,7 @@ function Comment(props){
     })
 
     const close = (id)=>{ // elimina un comentario
-        axios.delete(`http://localhost:4000/comments/${id}`)
+        axios.delete(`https://my-tinerary-dreamjuan-back.herokuapp.com/comments/${id}`)
             Toastify({
                 text:"Comment Deleted succesfully !"
             }).showToast()
@@ -41,7 +41,7 @@ function Comment(props){
 
     const divEdit = useRef(null)
     const edit = (id)=>{ // actualiza un comentario
-        axios.put(`http://localhost:4000/comments/${id}`,{
+        axios.put(`https://my-tinerary-dreamjuan-back.herokuapp.com/comments/${id}`,{
             comment: document.getElementById(`${id}`).value
         })
             Toastify({

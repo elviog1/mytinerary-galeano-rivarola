@@ -53,7 +53,7 @@ function Header() {
     async function signOut (){
         let id = JSON.parse(localStorage.getItem('user')).id
         try{
-             let response = await axios.post(`http://localhost:4000/auth/signout/${id}`)   
+             let response = await axios.post(`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/signout/${id}`)   
              console.log(response)
             setLogged(false)
             localStorage.removeItem('user')

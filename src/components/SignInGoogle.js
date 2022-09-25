@@ -14,7 +14,7 @@ export default function SignInGoogle(){
         let responsePayload = jose.decodeJwt(response.credential)
         // console.log(responsePayload)
 
-        axios.post (`http://localhost:4000/auth/signin`,{  
+        axios.post (`https://my-tinerary-dreamjuan-back.herokuapp.com/auth/signin`,{  
         mail : responsePayload.email,
         password : responsePayload.sub,
         })
@@ -24,7 +24,7 @@ export default function SignInGoogle(){
     localStorage.setItem('token',JSON.stringify(response.data.response.token))
     Toastify({
         text:"Logged in succesfully! Press here to go to the home page",
-        destination:"http://localhost:3000/"
+        destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
     }).showToast()
     })
     .catch(function(error){

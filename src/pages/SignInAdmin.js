@@ -18,7 +18,6 @@ export default function SignInAdmin(){
 
     const AccionR =  async (e)=>{
         e.preventDefault()
-
         axios.post (`http://localhost:4000/auth/signup`,{   
         name : nameR.current.value,
         mail : mailR.current.value,
@@ -32,7 +31,7 @@ export default function SignInAdmin(){
             localStorage.setItem('user',JSON.stringify(response.data.response.user))
             Toastify({
                 text:"Registration succesfully completed! Please check your Email to verificate your account",
-                destination:"http://localhost:3000/"
+                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
             }).showToast()
             
         })
