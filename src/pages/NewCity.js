@@ -1,6 +1,8 @@
 import '../styles/NewCity.css'
 import Input from '../components/Input'
 import axios from 'axios'
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 export default function NewCity(){
     const items = [
@@ -21,7 +23,7 @@ export default function NewCity(){
         let inputFundation= document.getElementById("Fundation").value
 
 
-             axios.post(`http://localhost:4000/cities/`,{           
+             axios.post(`http://localhost:4000/cities`,{           
                   name: inputCity,
                   country : inputCountry,
                   image: inputImage,
@@ -30,9 +32,22 @@ export default function NewCity(){
                 })
                 .then(function(response){
                     console.log(response)
+                    Toastify({
+                        text:"City created succesfully !",
+                        destination:"http://localhost:3000/newcity"
+                    }).showToast()
                 })
                 .catch(function(error){
                     console.log(error)
+                    if (error.response.data.message === "name to short") {
+                        Toastify({
+                            text:"Your name is too short, please try again(minimum 4 characters)"
+                        }).showToast()
+                    }else{
+                        Toastify({
+                            text:"Invalid request please try again"
+                        }).showToast()
+                    }
                 })
                 }
      return(

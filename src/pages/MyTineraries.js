@@ -3,20 +3,41 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Itinerary from '../components/Itinerary'
 import '../styles/Itinerary.css'
+import {useByuserQuery } from '../features/itineraiesApi'
 
 export default function MyTineraries () {
-  const {id} = useParams();
-  console.log(id);
-  const[itineraries, setItineraries] = useState([])
-  useEffect(()=>{
-      axios.get(`http://localhost:4000/itineraries/queryu?user=${id}`)
-      .then(response =>setItineraries(response.data.response))
-    },[])
+  let {id} = useParams();
+
+let{
+    data: itineraries,
+    isLoading,
+    isSuccess,
+    error
+} = useByuserQuery({id} ? id : "")
+
+if (isLoading) {
+    itineraries=[]
+} else if(isSuccess){
+    itineraries = itineraries
+}else if(error){
+    itineraries = []
+}
 
     return(
-        <div className='itineraries-container'>
-            <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
-                <Itinerary data={itineraries}/>
+        <div className="itinerary-card">
+            <div className='itinerary-container'>
+                <h1 className='tineraries-title'><span>My </span>Tineraries</h1>
+                    {/* {itineraries.length<0?<Itinerary data={itineraries} key={itineraries._id}/>:<div>
+                        <p>You have no Tineraries</p></div>
+} */}
+                    {itineraries?.length? itineraries.map(itinerary => 
+                    {
+                    return (
+                        <Itinerary data={itinerary} key={itinerary._id} />
+                        )
+                    }) : null
+                    }
+            </div>
         </div>
     )
 }
