@@ -4,8 +4,9 @@ import Input from '../components/Input'
 import EditInput from '../components/InputEdit'
 import '../styles/NewCity.css'
 import '../styles/EditCity.css'
-import api_url from '../api'
-
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
+import { useAllQuery, useEditCityMutation } from '../features/citiesApi'
 export default function EditCity(){
 
 const[items, setItems] = useState([])
