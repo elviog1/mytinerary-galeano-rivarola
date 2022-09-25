@@ -4,23 +4,15 @@ import Input from '../components/Input'
 import EditInput from '../components/InputEdit'
 import '../styles/NewCity.css'
 import '../styles/EditCity.css'
-<<<<<<< HEAD
-import api_url from '../api'
-=======
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 import { useAllQuery, useEditCityMutation, useGetIDQuery } from '../features/citiesApi'
->>>>>>> 494c011b04a11f7dfb5814b705517d474303fa58
 
 export default function EditCity(){
 
 const[items, setItems] = useState([])
 useEffect(()=>{
-<<<<<<< HEAD
-axios.get(api_url+'/cities/')
-=======
 axios.get('https://my-tinerary-dreamjuan-back.herokuapp.com/cities/')
->>>>>>> 494c011b04a11f7dfb5814b705517d474303fa58
     .then(response => setItems(response.data.response))
 }, [])
 const values = [
@@ -61,21 +53,6 @@ console.log(selected)
         }
         console.log(data)
 
-<<<<<<< HEAD
-         axios.patch(`https://my-tinerary-dreamjuan-back.herokuapp.com/cities/${seleccionada}`,{           
-               name: inputCity,
-               country : inputCountry,
-               image: inputImage,
-               population: inputPopulation,
-               fundation: inputFundation
-            })
-            .then(function(response){
-                console.log(response)
-            })
-            .catch(function(error){
-                console.log(error)
-            })
-=======
         editCity({name:cityID,data})
         if(cityUpdate?.success){
             Toastify({
@@ -114,7 +91,6 @@ console.log(selected)
         //             }).showToast()
         //         }
         //     })
->>>>>>> 494c011b04a11f7dfb5814b705517d474303fa58
             }
 
     return (
