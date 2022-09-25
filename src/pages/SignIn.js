@@ -46,11 +46,7 @@ export default function SignIn(){
             localStorage.setItem('token',JSON.stringify(response.data.response.token))
             Toastify({
                 text:"Registration succesfully completed! Please check your Email to verificate your account",
-<<<<<<< HEAD
-                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com/"
-=======
-                destination:"https://my-tinerary-dreamjuan-back.herokuapp.com/"
->>>>>>> main
+                destination:"https://my-tynerary-front-dreamjuan.herokuapp.com"
             }).showToast()
             
         })
