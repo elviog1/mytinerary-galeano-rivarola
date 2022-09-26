@@ -123,11 +123,11 @@ export default function SignIn(){
         <div className='signin-container'>
         <form className="signin-form">
         <h1>Sign In</h1>
-        <label htmlFor='mail' className="signin-field">mail
-                <input ref={mailS} required type="text" className="signin-input" id="mail" placeholder="Enter your mail" ></input>
+        <label htmlFor='mailS' className="signin-field">mail
+                <input ref={mailS} required type="text" className="signin-input" id="mailS" placeholder="Enter your mail" ></input>
             </label>
-            <label htmlFor='password' className="signin-field">password
-                <input ref={passS} required type="password" className="signin-input" id="password" placeholder="Enter your password" ></input>
+            <label htmlFor='passwordS' className="signin-field">password
+                <input ref={passS} required type="passwordS" className="signin-input" id="password" placeholder="Enter your password" ></input>
             </label>
             <button id="send" type="submit" className="nc-boton" onClick={AccionS}>Sign In</button>
             <SignInGoogle />
